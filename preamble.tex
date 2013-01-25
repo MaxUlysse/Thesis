@@ -1,0 +1,275 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%    Maxime U. Garcia, max.u.garcia@gmail.com,  01/2013 %%%
+%%%                                                       %%%
+%%%          Questions and suggestions WELCOMED!          %%%
+%%%                                                       %%%
+%%%       This thesis template largely derives from       %%%
+%%%            Charles Chapple, Robert Castelo            %%%
+%%%         Sergio Mendoza and Sergi Castellano           %%%
+%%%             Under GNU/GPL copyleft license            %%%
+%%%                                                       %%%
+%%%         FEEL FREE TO USE IT AND IMPROVE IT!!!         %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Preamble:  LaTeX parameters and extensions %%%
+
+%%%%%%%%%%%%%%%%%%%%%
+%%% Document type %%%
+%%%%%%%%%%%%%%%%%%%%%
+
+% While working to see output errors
+%\documentclass[draft,pdftex,oneside]{book}
+
+% To produce final printable version
+\documentclass[pdftex,oneside]{book}
+
+% For Fancyhdr
+\setlength{\headheight}{13pt}
+
+% To remove "No room for a new \dimen" when using tikz
+\RequirePackage{etex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Our own style file %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Style file for this template mythesis.sty
+% Style file for bibliography newicktree.sty
+\RequirePackage{mythesis,newicktree}
+
+%%%%%%%%%%%%%%%%%%%
+%%%   Colors    %%%
+%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{color}
+\input{colors}
+
+%%%%%%%%%%%%%%%%%%%%
+%%% Paper layout %%%
+%%%%%%%%%%%%%%%%%%%% 
+
+% Book size e-version
+\RequirePackage[paperwidth=170mm,paperheight=240mm,hmargin={2cm,1cm},vmargin={2cm,1.75cm}]{geometry}
+
+%\RequirePackage[frame,noaxes,a4,center]{crop}
+
+%%%%%%%%%%%%%%%%
+%%% Headings %%%
+%%%%%%%%%%%%%%%%
+
+%For memoir class
+\let\footruleskip\undefined
+
+% To produce nice headings
+\RequirePackage{fancyhdr}
+
+\pagestyle{fancy} 
+
+% Big first letter.
+\RequirePackage{lettrine}
+\newcommand{\mylettrine}[1]{\lettrine[lines=4,loversize=-0.1,lraise=0.1,lhang=.2]{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% MARKS AND DRAFTMARKS %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\myversion}{V 0.5}
+
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter. #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+\lfoot{}
+\rfoot{}
+
+% Normal marks
+%\lhead[\fancyplain{}{\sffamily\thepage}]{\fancyplain{}{\sffamily\rightmark}}
+%\rhead[\fancyplain{}{\sffamily\leftmark}]{\fancyplain{}{\sffamily\thepage}}
+%\cfoot{}
+
+%Draftmarks
+\lhead[\fancyplain{}{\sffamily\thepage}]{\fancyplain{}{\sffamily\textcolor{blue}{DRAFT} \rightmark}}
+\rhead[\fancyplain{}{\sffamily\leftmark}]{\fancyplain{}{\sffamily\textcolor{blue}{\today} \thepage}}
+\cfoot{\textcolor{blue}{\myversion}}
+
+%%% Line Spacing %%%
+\RequirePackage{setspace}
+
+%%%%%%%%%%%%%%%%%%%%
+%%% PDF commands %%%
+%%%%%%%%%%%%%%%%%%%%
+
+%\RequirePackage[draft]{pdfpages} % To include pdf documents with pdflatex. It does NOT work with latex.
+                              % Declare it before \RequirePackage{graphicx}
+
+% To produce final version
+\RequirePackage{pdfpages}
+
+%%% Global pdfpages options %%%
+
+% Used in each \%includepdf call unless overwritten locally
+\includepdfset{frame=false,pagecommand={\thispagestyle{fancy}}}
+
+%%%%%%%%%%%%%%%
+%%% FIGURES %%%
+%%%%%%%%%%%%%%%
+
+% Path to figures
+\graphicspath{{Figures//}}
+% To include graphics
+\RequirePackage{graphicx}
+% To wrap text
+\RequirePackage{wrapfig}
+% to draw Figures
+\RequirePackage{tikz}
+% to rotate figures and tables
+\RequirePackage{rotating}
+
+%%%%%%%%%%%%%%%%%
+%%% EQUATIONS %%%
+%%%%%%%%%%%%%%%%%
+
+\RequirePackage{mathtools}
+
+% New definition of square root:
+% Renames \sqrt as \oldsqrt
+\let\oldsqrt\sqrt
+% Defines the new \sqrt in terms of the old one
+\def\sqrt{\mathpalette\DHLhksqrt}
+\def\DHLhksqrt#1#2{
+  \setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
+  \advance\dimen0-0.2\ht0
+  \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}
+  {\box0\lower0.4pt\box2}}
+
+%%%%%%%%%%%%%%%%
+%%% ACRONYMS %%%
+%%%%%%%%%%%%%%%%
+
+\RequirePackage{suffix}
+\RequirePackage[printonlyused]{acronym}
+
+%%%%%%%%%%%%%%%%
+%%% VERBATIM %%%
+%%%%%%%%%%%%%%%%
+
+\RequirePackage{moreverb}
+
+%%%%%%%%%%%%%%%%%%
+%%% REFERENCES %%%
+%%%%%%%%%%%%%%%%%%
+
+% Natural Sciences Citations: author-year and numerical citations
+\RequirePackage[round]{natbib}
+
+%%%%%%%%%%%%%
+%%% INDEX %%%
+%%%%%%%%%%%%%
+
+% To make a subject index
+\RequirePackage{makeidx}
+
+% Subject index. It is added at the very end of the book
+\makeindex
+
+%%%%%%%%%%%%%
+%%% FONTS %%%
+%%%%%%%%%%%%%
+
+\RequirePackage{palatino}
+% To get \checkmark
+\RequirePackage{amsfonts}
+
+%\selectfont
+
+%\font\avantgarnormal = pagk at 10pt
+
+%%% to add an empty page, output pending figures and resume in an odd-numbered one %%%
+
+\newcommand{\clearemptypage}{\newpage\thispagestyle{empty}\mbox{}}
+
+\newcommand{\clearemptydoublepage}{
+    \clearemptypage
+    \if@twoside
+        \ifodd
+            \clearemptypage
+        \fi
+    \fi}
+
+% shorther command for boldface
+\newcommand{\bb}[1]{\textbf{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%
+%%% URL INCLUSION %%%
+%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage[pdftex,a4paper,colorlinks=true,linkcolor=black,menucolor=red,pdfhighlight=/P,citecolor=steelblue,urlcolor=brickred,linktocpage=false]{hyperref}
+%Enter URLs like this: \url{http://genome.imim.es/}
+
+%\RequirePackage[pdftex,a4paper,colorlinks=true,linkcolor=black,menucolor=black,pagecolor=black,pdfhighlight=/P,citecolor=black,urlcolor=black,linktocpage=true]{hyperref} % For printing
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%% DEFINING TERMS %%%
+%%%%%%%%%%%%%%%%%%%%%%
+
+\def\myauthor{Maxime U. Garcia}
+
+\def\mytitlefr{Découverte de biomarqueurs prédictifs en cancer du sein par Intégration Transcrip\-tome-Interactome}
+
+\def\mytitleen{Biomarkers discovery in breast cancer by Interactome-Transcriptome Integration}
+
+\def\myabstractfr{Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.}
+
+\def\myabstracten{Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.}
+
+\def\mykeywordsfr{Transcriptome; Interactome; Intégration de données; Réseaux de gène; classification; SVM; Signature; Biomarqueurs; Cancer; Cancer du Sein}
+
+\def\mykeywordsen{Transcriptome; Interactome; Data Integration; Gene Networks; classification; SVM; Signature; Biomarkers; Cancer; Breast Cancer}
+
+% To get e and er in superscript easily
+
+\newcommand{\eme}{\textsuperscript{e}}
+
+\newcommand{\er}{\textsuperscript{er}}
+
+%%%%%%%%%%%%%%%%%
+%%% PDF INFOS %%%
+%%%%%%%%%%%%%%%%%
+
+\hypersetup{
+    pdftitle        = {\mytitlefr},
+    pdfsubject      = {Thèse de doctorat en Bioinformatique et Génomique à Aix-Marseille Université},
+    pdfkeywords     = {\mykeywordsfr},
+    pdfauthor       = {\myauthor},
+    pdfcreator      = {\LaTeX},
+    pdfproducer     = {pdfeTeX-0.\the\pdftexversion\pdftexrevision}
+    pdfpagemode     = FullScreen,
+    pdffitwindow    = true}
+
+\AtBeginDocument{\pdfpagewidth=176mm\pdfpageheight=250mm}
+
+
+%%%%%%%%%%%%%%%%%%
+%%% PARAGRAPHS %%%
+%%%%%%%%%%%%%%%%%%
+
+\setlength{\parskip}{1ex plus0.2ex minus0.2ex}
+
+%%%%%%%%%%%%
+%%% DATE %%%
+%%%%%%%%%%%%
+
+\date{} % Keep it empty
+ 
+%%%%%%%%%%%%%%%%%
+%%% FOOTNOTES %%%
+%%%%%%%%%%%%%%%%%
+
+% Vertical spacing between footnotes
+\setlength{\footnotesep}{2ex}
+
+% Rule height, width and space
+\renewcommand{\footnoterule}{\noindent\rule{5cm}{.1ex}\vspace{1.5ex}}
+
+% That's all folks!
