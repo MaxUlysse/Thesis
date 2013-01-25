@@ -1,11 +1,11 @@
 #!/bin/bash
 
-############################################################# 
+#############################################################
 #############################################################
 ###    Maxime U. Garcia, max.u.garcia@gmail.com,  01/2013 ###
 ###                                                       ###
 ###          Questions and suggestions WELCOMED!          ###
-###                                                       ###  
+###                                                       ###
 ###       This thesis template largely derives from       ###
 ###            Charles Chapple, Robert Castelo            ###
 ###         Sergio Mendoza and Sergi Castellano           ###
@@ -20,7 +20,7 @@
 ########################
 ##  It compiles your  ##
 ## thesis but it does ##
-##   NOT write it ;P  ##
+##  NOT write it ;-P  ##
 ########################
 
 function clean() {
