@@ -10,3 +10,5 @@ At some point during this process, Josep Abril got involved and, knowing him, pr
 
 It's under GNU/GPL copyleft license
 So FEEL FREE TO USE IT AND IMPROVE IT!!!
+
+Type "./Makefile" at the command line to build a pdf of your thesis
