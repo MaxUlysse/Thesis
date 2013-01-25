@@ -1,0 +1,125 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%    Maxime U. Garcia, max.u.garcia@gmail.com,  01/2013 %%%
+%%%                                                       %%%
+%%%          Questions and suggestions WELCOMED!          %%%
+%%%                                                       %%%
+%%%       This thesis template largely derives from       %%%
+%%%            Charles Chapple, Robert Castelo            %%%
+%%%         Sergio Mendoza and Sergi Castellano           %%%
+%%%             Under GNU/GPL copyleft license            %%%
+%%%                                                       %%%
+%%%         FEEL FREE TO USE IT AND IMPROVE IT!!!         %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Preamble: LaTeX parameters and extensions %%%
+
+\input{preamble} % Call layout and other LaTeX parameters from file preamble.tex
+
+%%% Body: actual text with some control commands %%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% The whole writing starts here divided into %%%
+%%%   frontmatter, mainmatter and backmatter   %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Each \input command searches for a .tex file in a directory
+
+% Build the minitoc
+\dominitoc
+\nomtcrule
+
+% Set how many levels of subsections are listed in the Table Of Contents (TOC)
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+% The main body lies within the \begin{document} and \end{document} commands.
+\begin{document}
+
+%%% frontmatter %%%
+\frontmatter
+\input{Tex/title}
+\clearemptypage
+
+% Institutional logos and others
+\input{Tex/logos}      
+\clearemptypage
+
+% Dedicatory
+\input{Tex/dedicatory} 
+% Acknowledgements
+\input{Tex/acknowledgements}
+
+%%% TOC and List of figures and tables %%%
+
+% For a more compact index layout 
+\setlength{\parskip}{0.4ex plus0.2ex minus0.2ex}
+
+% Main TOC
+\tableofcontents
+\mtcaddchapter %prevent shifting due to TOC, TOT and TOF
+
+% Table of tables
+\listoftables
+\mtcaddchapter
+
+% Table of figures
+\listoffigures
+\mtcaddchapter
+
+%%% mainmatter %%%
+\mainmatter
+\clearemptydoublepage
+
+% State of the art
+\input{Tex/01-introduction}
+\clearemptydoublepage
+
+% Papers' supplementary material
+\input{Tex/02-methods}
+\clearemptydoublepage
+
+% Got papers? great!
+\input{Tex/03-results}
+\clearemptydoublepage
+
+% Got papers? great!
+\input{Tex/04-results}
+\clearemptydoublepage
+
+% Make sense of the whole of it
+\input{Tex/05-discussion}
+\clearemptydoublepage
+
+% Your contribution in short points
+\input{Tex/06-conclusions}
+\clearemptydoublepage
+
+\begin{appendices}
+\input{Tex/07-appendices}
+
+% Bibliography
+\bibliography{Bibliography/biblio}
+\bibliographystyle{unsrtnat}
+%\bibliographystyle{apalike}
+\clearemptydoublepage
+
+% Index
+\printindex
+\clearemptydoublepage
+
+%Colophon
+\input{Tex/colophon}
+\clearemptydoublepage
+
+% Abstract
+\phantomsection
+\addcontentsline{toc}{chapter}{Abstract}
+\input{Tex/abstract}
+
+\end{appendices}
+
+\end{document}
+% You made it!!! look for a postdoc now!!!
+% Or a life...
