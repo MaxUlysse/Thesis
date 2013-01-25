@@ -1,0 +1,238 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%    Maxime U. Garcia, max.u.garcia@gmail.com,  01/2013 %%%
+%%%                                                       %%%
+%%%          Questions and suggestions WELCOMED!          %%%
+%%%                                                       %%%
+%%%       This thesis template largely derives from       %%%
+%%%            Charles Chapple, Robert Castelo            %%%
+%%%         Sergio Mendoza and Sergi Castellano           %%%
+%%%             Under GNU/GPL copyleft license            %%%
+%%%                                                       %%%
+%%%         FEEL FREE TO USE IT AND IMPROVE IT!!!         %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%
+%%% LANGUAGE %%%
+%%%%%%%%%%%%%%%%
+
+\RequirePackage[french]{babel}
+\RequirePackage[latin1]{inputenc}
+\RequirePackage[T1]{fontenc}
+\frenchspacing
+\addto{\captionsfrench}{
+    \renewcommand\contentsname{Tables des matières}
+    \renewcommand\tablename{Tableau}
+    \renewcommand\listtablename{Index des tableaux}
+    \renewcommand\figurename{Figure}
+    \renewcommand\listfigurename{Index des figures}
+    \renewcommand\bibname{Références}}
+
+%%%%%%%%%%%%%%%%
+%%% CHAPTERS %%%
+%%%%%%%%%%%%%%%%
+
+% Make fancy headings different colors for each chapter
+\newcommand{\mychapter}[2]{\textcolor{#1}{\chapter{#2}}}
+
+\newcommand{\nochaptercolor}[2]{\textcolor{#1}{\chapter*{#2}}}
+
+% fancy chapters
+\RequirePackage[Glenn]{fncychap}
+%Sonny, Lenny, Conny, Rejne, Bjarne, Bjornstrup (other option for fancy chapters)
+
+% This is to create a fake chapter (like the acknowledgments).  It doesn't
+% get ennumerated, but it does get added to the Table of Contents (ToC),
+% and since the \chapter* doesn't define the markright or markboth
+% commands, we force it here to do so.
+
+\newcommand{\nochapter}[2][]{
+  \chapter*{#1}{
+    \addstarredchapter{#1}
+    \markboth{ #1 }{ #1 }}}
+
+% Chapter numbering in Roman
+\renewcommand\thechapter{\Roman{chapter}}
+
+\def\@makechapterhead#1{
+    \vspace*{50\p@}
+    {\parindent \z@ \raggedright \normalfont
+    \raggedleft
+    \ifnum \c@secnumdepth >\m@ne
+        \if@mainmatter
+        \par\nobreak
+        \vskip 20\p@
+        \fi
+    \fi
+    \interlinepenalty\@M
+    \avantgarboldHuge #1\par\nobreak
+    \vskip 40\p@}}
+
+\def\@schapter#1{
+    \if@twocolumn
+        \@topnewpage[\@makeschapterhead{#1}]
+    \else
+        \@makeschapterhead{#1}
+        \@afterheading
+    \fi}
+
+\def\@makechapterhead#1{
+    \vspace*{50\p@}
+    {\parindent \z@ \raggedright
+        \raggedleft
+        \normalfont
+        \interlinepenalty\@M
+        \Huge \bfseries  #1\par\nobreak
+        \vskip 40\p@}}
+
+\renewcommand{\ChNameVar}{\fontsize{14}{16}\usefont{OT1}{phv}{m}{n}\selectfont}
+\renewcommand{\ChNumVar}{\fontsize{60}{62}\usefont{OT1}{ptm}{m}{n}\selectfont}
+\ChTitleVar{\fontsize{26}{16}\sffamily}
+
+\def\@makechapterhead#1{
+  \vspace*{50\p@}
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter %%%%% Fix for frontmatter, mainmatter, and backmatter
+        \DOCH
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \DOTI{#1}}
+\color{black}}
+
+%%%%%%%%%%%%%%
+%%% TABLES %%%
+%%%%%%%%%%%%%%
+
+% Better tables
+\RequirePackage{booktabs}
+% To allow multirow
+\RequirePackage{multirow}
+% Let you make a second caption with \caption*
+\RequirePackage{caption}
+
+%%%%%%%%%%%
+%%% TOC %%%
+%%%%%%%%%%%
+
+\RequirePackage{tocbibind}
+\RequirePackage{appendix}
+
+% To get minitoc in french
+\RequirePackage[undotted,french]{minitoc}
+
+%%% Additional definitions for this thesis %%%
+
+\font\avantgar            = pagk8r
+\font\avantgarlarge       = pagk8r at 12pt
+\font\avantgarLarge       = pagd8r at 14pt
+\font\avantgarboldHuge    = pagd8r at 25pt
+
+% Better spacing
+\usepackage{microtype}
+
+%%%%%%%%%%%%%%%%%
+%%%% SECTIONS %%%
+%%%%%%%%%%%%%%%%%
+
+% Section in arabic
+\renewcommand\thesection{\thechapter.\arabic{section}}
+
+\renewcommand\section{\@startsection {section}{1}{\z@}
+  {-3.5ex \@plus -1ex \@minus -.2ex}
+  {2.3ex \@plus.2ex}
+  {\avantgarboldLarge}}
+
+% Redefine the format of section's number
+\renewcommand\@seccntformat[1]{
+  \fontsize{18}{16}\sffamily
+  \csname the#1\endcsname
+  \hspace{0.5em}}
+
+% Redefine the format of section's title
+\let\LaTeX@startsection\@startsection
+\renewcommand{\@startsection}[6]{\LaTeX@startsection{#1}{#2}{#3}{#4}{#5}{\raggedright #6}} 
+
+%section generica
+\renewcommand\section{\@startsection{section}{1}
+  {0pt}{-\baselineskip}{\baselineskip}
+  {\raggedright\medskip\fontsize{18}{16}\sffamily}}
+
+% Red box
+\newcommand\sectionred{\@startsection{section}{1}
+  {0pt}{-\baselineskip}{\baselineskip}
+  {\color{mydarkred}\raggedright\textcolor{mydarkred}{\rule{3mm}{0.75cm}}\textcolor{mylightred}{\rule{3mm}{0.75cm}}
+  \medskip\fontsize{18}{16}\sffamily}}
+
+% Orange box
+\newcommand\sectionorange{\@startsection{section}{1}
+  {0pt}{-\baselineskip}{\baselineskip}
+  {\color{mydarkorange}\raggedright\textcolor{mydarkorange}{\rule{3mm}{0.75cm}}\textcolor{mylightorange}{\rule{3mm}{0.75cm}}
+  \medskip\fontsize{18}{16}\sffamily}}
+
+% Yellow box
+\newcommand\sectionyellow{\@startsection{section}{1}
+  {0pt}{-\baselineskip}{\baselineskip}
+  {\color{mydarkyellow}\raggedright\textcolor{mydarkyellow}{\rule{3mm}{0.75cm}}\textcolor{mylightyellow}{\rule{3mm}{0.75cm}}
+  \medskip\fontsize{18}{16}\sffamily}}
+
+% Green box
+\newcommand\sectiongreen{\@startsection{section}{1}
+  {0pt}{-\baselineskip}{\baselineskip}
+  {\color{mydarkgreen}\raggedright\textcolor{mydarkgreen}{\rule{3mm}{0.75cm}}\textcolor{mylightgreen}{\rule{3mm}{0.75cm}}
+  \medskip\fontsize{18}{16}\sffamily}}
+
+% Blue box
+\newcommand\sectionblue{\@startsection{section}{1}
+  {0pt}{-\baselineskip}{\baselineskip}
+  {\color{mydarkblue}\raggedright\textcolor{mydarkblue}{\rule{3mm}{0.75cm}}\textcolor{mylightblue}{\rule{3mm}{0.75cm}}
+  \medskip\fontsize{18}{16}\sffamily}}
+
+% Indigo box
+\newcommand\sectionindigo{\@startsection{section}{1}
+  {0pt}{-\baselineskip}{\baselineskip}
+  {\color{mydarkindigo}\raggedright\textcolor{mydarkindigo}{\rule{3mm}{0.75cm}}\textcolor{mylightindigo}{\rule{3mm}{0.75cm}}
+  \medskip\fontsize{18}{16}\sffamily}}
+
+% Violet box
+\newcommand\sectionviolet{\@startsection{section}{1}
+  {0pt}{-\baselineskip}{\baselineskip}
+  {\color{mydarkviolet}\raggedright\textcolor{mydarkviolet}{\rule{3mm}{0.75cm}}\textcolor{mylightviolet}{\rule{3mm}{0.75cm}}
+  \medskip\fontsize{18}{16}\sffamily}}
+
+% grey box
+\newcommand\sectiongrey{\@startsection{section}{1}
+  {0pt}{-\baselineskip}{\baselineskip}
+  {\color{mydarkgrey}\raggedright\textcolor{mydarkgrey}{\rule{3mm}{0.75cm}}\textcolor{mylightgrey}{\rule{3mm}{0.75cm}}
+  \medskip\fontsize{18}{16}\sffamily}}
+
+%%%%%%%%%%%%%%%%%%%
+%%% SUBSECTIONS %%%
+%%%%%%%%%%%%%%%%%%%
+
+% Subsection in alphanumeric lowercase
+\renewcommand\thesubsection{\thesection.\alph{subsection}}
+
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}
+  {-3.25ex\@plus -1ex \@minus -.2ex}
+  {1.5ex \@plus .2ex}
+  {\avantgarboldlarge}}
+
+\renewcommand\subsection{\@startsection{subsection}{1}
+  {0pt}{-\baselineskip}{\baselineskip}
+  {\raggedright\medskip\fontsize{14}{16}\sffamily}}
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%% SUBSUBSECTIONS %%%
+%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}
+  {-3.25ex\@plus -1ex \@minus -.2ex}
+  {1.5ex \@plus .2ex}
+  {\avantgarbold}}
+
+\renewcommand\subsubsection{\@startsection{subsubsection}{1}
+  {0pt}{-\baselineskip}{\baselineskip}
+  {\raggedright\medskip\fontsize{12}{16}\sffamily}}
