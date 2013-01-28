@@ -77,6 +77,10 @@ clean $name
 
 if [ "`grep Warning mythesis.log | grep -v minitoc`" = "" ]; then
     rm $name/*.log 2>/dev/null
+else
+  echo -e "\nWarning"
+	grep Warning mythesis.log | grep -v minitoc
+	echo -e "\n"
 fi
 
 for i in `ls` ; do
