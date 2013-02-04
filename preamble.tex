@@ -13,7 +13,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% Preamble:  LaTeX parameters and extensions %%%
+%%% Preamble: LaTeX parameters and extensions %%%
 
 %%%%%%%%%%%%%%%%%%%%%
 %%% Document type %%%
@@ -161,7 +161,7 @@
 %%%%%%%%%%%%%%%%%%
 
 % Natural Sciences Citations: author-year and numerical citations
-\RequirePackage[round]{natbib}
+\RequirePackage[round,sort&compress]{natbib}
 
 %%%%%%%%%%%%%
 %%% INDEX %%%
@@ -227,11 +227,19 @@
 
 \def\mykeywordsen{Transcriptome; Interactome; Data Integration; Gene Networks; classification; SVM; Signature; Biomarkers; Cancer; Breast Cancer}
 
+% To get subscript easily
+
+\newcommand{\textunderscript}[1]{$_{\text{#1}}$}
+
 % To get e and er in superscript easily
 
 \newcommand{\eme}{\textsuperscript{e}}
 
 \newcommand{\er}{\textsuperscript{er}}
+
+% To get CO2 easily
+
+\newcommand{\COO}{CO\textunderscript{2}}
 
 %%%%%%%%%%%%%%%%%
 %%% PDF INFOS %%%
