@@ -15,7 +15,7 @@
 #############################################################
 #############################################################
 
-#use ./SVG2PNG
+#use ./SVG2PNG.sh
 #Figures is the folder wher all your figures are
 
 for i in `ls -1 Figures | grep svg`
