@@ -15,7 +15,7 @@
 #############################################################
 #############################################################
 
-#use : ./UpdateBibliography
+#use : ./UpdateBibliography.sh
 
 #If you use Mendeley, your BibTeX synced file is library.bib (with just 1 file for the whole library)
 #I don't know what it does for 1 file per collection or 1 file per document, but it should not be to complicated
