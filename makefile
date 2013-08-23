@@ -25,7 +25,9 @@ MAIN	= mythesis
 
 all: pdf
 
-pdf:
+pdf: log remove
+
+log:
 	pdflatex ${MAIN}
 	@while ( grep "Rerun to get cross-references" \
 			${MAIN}.log > /dev/null ); do \
@@ -35,6 +37,11 @@ pdf:
 	done
 	makeindex ${MAIN}; \
 	pdflatex ${MAIN}; \
+
+clean:
+	rm -f ${MAIN}.pdf
+
+remove:
 	rm -f \
 	${MAIN}.aux \
 	${MAIN}.bbl \
@@ -49,17 +56,3 @@ pdf:
 	${MAIN}.mtc* \
 	${MAIN}.out \
 	${MAIN}.toc
-
-log:
-	pdflatex ${MAIN}
-	@while ( grep "Rerun to get cross-references" \
-			${MAIN}.log > /dev/null ); do \
-		echo '** Re-running LaTeX **'; \
-		bibtex ${MAIN}; \
-		pdflatex ${MAIN}; \
-	done
-	makeindex ${MAIN}; \
-	pdflatex ${MAIN}; \
-
-clean:
-	rm ${MAIN}.pdf
