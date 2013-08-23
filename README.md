@@ -7,6 +7,7 @@ All of these were derived from the original templates written by Robert Castelo 
 At some point during this process, Josep Abril got involved and, according to one of the previous people, who knew him, probably rewrote the whole thing.
 
 It's under GNU/GPL copyleft license
+
 So FEEL FREE TO USE IT AND IMPROVE IT!!!
 
 Type <code>make</code> at the command line to build a pdf of your thesis
