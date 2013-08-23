@@ -35,19 +35,20 @@ pdf:
 	done
 	makeindex ${MAIN}; \
 	pdflatex ${MAIN}; \
-	rm ${MAIN}.aux
-	rm ${MAIN}.bbl
-	rm ${MAIN}.blg
-	rm ${MAIN}.idx
-	rm ${MAIN}.ilg
-	rm ${MAIN}.ind
-	rm ${MAIN}.lof
-	rm ${MAIN}.log
-	rm ${MAIN}.lot
-	rm ${MAIN}.maf
-	rm ${MAIN}.mtc*
-	rm ${MAIN}.out
-	rm ${MAIN}.toc
+	rm -f \
+	${MAIN}.aux \
+	${MAIN}.bbl \
+	${MAIN}.blg \
+	${MAIN}.idx \
+	${MAIN}.ilg \
+	${MAIN}.ind \
+	${MAIN}.lof \
+	${MAIN}.log \
+	${MAIN}.lot \
+	${MAIN}.maf \
+	${MAIN}.mtc* \
+	${MAIN}.out \
+	${MAIN}.toc
 
 log:
 	pdflatex ${MAIN}
