@@ -1,25 +1,24 @@
 #!/bin/bash
+#use ./SVG2PDF
 
 #############################################################
 #############################################################
-###    Maxime U. Garcia, max.u.garcia@gmail.com,  01/2013 ###
+###       Maxime Ulysse Garcia, max@ithake.eu, 2013       ###
 ###                                                       ###
 ###          Questions and suggestions WELCOMED!          ###
 ###                                                       ###
 ###       This thesis template largely derives from       ###
 ###            Charles Chapple, Robert Castelo            ###
-###         Sergio Mendoza and Sergi Castellano           ###
+###          Sergio Mendoza and Sergi Castellano          ###
 ###             Under GNU/GPL copyleft license            ###
 ###                                                       ###
 ###         FEEL FREE TO USE IT AND IMPROVE IT!!!         ###
 #############################################################
 #############################################################
 
-#use ./SVG2PDF.sh
-
 for i in `ls -1 Figures | grep svg`
 do
-  file=$(echo $i | sed 's/\.svg$//g')
+	file=$(echo $i | sed 's/\.svg$//g')
 	if [[ -e Figures/$file.pdf ]]; then
 		rm Figures/$file.pdf
 	fi

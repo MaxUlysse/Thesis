@@ -1,17 +1,17 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%    Maxime U. Garcia, max.u.garcia@gmail.com,  01/2013 %%%
-%%%                                                       %%%
-%%%          Questions and suggestions WELCOMED!          %%%
-%%%                                                       %%%
-%%%       This thesis template largely derives from       %%%
-%%%            Charles Chapple, Robert Castelo            %%%
-%%%         Sergio Mendoza and Sergi Castellano           %%%
-%%%             Under GNU/GPL copyleft license            %%%
-%%%                                                       %%%
-%%%         FEEL FREE TO USE IT AND IMPROVE IT!!!         %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#############################################################
+%#############################################################
+%###       Maxime Ulysse Garcia, max@ithake.eu, 2013       ###
+%###                                                       ###
+%###          Questions and suggestions WELCOMED!          ###
+%###                                                       ###
+%###       This thesis template largely derives from       ###
+%###            Charles Chapple, Robert Castelo            ###
+%###          Sergio Mendoza and Sergi Castellano          ###
+%###             Under GNU/GPL copyleft license            ###
+%###                                                       ###
+%###         FEEL FREE TO USE IT AND IMPROVE IT!!!         ###
+%#############################################################
+%#############################################################
 
 %%% Preamble: LaTeX parameters and extensions %%%
 
@@ -51,7 +51,7 @@
 %%%%%%%%%%%%%%%%%%%% 
 
 % Book size e-version
-\RequirePackage[paperwidth=170mm,paperheight=240mm,hmargin={2cm,1cm},vmargin={2cm,1.75cm}]{geometry}
+\RequirePackage[paperwidth=170mm,paperheight=240mm,hmargin={2cm,1cm},vmargin={2cm,1.75cm},headheight=14pt]{geometry}
 
 %\RequirePackage[frame,noaxes,a4,center]{crop}
 
@@ -143,6 +143,32 @@
   \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}
   {\box0\lower0.4pt\box2}}
 
+%%%%%%%%%%%%%%%%%%%
+%%% BIG NUMBERS %%%
+%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{numprint}
+
+%%%%%%%%%%%%%%%%%
+%%%   LISTS   %%%
+%%%%%%%%%%%%%%%%%
+
+% Provides a new environnement to do a list
+\newenvironment{mylist}[1]{%
+  \begin{list}{}{%
+    \settowidth{\labelwidth}{#1:}
+    \setlength{\labelsep}{0.5cm}
+    \setlength{\leftmargin}{\labelwidth}
+    \addtolength{\leftmargin}{\labelsep}
+    \setlength{\rightmargin}{0pt}
+    \setlength{\parsep}{0.5ex plus 0.2ex minus 0.1ex}
+    \setlength{\itemsep}{0 ex plus 0.2ex}
+    \renewcommand{\makelabel}[1]{\textbf{##1}\hfil}
+    }
+  }
+{\end{list}}
+
+
 %%%%%%%%%%%%%%%%
 %%% ACRONYMS %%%
 %%%%%%%%%%%%%%%%
@@ -204,7 +230,7 @@
 %%% URL INCLUSION %%%
 %%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage[pdftex,a4paper,colorlinks=true,linkcolor=black,menucolor=red,pdfhighlight=/P,citecolor=steelblue,urlcolor=brickred,linktocpage=false]{hyperref}
+\RequirePackage[pdftex,colorlinks=true,linkcolor=black,menucolor=red,pdfhighlight=/P,citecolor=steelblue,urlcolor=brickred,linktocpage=false]{hyperref}
 %Enter URLs like this: \url{http://genome.imim.es/}
 
 %\RequirePackage[pdftex,a4paper,colorlinks=true,linkcolor=black,menucolor=black,pagecolor=black,pdfhighlight=/P,citecolor=black,urlcolor=black,linktocpage=true]{hyperref} % For printing
@@ -233,13 +259,15 @@
 
 % To get e and er in superscript easily
 
-\newcommand{\eme}{\textsuperscript{e}}
+\newcommand{\eme}{\textsuperscript{e} }
 
-\newcommand{\er}{\textsuperscript{er}}
+\newcommand{\er}{\textsuperscript{er} }
 
-% To get CO2 easily
+% To get CO2 and O2 easily
 
-\newcommand{\COO}{CO\textunderscript{2}}
+\newcommand{\COO}{CO\textunderscript{2} }
+
+\newcommand{\OO}{O\textunderscript{2} }
 
 %%%%%%%%%%%%%%%%%
 %%% PDF INFOS %%%
