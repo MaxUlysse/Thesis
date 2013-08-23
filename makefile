@@ -21,7 +21,7 @@
 ##  NOT write it ;-P  ##
 ########################
 
-MAIN	= mythesis
+MAIN = mythesis
 
 all: pdf
 
