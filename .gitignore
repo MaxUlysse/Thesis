@@ -6,3 +6,17 @@ figures/
 motes
 tex/
 mythesis.pdf
+
+mythesis.aux
+mythesis.bbl
+mythesis.blg
+mythesis.idx
+mythesis.ilg
+mythesis.ind
+mythesis.lof
+mythesis.log
+mythesis.lot
+mythesis.maf
+mythesis.mtc*
+mythesis.out
+mythesis.toc
