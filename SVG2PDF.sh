@@ -16,16 +16,16 @@
 #############################################################
 #############################################################
 
-for i in `ls -1 Figures | grep svg`
+for i in `ls -1 figures | grep svg`
 do
 	file=$(echo $i | sed 's/\.svg$//g')
-	if [[ -e Figures/$file.pdf ]]; then
-		rm Figures/$file.pdf
+	if [[ -e figures/$file.pdf ]]; then
+		rm figures/$file.pdf
 	fi
-	if [[ -e Figures/$file.pdf_tex ]]; then
-		rm Figures/$file.pdf_tex
+	if [[ -e figures/$file.pdf_tex ]]; then
+		rm figures/$file.pdf_tex
 	fi
-	inkscape -D -z --file=Figures/$file.svg --export-pdf=Figures/$file.pdf --export-latex
+	inkscape -D -z --file=figures/$file.svg --export-pdf=figures/$file.pdf --export-latex
 	echo "File : $file"
 done;
 echo "Done."
