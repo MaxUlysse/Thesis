@@ -1,6 +1,6 @@
 #!/bin/bash
 #use ./SVG2PNG
-#Figures is the folder wher all your figures are
+#figures is the folder wher all your figures are
 
 #############################################################
 #############################################################
@@ -17,10 +17,10 @@
 #############################################################
 #############################################################
 
-for i in `ls -1 Figures | grep svg`
+for i in `ls -1 figures | grep svg`
 do
 	file=$(echo $i | sed 's/\.svg$//g')
-	inkscape Figures/$file.svg -e Figures/$file.png -y 255 -d 180
+	inkscape figures/$file.svg -e figures/$file.png -y 255 -d 180
 	#-y 255 means background opacity is at 255 (between 0 to 255).
 	#-d 180 means 180 dpi
 	echo "File : $file"
