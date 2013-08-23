@@ -37,6 +37,6 @@ grep -v "isbn = {" |
 grep -v "issn = {" |
 grep -v "editor = {" |
 grep -v "address = {" |
-grep -v "annote = {" > Bibliography/biblio.bib
+grep -v "annote = {" > bibliography/biblio.bib
 
-sed -i 's/\\o /\{\\o\}/g' Bibliography/biblio.bib
+sed -i 's/\\o /\{\\o\}/g' bibliography/biblio.bib
