@@ -29,14 +29,17 @@ pdf: log remove
 
 log:
 	pdflatex ${MAIN}
-	@while ( grep "Rerun to get cross-references" \
-			${MAIN}.log > /dev/null ); do \
+	@while ( grep "Rerun to get cross-references" ${MAIN}.log > /dev/null ); do \
 		echo '** Re-running LaTeX **'; \
 		bibtex ${MAIN}; \
 		pdflatex ${MAIN}; \
 	done
 	makeindex ${MAIN}; \
-	pdflatex ${MAIN}; \
+	pdflatex ${MAIN}
+	@while ( grep "Rerun to get outlines " ${MAIN}.log > /dev/null ); do \
+		echo '** Re-running LaTeX **'; \
+		pdflatex ${MAIN}; \
+	done
 
 clean:
 	rm -f ${MAIN}.pdf
