@@ -1,11 +1,10 @@
 articles/
 cover/
 data/
-figures/*.pdf
-figures/*.pdf_tex
-figures/*.pdf_png
 
-mythesis.pdf
+*.pdf
+*.pdf_tex
+*.png
 
 .dropbox
 
