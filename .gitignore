@@ -1,11 +1,11 @@
 articles/
-bibliography/
 cover/
 data/
 figures/
-motes
 tex/
 mythesis.pdf
+
+.dropbox
 
 mythesis.aux
 mythesis.bbl
