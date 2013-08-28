@@ -1,0 +1,913 @@
+\singlespacing
+
+\mychapter{myred}{Introduction générale}
+  \sectionred*{Résumé}
+    \begin{center}
+      \begin{tabular}{c}
+        \fcolorbox{mydarkred}{mylightred}{
+        \begin{minipage}[][4cm][c]{0.8\linewidth}
+          \sffamily
+          Ce chapitre introductif présente de façon génarale le cancer\index{cancer}.
+          Après un court historique des différentes actions entamées contre cette maladie, nous explorerons les caractéristiques biologiques des cancers.
+          Puis, nous détaillerons les spécificités du cancer du sein\index{cancer!cancer du sein}, avant d'aborder l'intérêt de la médecine prédictive et personnalisée pour les signatures prédictives de l'évolution des cancers, et ce plus spécifiquement dans le cadre du cancer du sein.
+        \end{minipage}}\\
+        \\[2ex]
+        \begin{minipage}[][4cm][c]{0.9\linewidth}
+          \mtcsetdepth{minitoc}{1}
+          \minitoc
+        \end{minipage}
+      \end{tabular}
+    \end{center}
+    \newpage
+
+  \doublespacing
+
+  \section*{\textcolor{myred}{Problématique}}
+    \mylettrine{L}{e cancer} est, dans les pays occidentalisés, la seconde cause de décès après les maladies cardio-vasculaires.
+    Ceci en fait une préoccupation majeure de santé publique.
+    En 1918, avec la création de La Ligue franco-anglo-américaine contre le cancer\footnote{actuellement La Ligue nationale contre le cancer}, une action associative est mise en place pour lutter contre le cancer.
+    Les gouvernements s'impliquent eux aussi.
+    Ainsi en 1937 aux États-Unis d'Amérique, le National Cancer Institute Act a établi le \ac{NCI}, institut fédéral de recherche contre le cancer, qui fut par la suite renforcé par le président Nixon et le National Cancer Act en 1971.
+
+    L'\ac{ONG} \ac{EORTC} a été fondée en 1962 dans le but de stimuler la recherche clinique en Europe.
+    L'\ac{OMS} a créé en 1965 l'\ac{IARC}, agence intergouvernementale de recherche contre le cancer, dans le but de coordonner la recherche sur les causes du cancer.
+    L'\ac{IARC} classifie les substances suivant leur cancérogénicité.
+    En France, l'\ac{INCa}, groupement d'intérêt public fondé en 2005, est chargé de coordonner la recherche scientifique et la lutte contre le cancer.
+    Les Plans Cancer I (2003-2007) et II (2009-2013), plans de lutte gouvernementaux contre le cancer, mettent eux aussi l'accent sur la recherche, et ont ainsi constitué les Cancéropôles, entités supra-régionales dont le but est de coordonner et de mettre en réseau des équipes de recherche.
+    
+    Le cancer est une maladie génétique, causée par l'acquisition de mutations qui peuvent être déclenchées par plusieurs substances ou agents.
+    Ces facteurs peuvent être chimiques, physiques ou encore biologiques.
+    Une susceptibilité génétique héréditaire est également mise en cause.
+    Tous ces éléments font du cancer une maladie extrêmement complexe, multifactorielle et hétérogène.
+    Les efforts de la recherche se dirigent par conséquent non seulement vers des traitements ciblés, mais aussi vers des méthodes de classification des tumeurs cancéreuses dans le but de trouver des groupes de patients permettant d'affiner et d'adapter le traitement de facon beaucoup plus fine.
+    \pagebreak
+
+    Ainsi, dans le domaine du cancer du sein\index{cancer!cancer du sein}, le système de classification par grade de Scarff-Bloom-Richardson \citep{Bloom1957}, et sa version étendue par les critères de Nottingham \citep{Elston1991} se basent sur la similarité microscopique entre les tumeurs et le tissu sain.
+    L'\ac{OMS} a établi en 2003 une classification histopathologique des tumeurs \citep{WHO2003}.
+
+    D'autre part, depuis les années 1990, des consortiums internationaux étudient le génome humain.
+    Les buts du Projet Génome Humain (Human Genome Project) étaient le séquençage complet du génome humain et l'identification de tous les gènes \citep{HGP2001}.
+    Plus récemment, en septembre 2012, le projet \ac{ENCODE} a permis l'identification des éléments fonctionnels contenus dans l'\acs{ADN} non-codant \citep{ENCODE2012}.
+    Ces projets permettent de mieux appréhender la complexité du génome humain, et aident ainsi à sa compréhension.
+
+    Les puces à \acs{ADN} permettent la détermination du profil génétique des tumeurs.
+    Cette utilisation comme outil de diagnostic présente l'avantage de pouvoir faire appel à plus de vingt mille sondes pour fournir une signature du type cellulaire étudié.
+    Si l'on considère que chaque type de tumeur présente une signature spécifique, on pourrait ainsi virtuellement distinguer, classer tous les types de tumeurs et donner un traitement approprié.
+
+    Le cancer du sein\index{cancer!cancer du sein} est le cancer le plus répandu et le plus mortel chez la femme.
+    Les patientes sans ganglions à un stade précoce subissent une chimiothérapie adjuvante que l'on pourrait éviter dans 70 à 80 \% des cas \citep{Bertucci2002}.
+    Deux études de puces à \acs{ADN} ont permis d'établir deux signatures : l'une de 70 gènes \citep{vantveer2002} et l'autre de 76 gènes \citep{Wang2005} prédisant la rechute métastatique dans le cancer du sein\index{cancer!cancer du sein}.
+    Mais seulement 3 gènes sont communs entre ces deux signatures \citep{Chuang2007}.
+    Il a également été prouvé que plus d'une signature à 70 gènes existait avec le même pouvoir prédictif \citep{EinDor2006}.
+    De telles signatures présentent donc une instabilité et un manque de reproductibilité et de généralisation.
+    Nous présentons, dans cet ouvrage, une méthode pour palier à ces inconvénients \citep{Garcia2011, Garcia2012, Garcia2013}.
+    Nous commencerons par décrire les différentes actions entamées historiquement contre le cancer.
+    Nous explorerons ensuite les caractéristiques biologiques des cancers.
+    Puis, nous développerons les spécificités du cancer du sein\index{cancer!cancer du sein}, avant d'aborder l'intérêt de la médecine prédictive et personnalisée pour les signatures prédictives de l'évolution des cancers, et ce plus spécifiquement dans le cadre du cancer du sein.
+
+  \section{\textcolor{myred}{La recherche sur le cancer\index{cancer}}}
+
+    \subsection{\textcolor{myred}{Historique}}
+      \mylettrine{H}{ippocrate de Cos}, médecin grec des V\eme et IV\eme siècles avant JC est connu comme étant le père de la médecine, mais ce n'est pas le premier à décrire le cancer.
+      En Égypte antique, le papyrus Ebers (\numprint{1500} ans avant JC) décrit déjà cette maladie.
+      Quelques dizaines d'années avant Hippocrate, Hérodote décrit la tumeur du sein de la femme de Darius I\er, Roi de l'empire Perse.
+      Mais s'il n'est pas le premier à le décrire, c'est bien Hippocrate qui donne son nom au cancer.
+      Le mot \textit{karkinos} qui signifie crabe en grec, désigne pour Hippocrate le crabe dévorant les tissus, et conduisant de manière inéluctable à la mort.
+
+      Il faut cependant attendre la fin du XIX\eme siècle pour que la technologie permette plus que des descriptions et des théories.
+      En 1585, Ambroise Paré, dans son traité des \emph{tumeurs contre nature} décrit la tumeur du sein d'une dame d'honneur de la reine Catherine de Médicis.
+      En 1693, Houppeville écrit un traité sur \emph{la guérison du cancer du sein\index{cancer!cancer du sein}}.
+      Il y présente \emph{La théorie infectieuse} qui défend la contagiosité du cancer.
+      Au début du XIX\eme siècle Xavier Bichat, puis René Laennec, sont à l'origine de la théorie cellulaire moderne du cancer.
+
+      Les premières révolutions apparaissent à la fin du XIX\eme siècle avec les travaux de Louis Pasteur permettant le développement de l'asepsie fortement promue par Eugène Koeberlé.
+      La découverte des rayons X par Röntgen (1895) permet également un meilleur contrôle des conditions d'interventions chirurgicales.
+      En découle une amélioration de la survie post-opératoire.
+      En 1914, Theodor Boveri met en évidence l'importance des mutations chromosomiques dans le cancer.
+      Dès le milieu du XX\eme siècle, les découvertes de la transmission de l'information cellulaire par l'\acs{ADN}, et le décodage du code génétique ont posé les jalons des recherches actuelles sur le génome humain.
+      Le tableau~\ref{tab:Devita2012} nous présente une fresque historique intégrant les différentes découvertes et événements majeurs dans le domaine de la recherche sur le cancer.
+
+      \begin{table}
+        \begin{center}
+          \caption{Découvertes et événements majeurs dans le domaine du cancer\index{cancer}, inspiré de \citet{Devita2012}.}
+          \begin{tabular}{cl}
+            \toprule
+            \emph{Année}  & \multicolumn{1}{c}{\emph{Découverte ou événement}}                                      \\
+            \midrule
+            1863          & Origine cellulaire du cancer (\emph{Virchow})                                           \\
+            1889          & Hypothèse de la graine et du sol (\emph{Paget})                                         \\
+            1895          & Rayons X \emph{(Röntgen)}                                                               \\
+            1914          & Mutations chromosomiques dans le cancer (\emph{Boveri})                                 \\
+            1918          & Création de La Ligue franco-anglo-américaine contre le cancer                           \\
+            1924          & Hypothèse de Warburg                                                                    \\
+            1937          & Fondation du \ac{NCI}                                                                   \\
+            1944          & Transmission de l'information cellulaire par l'\acs{ADN} (\emph{Avery})                 \\
+            1950          & Disponibilité des drogues contre le cancer via                                          \\
+                          & \emph{Cancer Chemotherapy National Service Center}                                      \\
+            1953          & Structure de l'\acs{ADN} (\emph{Watson \& Crick})                                       \\
+            1961          & Décodage du code génétique (\emph{Nirenberg \& Matthaei})                               \\
+            1962          & Fondation de l'\ac{EORTC}                                                               \\
+            1965          & Fondation de l'\ac{IARC}                                                                \\
+            1970          & Transcriptase inverse                                                                   \\
+            1971          & Enzymes de restriction                                                                  \\
+                          & National Cancer Act (\emph{War on cancer})                                              \\
+            1975          & Hybridomes et anticorps monoclonaux                                                     \\
+                          & Suivi des statistiques sur le cancer par le programme \acs{SEER}                        \\
+            1976          & Origine cellulaire des oncogènes rétroviraux                                            \\
+            1979          & Facteur de croissance épidermique et son récepteur                                      \\
+            1981          & Suppression de la croissance tumorale par \acs{p-TP53}                                  \\
+            1984          & Protéines G et signalisation cellulaire                                                 \\
+            1986          & Gène \acs{RB1}, cause génétique du rétinoblastome                                       \\
+            1990          & Première baisse de l'incidence et de la mortalité du cancer                             \\
+            1991          & \multirow{2}{6.5cm}{Association entre mutation du gène \acs{APC} et cancer colorectal}  \\
+            & \\
+            1994          & Syndromes génétiques du cancer                                                          \\
+                          & Association entre le gène \acs{BRCA1} et le cancer du sein\index{cancer!cancer du sein} \\
+            2000          & Séquençage du génome humain                                                             \\
+            2002          & Épigénétique dans le cancer                                                             \\
+                          & MicroARN dans le cancer                                                                 \\
+            2003          & Plan Cancer I (2003-2007)                                                               \\
+            2005          & Fondation de l'\ac{INCa}                                                                \\
+            2005          & Première baisse dans le nombre total de morts à cause du cancer                         \\
+            2006          & Interaction tumeur et stroma                                                            \\
+            2009          & Plan Cancer II (2009-2013)                                                              \\
+            \bottomrule
+          \end{tabular}
+          \label{tab:Devita2012}
+        \end{center}
+      \end{table}
+
+    \subsection{\textcolor{myred}{Rappels sur l'expression des gènes et sa régulation}}\label{Expression}
+      \mylettrine{L}{e gène} est une unité d'information constituée d'une séquence \acs{ADN} utilisée pour synthétiser une protéine ou un \acs{ARN} qui aura un rôle dans le fonctionnement de la cellule.
+      Chez l'humain, le nombre de gènes qui correspondent à une protéine est estimé à environ \numprint{30000} \citep{HGP2001} (+/- \numprint{10000} suivant les estimations).
+      La taille du génome humain est de \numprint{3200000000} \ac{pb} \citep{HGP2001}.
+      La taille moyenne d'un gène est d'environ \numprint{3000} \ac{pb}, mais elle peut être très variable.
+      \numprint{100000000} \ac{pb} est une approximation rapide de la taille totale de l'\acs{ADN} correspondant à des protéines.
+      Cette petite portion du génome (environ 3 \%) est qualifié de codante.
+      La majeure partie du génome humain est donc constituée de séquences non-codantes, qui correspondent notamment à des régions régulatrices de l'ADN \citep{ENCODE2012}.
+
+      La séquence \acs{ADN} d'un gène subit un ensemble de processus au cours desquels l'information contenue dans l'\acs{ADN} sert à synthétiser des protéines ou des \acsp{ARN} fonctionnels.
+      Cet ensemble de processus est appelé expression des gènes et comporte plusieurs étapes, comme le montre la figure~\ref{fig:Expression} :
+      \begin{figure}
+        \begin{center}
+          \def\svgwidth{.8\columnwidth}\input{figures/Expression.pdf_tex}
+          \caption{Représentation schématique de l'expression d'un gène dans une cellule eucaryote.}
+          \label{fig:Expression}
+        \end{center}
+      \end{figure}
+
+      \begin{description}
+          \item [La transcription]              \hfill \\
+            Étape au cours de laquelle l'\acs{ADN} est transcrit en \acs{ARN} par les \acs{ARN} polymérases.
+            Des facteurs de transcriptions contrôlent la fixation de l'\acs{ARN} polymérase au promoteur.
+            Plusieurs types d'\acs{ARN} polymérases interviennent dans la transcription de plusieurs types d'\acsp{ARN}.
+            Les \acsp{ARN} codants pour des protéines sont les \acs{ARNm}.
+            Cette étape se déroule dans le noyau de la cellule.
+          \item [La maturation de l'\acs{ARNm}] \hfill \\
+            Étape au cours de laquelle les extrémités de l'\acs{ARNm} sont modifiées (ajout de la coiffe en 5' et polyadénylation en en 3').
+            S'il y en a les introns sont épissés (excision des régions non-codantes).
+            Cette étape se déroule dans le noyau de la cellule et est nécessaire pour que l'\acs{ARNm} puisse sortir du noyau.
+          \item [La traduction]                 \hfill \\
+            Étape lors de laquelle l'\acs{ARNm} mature est traduit en protéine.
+            Cette étape se déroule dans le cytoplasme de la cellule, dans le réticulum endoplasmique et nécessite les \acs{ARNt} et les ribosomes.
+      \end{description}
+      \vspace{1.5ex}
+
+      Nous allons explorer ici quelques-uns des mécanismes de la régulation de l'expression des gènes en commençant par le niveau cellulaire.
+
+      Les protéines régulatrices de la transcription se lient spécifiquement à des séquences d'\acs{ADN} et recrutent les co-facteurs ainsi que l'appareil de transcription.
+      Des analyses de type \ac{GWAS} ont été utilisées chez l'humain pour identifier les gènes cibles de plusieurs régulateurs de la transcription.
+      \pagebreak
+
+      La famille de \acp{TF} \acs{E2F} a été ainsi impliquée dans le contrôle de la progression du cycle cellulaire, la prolifération, la synthèse de l'\acs{ADN}, sa réplication, sa surveillance et sa réparation, la condensation de la chromatine, la ségrégation des chromosomes \citep{Ren2002}.
+
+      Des mécanismes moléculaires épigénétiques\footnote{du grec \emph{epi}, au dessus} participent également à la régulation des gènes.
+      Ils peuvent altérer l'expression des gènes sans en changer la séquence.
+      La méthylation de l'\acs{ADN} est un phénomène en relation direct avec l'expression des gènes.
+      Une faible méthylation favorise la transcription mais une forte méthylation, au contraire, l'inhibe.
+
+      Chez les eucaryotes, lorsque le promoteur d'un gène est méthylé, le gène en aval est en général réprimé et n'est donc plus transcrit en \acs{ARNm}.
+      Chez les mammifères, des facteurs environnementaux peuvent de plus influencer cette méthylation \citep{Szyf2011}.
+
+      D'autres mécanismes épigénétiques peuvent intervenir lors des différents processus de l'expression des gènes : la condensation de la chromatine, la transcription, le transport et la dégradation de l'\acs{ARNm}, la traduction et la modification post-traductionnelle de la protéine \citep{Reik2007, Rosenfeld2009, Jia2012}.
+
+      Les \ac{miARN} sont des régulateurs post-transcriptionnels capables de bloquer l'expression d'un gène.
+      Leur séquence est complémentaire d'un \acs{ARNm} cible, et leur appariement conduit donc à la répression post-transcriptionnelle ou à la dégradation de cet \acs{ARNm} \citep{Kusenda2006, Bartel2009}.
+      Le génome humain comprendrait environ un millier de gènes de \ac{miARN} \citep{Bentwich2005}, qui cibleraient jusqu'à 60 \% des gènes \citep{Lewis2005, Friedman2009}.
+
+      Il y a plusieurs centaines de types cellulaires différents dans le corps humain.
+      Chaque cellule possède le même patrimoine génétique (mis à part les gamètes et les érythrocytes), mais chacune exprime un certain nombre de gènes ce qui la maintient dans une différenciation plus ou moins poussée.
+
+      Pendant la différenciation, certains gènes sont exprimés alors que d'autres sont réprimés.
+      Une cellule non-spécialisée se spécialise ainsi en un des nombreux types cellulaires composant le corps.
+
+      Les mécanismes de la régulation des gènes expliquent comment la cellule différenciée va exprimer une partie spécifique de son génome et développer des structures précises et acquérir certaines fonctions.
+
+      La différenciation peut entraîner des changements dans nombre d'aspects de la physiologie de la cellule : sa taille, sa forme, sa polarité, son activité métabolique, sa sensibilité à certains signaux et son expression des gènes.
+      Chaque type cellulaire exprime donc un ensemble de gènes qui lui est propre \citep{Goring2012, Wirth2011, Li2012c}.
+
+      Un ensemble fonctionnel de cellules semblables, ayant la même origine et contribuant à la même fonction est un tissu.
+      C'est par la régulation de l'expression des gènes que les cellules saines respectent l'homéostasie tissulaire.
+      Leur croissance est contrôlée, et leur mort programmée.
+      Elles conservent leur équilibre de fonctionnement en dépit des contraintes, et permettent la survie de l'organisme.
+
+      La figure~\ref{fig:Wirth2011} représente les expressions des gènes de 42 types cellulaires différents en utilisant une représentation par cartes auto-organisatrices de Kohonen.
+      Elle illustre les différences d'expression des gènes entre différents tissus \citep{Wirth2011}.
+
+      \begin{figure}
+        \begin{center}
+          \def\svgwidth{\columnwidth}\input{figures/Wirth2011.pdf_tex}
+          \caption{Profil d'expression de 42 tissus en représentation par cartes auto-organisatrices de Kohonen \citep{Wirth2011}.}
+          \label{fig:Wirth2011}
+        \end{center}
+      \end{figure}
+
+      \pagebreak
+      Les tissus eux-même sont assemblés en organes dont l'activité peut être régulée par les hormones.
+      Ce sont des composés chimiques sécrétés par des cellules endocrines qui agissent à distance via des récepteurs situés sur des cellules cibles.
+      Elles sont capables d'agir à très faibles doses et régulent l'activité d'un ou plusieurs organes.
+      Les effets des hormones peuvent être variés :
+      \begin{itemize}
+          \item   Stimulation ou inhibition de la croissance
+          \item   Activation ou arrêt de l'apoptose
+          \item   Stimulation ou inhibition du système immunitaire
+          \item   Régulation du métabolisme
+          \item   Préparation du corps à la puberté, à la grossesse, à la ménopause
+          \item   Contrôle du cycle reproductif
+          \item   Sensation de faim
+          \item   Variation d'humeur
+          \item   Excitation sexuelle
+      \end{itemize}
+      \vspace{1.5ex}
+
+      Les hormones peuvent également réguler la production et la libération d'autres hormones.
+      Nous pouvons prendre pour exemple la préparation de l'organisme féminin a une éventuelle grossesse est réalisé par le cycle menstruel.
+      La production d'hormones ({\oe}strogènes et progestérone) par les ovaires est sous l'influence de plusieurs signaux.
+      La GnRH, sécrétée par l'hypothalamus, agit sur l'hypophyse qui sécrète à son tour les hormones FSH et LH qui agissent sur les ovaires pour la production des {\oe}strogènes et de la progestérone.
+
+      Les {\oe}strogènes assurent le développement et le maintien des caractères sexuels secondaires :
+      \begin{itemize}
+          \item   Augmentation de volume de l'utérus, du vagin et des organes génitaux externes
+          \item   Développement des seins
+          \item   Apparition de poils axillaires et pubiens
+          \item   Augmentation des dépôts de tissus adipeux sous-cutanés (principalement aux hanches et aux seins)
+          \item   Élargissement du bassin
+          \item   Début des menstruations
+      \end{itemize}
+      \vspace{1.5ex}
+
+      Lors de la puberté, les {\oe}strogènes interviennent dans la poussée de croissance osseuse et maintiennent la solidité de l'os.
+
+      La progestérone agit en lien avec les {\oe}strogènes lors de l'établissement du cycle menstruel.
+      Elle est synthétisée par les ovaires à partir du cholestérol et assure le maintien et la transformation de la muqueuse utérine.
+      Si l'ovule n'est pas fécondé, la chute de sa concentration induit l'apparition des menstruations.
+      La progestérone prépare également les seins à la lactation.
+
+      La figure~\ref{fig:Cycle_menstruel} illustre le cycle menstruel et les hormones impliquées dans cette préparation de l'organisme à une éventuelle grossesse.
+
+      \begin{figure}
+        \begin{center}
+          \def\svgwidth{\columnwidth}\input{figures/Cycle_menstruel.pdf_tex}
+          \caption{Les variations des hormones lors du cycle menstruel.}
+          \label{fig:Cycle_menstruel}
+        \end{center}
+      \end{figure}
+
+      L'horloge moléculaire contrôlant le cycle circadien est responsable de la régulation de nombreuses hormones.
+      C'est une adaptation de l'organisme à l'alternance du cycle jour / nuit.
+      Cette horloge implique une boucle transcriptionnelle entre les gènes \acs{CLOCK} et \acs{ARNTL}.
+      Le gène \acs{NPAS2} encodant pour le \acs{TF} \acs{p-NPAS2} en fait également partie \citep{Koike2012}.
+      La variation circadienne de l'expression des gènes est également contrôlée par les \ac{miARN} \citep{Mehta2012}.
+
+      La régulation de l'expression des gènes est donc le mécanisme fondamental permettant la différenciation cellulaire, la morphogenèse et l'adaptabilité d'un organisme vivant à son environnement.
+      Toutes les cellules interagissent ensemble et sont dépendantes du bon fonctionnement des autres cellules.
+
+      Comme nous l'avons vu, les cellules de même type sont réunies en tissus, eux-mêmes formant des organes qui interagissent entre eux à un niveau supérieur.
+      Mais toute cette organisation nécessite une coordination, d'où la nécessité d'un système de communication à tous les niveaux, cellulaire, tissulaire et organique.
+      Nous allons maintenant voir ce qui peut arriver lors qu'un tel dysfonctionnement survient.
+
+    \subsection{\textcolor{myred}{Les caractéristiques spécifiques des cancers}}
+
+      \mylettrine{L}{e cancer} est une maladie très complexe.
+      Il est souvent dit qu'il n'y a pas un cancer, mais des cancers.
+      Dans l'organisme, chaque cellule est une entité vivante qui fonctionne de manière autonome, mais coordonnée avec les autres dans un ensemble dont la survie dépend de la bonne organisation de ses constituants.
+      Le cancer est provoqué par un enchaînement d'événements qui conduisent les cellules saines à ne plus être coordonnées mais à proliférer de façon non-régulée.
+
+      Des réseaux de régulations contrôlent la prolifération et l'homéostasie des cellules saines, ce sont ces réseaux qui sont perturbés lors de l'évolution d'une tumeur bénigne en tumeur cancéreuse.
+      Avant de considérer les réseaux et les mécanismes impliqués dans le processus de cancérisation, nous allons nous intéresser aux gènes.
+      Les gènes associées au cancer ont été classés en deux catégories sur la base de leurs caractères cancérogènes ou protecteurs :
+
+      \begin{description}
+        \item [Les oncogènes] \hfill \\
+          L'expression des oncogènes\footnote{du grec \emph{onkos}, signifiant vrac, masse ou tumeur} favorise la survenue de cancers.
+          Ces gènes commandent la synthèse de protéines (oncoprotéines) stimulant la division et déclenchent une prolifération désordonnée des cellules.
+
+          Plusieurs dizaines d'oncogènes ont été décrits, dont le gène \acs{MYC} codant pour le facteur de transcription \acs{p-MYC} qui régule l'expression d'environ 15 \% des gènes.
+          Soumis à une sur-expression, il stimule la prolifération des cellules \citep{Li2003}.
+
+        \item [Les \acp{TSG}] \hfill \\
+          Les \acp{TSG} agissent en sens inverse des oncogènes.
+          Ce sont des régulateurs négatifs de la prolifération cellulaire.
+          Leur inactivation n'empêchant plus la prolifération cellulaire favorise donc la survenue des cancers.
+          Certains \acp{TSG} sont spécifiques de certains cancers.
+          Ainsi le gène \acs{RB1} est impliqué dans le développement du rétinoblastome.
+
+          Les gènes \acs{BRCA1} et \acs{BRCA2} sont impliqués dans les cancers du sein, \acs{APC} dans les cancers du colon, \acs{WT1} dans les cancers du rein.
+
+          D'autres ont un spectre d'inactivation plus large comme \acs{TP53} ou \acs{CDKN2A} qui sont inactivés dans un grand nombre de types de cancer.
+
+      \end{description}
+      \vspace{1.5ex}
+
+      On peut également ajouter à ces deux catégories de gènes, une troisième facilitant le cancer:
+
+      \begin{description}
+        \item [Les gènes de réparation de l'\acs{ADN}]  \hfill \\
+          L'\acs{ADN} est continuellement soumis aux activités métaboliques intrinsèques à la cellule et à des facteurs environnementaux externes qui portent atteinte à son intégrité.
+          Les facteurs environnementaux peuvent être de nature physique (\emph{ie} rayonnements, ondes\dots), chimique (\emph{ie} radicaux libres, médicaments\dots) ou biologique (\emph{ie} toxines, virus\dots).
+
+          On estime entre mille et plus d'un million le nombre de lésions par cellule et par jour.
+          Beaucoup de ces lésions provoquent des dommages tels que la cellule elle-même ne peut se reproduire ou donne naissance à des cellules-filles non viables.
+          Les gènes de réparation de l'\acs{ADN} sont capables de détecter et de réparer les lésions de l'\acs{ADN} et prévenir cet état anormal.
+
+          Les mécanismes de réparation de l'\acs{ADN} garantissent la stabilité du génome.
+          La capacité de réparation de l'\acs{ADN} d'une cellule est essentielle à l'intégrité de son génome, et donc à son fonctionnement normal et à celui de l'organisme.
+      \end{description}
+      \vspace{1.5ex}
+
+      Les différents génotypes possibles des cellules cancéreuses ne sont probablement la manifestation d'altérations que de quelques processus essentiels dans la physiologie cellulaire.
+      Ces altérations seraient les caractéristiques spécifiques des cancers.
+      Huit capacités essentielles ont été mises en évidence comme le détaille la figure~\ref{fig:Hanahan2011} reprenant les publications \citet{Hanahan2000,Hanahan2011} :
+
+      \begin{sidewaysfigure}
+        \begin{center}
+          \def\svgwidth{\columnwidth}
+          \input{figures/Hallmarks.pdf_tex}
+          \caption{Caractéristiques du Cancer inspiré de \citet{Hanahan2000,Hanahan2011}.}
+          \label{fig:Hanahan2011}
+        \end{center}
+      \end{sidewaysfigure}
+
+      \begin{description}
+        \item [L'autosuffisance en signaux de croissance]               \hfill \\
+          Une grande partie des oncogènes affectent le besoin en signaux de croissance dont les cellules saines sont dépendantes afin d'entrer dans un état de prolifération active.
+          Un tel comportement dévie fortement dans les cellules tumorales qui montrent invariablement une dépendance fortement réduite aux signaux de croissance externes.
+
+          Nous pouvons donc en déduire que les cellules tumorales génèrent elles-même leurs propres signaux de croissance et réduisent ainsi leur dépendance vis à vis de la stimulation du micro-environnement qui les entoure.
+          Cette indépendance perturbe totalement le mécanisme d'homéostasie qui gouverne le comportement des cellules dans un tissu.
+          La plupart des signaux de croissance sont produits par un type cellulaire pour permettre la prolifération d'un autre.
+
+          La synthèse de signaux de croissance par une cellule cancéreuse dévie clairement de la dépendance en signaux de croissance des autres cellules du même tissu.
+          Beaucoup de cellules cancéreuses ont acquis cette capacité à synthétiser les signaux de croissance auxquelles elles sont elles-mêmes réceptives, créant ainsi une boucle rétroactive sans fin.
+
+          Une mutation de \acs{HRAS} par exemple, oncogène de la famille \acs{RAS}, active constamment la protéine \acs{p-HRAS} normalement activée par le facteur de croissance \acs{p-EGF} et donc augmente la prolifération cellulaire.
+          De par la nature proliférative du cancer, il est probable que les voies des signaux de croissance subissent une dérégulation dans toutes les tumeurs \citep{Hanahan2000}.
+ 
+        \item [L'insensibilité au signaux inhibiteurs de la croissance] \hfill \\
+          En parallèle de l'autosuffisance en signaux de croissance, les cellules cancéreuses sont insensibles aux mécanismes d'inhibitions de la prolifération cellulaire.
+          Beaucoup de ces mécanismes dépendent de l'actions de \acp{TSG} dont un grand nombre ont été découvert par leurs propriétés d'inactivation dans différentes formes de cancer chez l'homme ou chez l'animal.
+
+          Nous pouvons citer \acs{TP53} et \acs{RB1} qui sont des \emph{hubs} (gènes interagissent avec un grand nombre de gènes) dans des processus clés de la régulation cellulaire qui contrôle la prolifération et l'apoptose.
+
+          \acs{RB1} est un point de contrôle pour le cycle de la division cellulaire.
+          Les cellules cancéreuses ayant une perte de \acs{RB1} ne reçoivent plus les signaux inhibiteurs que celui-ci transmet.
+
+          \acs{TP53} est capable de bloquer la progression du cycle cellulaire, s'il y a des dérégulations dans les niveaux de signaux de croissance, glucose ou d'oxygénation, ou des dégâts trop importants sur le génome, le temps que la situation se normalise.
+
+          \acs{TP53} peut même déclencher l'apoptose si des dégâts irréparables affectent ces systèmes cellulaires \citep{Stephens2012,Peifer2012,Lazar2012,Zhang2012c,RozenblattRosen2012}.
+
+        \item [La capacité à échapper à l'apoptose]                         \hfill \\
+          L'apoptose, ou mort cellulaire programmée, est une des voies possibles de la mort cellulaire.
+          Elle est nécessaire au développement et à la survie des organismes multicellulaires.
+          L'apoptose a un rôle structurel et survient massivement lors du développement embryonnaire, l'exemple le plus parlant étant celui de la formation des doigts.
+          L'apoptose a également un rôle de protection de l'organisme et survient lorsqu'une cellule a accumulé trop de dégâts et qu'ils sont devenus irréparables.
+
+          Une cellule échappant à l'apoptose survivrait et se multiplierait en dépit d'anomalies génétiques qui peuvent être dommageables à l'organisme entier.
+          Comme vu précédemment, \acs{TP53} étant capable de déclencher l'apoptose, son inactivation implique logiquement la capacité de la cellule cancéreuse à éviter l'apoptose.
+          L'apoptose étant en équilibre constant avec la prolifération cellulaire, l'acquisition de cette capacité induit forcément une prolifération d'autant plus accrue.
+
+        \item [La capacité de se répliquer indéfiniment]                \hfill \\
+          À l'instar de la capacité à éviter l'apoptose, la capacité à se répliquer à l'infini est inhabituelle pour les cellules qui ne sont normalement autorisées qu'à un certain nombre de cycles de croissance et de division.
+          Il est largement accepté que les cellules cancéreuses requièrent cette capacité pour que les tumeurs puissent se développer suffisamment.
+
+          Cette capacité est normalement limité par deux phénomènes barrières : la sénescence, fin de la capacité réplicative des cellules qui conduit à un état stable non-prolifératif, et l'apoptose qui conduit à la mort naturelle programmée des cellules.
+          Les télomères protégeant la fin des chromosomes sont directement impliqués dans cette capacité de prolifération illimitée \citep{Blasco2005}.
+          La longueur des télomères d'une cellule dirige le nombre de cycles de croissance et de division qu'elle peut subir.
+
+          La télomérase, \acs{ADN} polymérase spécialisée dans l'ajout de segments répétés dans les télomères, pratiquement absente dans les cellules normales est exprimée à des niveaux significatifs dans les cellules cancéreuses.
+          La présence d'une activité télomérase est corrélée avec la résistance à la sénescence et à l'apoptose.
+          La suppression de cette activité entraîne un raccourcissement des télomères et l'activation d'une des deux barrières à la prolifération.
+
+        \item [L'induction de l'angiogenèse]                            \hfill \\
+          L'angiogenèse est le processus qui permet la création de nouveaux vaisseaux sanguins à partir de vaisseaux existants.
+          C'est un processus physiologiquement normal dans le développement de l'embryon ou dans la cicatrisation d'une plaie, mais qui permet à la tumeur de récupérer dans la circulation sanguine l'oxygène et les autres éléments nécessaires à son développement.
+
+          Des facteurs de croissance de l'endothélium vasculaire comme \acs{VEGFA} induisent la croissance de capillaires sanguins dans la tumeur \cite{Lu2012}.
+          C'est aussi une des étapes nécessaire à la libre circulation des cellules cancéreuses qui va mener à la formation de métastase.
+
+        \item [La capacité à former des métastases]                     \hfill \\
+          Cette capacité nécessite tout d'abord la possibilité d'avoir des cellules libres circulantes, que ce soit par angiogenèse ou par invasion.
+          La perte d'adhésion aux autres cellules ou à la matrice extra-cellulaire par l'inactivation de \acs{CDH1}, gène clé de l'adhésion cellule-cellule par la formation des jonctions adhérentes, est fréquemment observée \citep{Berx2009}.
+
+          Le processus d'invasion est généralement vu comme une première étape vers la métastase.
+          Ce processus commence par l'invasion locale, puis par l'invasion des capillaires sanguins ou lymphatiques proches (intravasion).
+          Il s'en suit la circulation de cellules cancéreuses dans les systèmes lymphatiques et hématogènes et le transfert de ces cellules dans les tissus distants (extravasion).
+          Les métastases se forment ensuite, commençant par des micro-métastases, qui grossissent en tumeurs macroscopiques (colonisation) \citep{Talmadge2010}.
+
+        \item [La capacité à éviter la destruction immunitaire]         \hfill \\
+          Le système immunitaire surveille constamment tous les tissus et organes de l'organisme.
+          Cette surveillance immunitaire identifie et détruit les cellules anormales.
+          Cette réaction immunitaire devient défaillante lorsqu'un cancer se développe, ainsi les patients immunodéprimés sont plus sujets aux cancers \citep{Vajdic2010}.
+
+          Les tumeurs croissent donc malgré cette surveillance immunitaire et réaction hostile.
+          Divers mécanismes d'échappement sont utilisés : disparition des antigènes pour ne plus être perçues par le système immunitaire, sécrétion de substances immunosuppressives inhibant la réaction immunitaire, détournement de la réaction immunitaire pour produire des facteurs utiles à la tumeur \citep{Manjili2012}.
+
+        \item [La dérégulation énergétique de la cellule]               \hfill \\
+          Sous conditions aérobies, la glycolyse produit normalement du pyruvate dans le cytoplasme de la cellule, qui via le cycle de Krebs se transforme en {\COO} dans la mitochondrie.
+          Sous conditions anaérobies, la mitochondrie ne peut métaboliser le pyruvate et seul la glycolyse a lieu.
+
+          La glycolyse seule a un bilan faible : 2 moles d'\acs{ATP} sont produites par mole de glucose consommée.
+          Le cycle de Krebs produit quand à lui un équivalent de 30 moles d'\acs{ATP} par équivalent de mole de glucose consommée, soit un bilan énergétique beaucoup plus riche dans les conditions aérobies.
+          Otto Warburg a observé que même en présence d'{\OO}, les cellules cancéreuses modifient et limitent leur métabolisme à la seule glycolyse.
+
+          Cette modification du métabolisme peut sembler contre-productive, vu que les cellules cancéreuses doivent compenser pour une production quinze fois moindre d'\acs{ATP} par rapport au cycle de Krebs.
+          En effet, une plus grande consommation du glucose a été décrite dans de nombreux types tumoraux.
+          Ce mode de fonctionnement a été associé avec l'activation d'oncogènes (\acs{RAS}, \acs{MYC}), et la mutation de \acsp{TSG} (\acs{TP53}) \citep{Deberardinis2008}.
+
+          Des conditions hypoxiques peuvent également sur-activer les transporteurs du glucose et les multiples enzymes de la glycolyse et ainsi renforcer cette dépendance \citep{Deberardinis2008}.
+          Il apparaît que l'oxygénation, est fluctuante dans les tumeurs, à la fois temporellement et régionalement, et ce probablement sous le résultat de l'instabilité et l'organisation chaotique des vaisseaux nouvellement formés par la tumeur \citep{Hardee2009}.
+          Cette caractéristique de restructuration énergétique du métabolisme cellulaire est directement influencée par des gènes impliqués dans d'autres caractéristiques (\emph{ie} \acs{RAS} et \acs{MYC} pour l'insuffisance en signaux de croissance, \acs{TP53} pour l'insensibilité aux signaux inhibiteurs de la croissance et l'évitement de l'apoptose)
+      \end{description}
+      \vspace{1.5ex}
+
+      En plus de ces huit capacités essentielles, \citeauthor{Hanahan2011} en décrivent deux autres facilitant le cancer :
+      \begin{description}
+        \item [L'instabilité du génome et les mutations]    \hfill \\
+          Cette capacité découle directement de l'inactivation ou perturbation de l'activité des gènes de réparation de l'\acs{ADN} précédemment décrits.
+          Et si elle n'est pas la cause première du cancer, elle y contribue fortement.
+
+        \item [L'inflammation favorisant les tumeurs]       \hfill \\
+          Il est reconnu que certaines tumeurs sont fortement infiltrées par des cellules du système immunitaire et qu'elles génèrent des conditions inflammatoires dans les tissus proches \citep{Dvorak1986}.
+          Une telle réponse immunitaire est généralement comprise comme une tentative du système immunitaire d'éliminer la tumeur.
+
+          Mais l'inflammation des tumeurs a également l'effet paradoxal de favoriser la tumorogénèse et la progression tumorale.
+          Les cellules inflammatoires peuvent sécréter des substances chimiques, qui sont activement mutagènes pour les cellules cancéreuses proches, accélérant leur évolution vers des états plus dangereux \citep{Grivennikov2010}.
+      \end{description}
+      \vspace{1.5ex}
+
+      Chacun de ces processus met en jeu des gènes différents.
+      Chacun des gènes impliqués dans ces processus est intégré dans un réseau de gènes, une voie de métabolisme ou un réseau de régulation.
+      Nous ne parlons plus alors d'un seul gène en jeu, mais d'un ensemble de gènes impliqués dans des processus.
+      Tout en considérant les réseaux, il nous faut cependant considérer deux catégories de gènes :
+      \begin{description}
+        \item [Les gènes directeurs (\emph{drivers genes})]    \hfill \\
+          Historiquement, les projets de séquençage des tumeurs recherchaient les gènes qui étaient fréquemment mutés, et qui donc avait donc supposément un rôle dans l'oncogénèse.
+          La difficulté était de différencier les mutations directives (\emph{drivers}), qui déclenchent l'oncogénèse ou le phénotype cancéreux \citep{Greenman2006, Sjoblom2006, Wood2007}, des mutations accessoires (\emph{passagères}) qui sont dues au cancer.
+          Par extension, les \emph{drivers genes} sont devenus les gènes porteurs de \emph{drivers mutations}.
+          Nous les considérons comme les gènes ayant une fonction clé dont les perturbations peuvent être la cause des cancers.
+        \item [Les gènes passagers (\emph{passengers genes})] \hfill \\
+          Par opposition, les gènes passagers sont donc les gènes qui ne sont pas à l'origine du cancer même s'ils peuvent y participer.
+      \end{description}
+      \vspace{1.5ex}
+
+      Dans le cas d'un réseau de régulation des gènes. Nous proposons l'hypothèse que les gènes directeurs en amont du réseau, qui subissent une légère perturbation peuvent déclencher de plus grandes perturbations dans les gènes en aval et donc le cancer.
+
+      Le cancer peut donc être causé par des oncogènes stimulant la division et déclenchant une prolifération, ou par une inactivation des \acp{TSG} ne la régulant plus.
+      Nous avons également exploré les différentes capacités développées par les tumeurs.
+
+      Toutes ces capacités n'ont pas nécessairement besoin d'être acquises pour qu'une tumeur deviennent cancéreuse.
+      Mais toutes participent au développement et à la gravité de la tumeur.
+      Nous allons maintenant étudier ce que les technologies à haut-débit ont apporté à la recherche sur le cancer.
+
+  \section{\textcolor{myred}{L'apport des technologies à haut-débit à la recherche sur le cancer}}
+
+    \subsection{\textcolor{myred}{L'ère post-génomique et la fin du paradigme \emph{un gène, une maladie}}}
+      \mylettrine{L}{e paradigme "un gène, une maladie"}, désignant le fait qu'un gène, et par conséquent ses modifications ou mutations, causerait une maladie avait déjà été bien mis à mal par la découverte des \acp{SNP} (variations très fréquentes d'une seule paire de bases du génome, entre individus d'une même espèce).
+      Les projets internationaux de séquençage ont définitivement permis d'enterrer ce paradigme.
+
+      Ainsi, le Projet Génome Humain commencé dans les années 1990 par un consortium international s'est étalé sur près de quinze ans et a permis le séquençage complet du génome humain \citep{HGP2001}.
+      L'évolution des technologies de séquençage en font des outils de plus en plus utilisés et ce, à des échelles de plus en plus grandes.
+
+      De ce fait, le Projet 1000 Génomes commencé début 2008 utilisant des nouvelles technologies plus rapides et moins coûteuses a séquencé en trois ans les génomes d'un millier de personnes appartenant à différents groupes ethniques \citep{1000GPC2010}.
+
+      De la même manière l'\ac{ICGC} coordonne au niveau international un projet de séquençage à très grande échelle de plus de 25 000 tumeurs sur une cinquantaine de types ou de sous-types cancéreux différents \citep{ICGC2010}.
+      Le transcriptome est l'ensemble des \acsp{ARN} issus de la transcription du génome.
+      Contrairement au génome, qui est généralement fixe (à l'exception des mutations), le transcriptome peut varier grandement.
+
+      Une approche transcriptomique mesure le niveau d'expression des \acs{ARNm} transcrits dans la cellule, ce qui reflète directement les gènes exprimés à un moment donné.
+      Nous utilisons pour cela les puces à \acs{ADN}, ou plus récemment, le séquençage d'\acs{ARN} à haut débit \acs{RNA}-seq.
+
+      Cette approche permet l'étude à grande échelle des régulations / dérégulations de gènes dans des conditions diverses.
+      De ce fait, en une seule étude, il est théoriquement possible d'identifier les gènes différentiellement exprimés entre deux expériences portant sur deux conditions biologiques différentes.
+
+      Cette technique a été utilisée pour observer l'effet d'une drogue sur les (\acp{GEP}), pour comparer les tissus sains et les tissus malades, pour étudier les réponses au traitement en comparant les patients traités et ceux non-traités.
+
+      De nombreuses maladies ont été étudiées par cette approche : Alzheimer \citep{Ricciarelli2004}, le diabète \citep{Kaestner2003} ainsi que plusieurs formes de cancer (leucémie : \citet{Golub1999}, cancer du colon : \citet{Li2001}, cancer du sein\index{cancer!cancer du sein} : \citet{Wang2005}) et encore bien d'autres maladies \citep{Munro2009}.
+
+      Dans le contexte du cancer, une maladie particulièrement hétérogène, l'utilisation des \acp{GEP} sont utilisés pour prédire la résistance au traitement \citep{DeLavallade2010}, ou la rechute métastatique dans le cancer du sein\index{cancer!cancer du sein} \citep{vandevijver2002}.
+      Des études sur le micro-environnement tumoral ont permis de comprendre l'influence du système immunitaire sur la survie des patients \citep{Pages2010}.
+
+      Les puces à \acs{ADN} font parti des technologies à haut-débit qui ont été introduites en biologie moléculaire à partir des années 1990.
+      Découlant de la technique du southern blot, les puces à \acs{ADN} permettent en une seule expérience la mesure des niveaux d'expression de plus 30 000 gènes, le tout sur une courte période de temps (de l'ordre de deux jours).
+      Encore très utilisée, il est cependant difficile avec cette technologie d'estimer avec précision la quantification des \acp{GEP} \citep{Heller2002, Hardiman2004, Wang2005b, Zakharkin2005, Draghici2006}.
+      \pagebreak
+
+      Le \acs{RNA}-seq est une technique de séquençage à haut-débit appliquée au transcriptome.
+      Avec les capacités de couverture et de résolution du séquençage à haut-débit, le \acs{RNA}-seq permet d'avoir des informations qualitatives, il est par conséquent de plus en plus utilisé et sera probablement amené à remplacer les puces à \acs{ADN} \citep{Maher2009, Fu2009, Wang2009, Sirbu2012}.
+
+      Les technologies à haut-débit ont grandement augmenté notre connaissance du génome humain.
+      Elles nous permettent également de l'explorer à grande échelle et à moindre frais.
+      Pour reprendre l'exemple du séquençage du génome humain, ce qui a pris pratiquement 15 ans et plusieurs centaines de millions de dollars, actuellement se fait en quelques jours pour quelques milliers de dollars.
+      Nous allons maintenant voir plus en détail ce que de telles évolutions et technologiques ont apporté en médecine et quelles ont été leurs applications.
+
+    \subsection{\textcolor{myred}{La médecine prédictive et la médecine personnalisée}}\label{sub:MedPrePer}
+      \mylettrine{L}{a médecine prédictive} est la discipline qui prédit la probabilité de survenue d'une maladie et induit des mesures préventives soit pour la prévenir, soit pour diminuer au maximum son impact pour le patient.
+      Les approches protéomiques même si elles permettent une détection précoce de la maladie, ne détectent généralement des biomarqueurs que parce que la maladie est déjà présente.
+      Par conséquent les approches basées sur la génétique sont celles qui permettent le mieux de prévoir la maladie, et ainsi d'estimer les risques des dizaines d'années avant qu'une maladie apparaisse.
+
+      Une femme avec une mutation dans le gène \acs{BRCA1} a ainsi un risque augmenté de 65 \% de développer un cancer du sein\index{cancer!cancer du sein} \citep{Antoniou2003}.
+      Les individus plus susceptibles à une maladie peuvent donc suivre des traitements ou des conseils spécifiques pour améliorer leur hygiène de vie dans le but d'empêcher l'apparition de cette maladie\footnote{cf le récent cas très médiatisé d'Angelina Jolie}.
+      \pagebreak
+
+      La médecine personnalisée est la discipline qui attribue à chaque patient des soins spécifiques en se basant sur ses caractéristiques, son mode de vie ou son environnement.
+      Les technologies à haut-débit permettent ainsi de traiter chaque patient en fonction de ses spécificités biologiques et génétiques.
+      L'utilisation de la médecine personnalisée est une des voies les plus prometteuses en cancérologie.
+      Son but est d'améliorer l'efficacité des soins, d'éviter les traitements inutiles et d'améliorer la qualité de vie des patients.
+
+      Les technologies à haut-débit permettent de déterminer de façon précise les caractéristiques de chaque tumeur et d'analyser les mécanismes moléculaires en cause.
+      Par conséquent cela permet de préciser le diagnostic, d'identifier les caractéristiques de la tumeur et de proposer si cela est possible une thérapie ciblée, ce qui permet d'avoir moins d'effets indésirables qu'avec les chimiothérapies actuelles.
+
+      On appelle biomarqueurs les marqueurs biologiques permettant de caractériser de manière spécifique un tissu, un type cellulaire ou un état anormal.
+      En cancérologie ce sont généralement des molécules, des protéines ou des gènes sur-exprimés ou anormalement absents dans certains types de tumeurs.
+      Un biomarqueur peut servir à évaluer la réponse au traitement; c'est le cas du récepteur \acs{p-ERBB2}, qui permet dans le cancer du sein\index{cancer!cancer du sein} de prédire la réponse à un traitement hormonal.
+
+      Les biomarqueurs peuvent également être utilisés pour choisir un thérapie ciblée.
+      Ainsi les patientes sur-exprimant \acs{p-ERBB2} peuvent avoir de ce fait accès au Trastuzumab, réduisant de 50 \% le risque de récidive \citep{Hudis2007}.
+      Actuellement, 17 thérapies ciblées peuvent être prescrites en France pour différents types de cancer.
+
+      Les technologies permettent d'acquérir une meilleure connaissance des caractéristiques des tumeurs et de leur évolution.
+      Les biomarqueurs permettent d'affiner au mieux le traitement suivant la caractérisation des facteurs de risques.
+      Nous avons ainsi dans une seule approche combinées les caractéristiques de la médecine prédictive quant à l'évolution de la maladie et de la médecine personnalisée quant à l'adaptation du traitement au patient.
+      Nous allons maintenant aborder la recherche sur le cancer du sein\index{cancer!cancer du sein}.
+
+  \section{\textcolor{myred}{La recherche sur le cancer du sein\index{cancer!cancer du sein}}}\label{Sec:RechercheBC}
+
+    \subsection{\textcolor{myred}{Les caractéristiques du cancer du sein\index{cancer!cancer du sein}}}
+      \mylettrine{L}{e cancer du sein\index{cancer!cancer du sein}} est le plus mortel et le plus fréquent chez la femme.
+      Il est en tête de la mortalité devant le cancer colo-rectal et le cancer du poumon comme le montre le tableau~\ref{tab:Inca2011}.
+      Néanmoins, le taux de mortalité par cancer du sein\index{cancer!cancer du sein} chez la femme diminue en France depuis une quinzaine d'années.
+
+      Les taux de survie relative à 1, 3 et 5 ans sont respectivement de 97 \%, 90 \% et 85 \% \citep{Inca2011}.
+      La survie à 5 ans varie avec le stade du cancer lors du diagnostic.
+      Ils sont respectivement de 98.3 \%, 83.5 \% et 23.3 \% pour les stades locaux, régionaux (envahissement ganglionnaire) et métastatique \citep{SEER2011}.
+      Il est donc important de détecter le plus précocement possible le cancer pour augmenter les chances de survie.
+
+      \begin{table}
+        \begin{center}
+          \caption{Effectif annuel moyen de décès et taux observé (standardisé monde) de mortalité des cancers pour la période 2004-2008, tiré de \citet{Inca2011}.}
+          \begin{tabular}{lrrrr}
+            \toprule
+            \multicolumn{1}{c}{\multirow{3}{*}{Organe}} & \multicolumn{2}{c}{\emph{Homme}} & \multicolumn{2}{c}{\emph{Femme}} \\
+            \cmidrule(r){2-3}\cmidrule(r){4-5}
+            & \multirow{2}{*}{\emph{Effectif}} & \multirow{2}{1.1cm}{\emph{TSM p. \numprint{100000}}} & \multirow{2}{*}{\emph{Effectif}} & \multirow{2}{1.1cm}{\emph{TSM p. \numprint{100000}}} \\
+            &  &  &  & \\
+            \midrule
+            Lèvre, cavité buccale et pharynx    & \numprint{3334}   & 7,1        & \numprint{730}             &  1,2          \\
+            {\OE}sophage                        & \numprint{3157}   & 6,2        & \numprint{718}             &  0,9          \\
+            Estomac                             & \numprint{3015}   & 5,2        & \numprint{1741}            &  1,9          \\
+            Côlon-rectum                        & \numprint{8759}   & 14,4       & \numprint{7767}            &  8,3          \\
+            Foie                                & \numprint{5429}   & 9,9        & \numprint{1914}            &  2,2          \\
+            Vésicule biliaire                   & \numprint{505}    & 0,8        & \numprint{749}             &  0,8          \\
+            Pancréas                            & \numprint{4307}   & 7,9        & \numprint{4012}            &  4,7          \\
+            Larynx                              & \numprint{1259}   & 2,5        & \numprint{144}             &  0,2          \\
+            Poumon                              & \numprint{21881}  & 42,3       & \numprint{6195}            &  9,9          \\
+            Mésothéliome de la plèvre           & \numprint{583}    & 1,0        & \numprint{236}             &  0,3          \\
+            Mélanome de la peau                 & \numprint{828}    & 1,7        & \numprint{703}             &  1,1          \\
+            \textbf{Sein}                       & \textbf{-}        & \textbf{-} & \textbf{\numprint{11359}}  & \textbf{17,2} \\
+            Col de l'utérus                     & -                 & -          & \numprint{1113}            &  1,9          \\
+            Corps de l'utérus                   & -                 & -          & \numprint{1904}            &  2,3          \\
+            Ovaires                             & -                 & -          & \numprint{3340}            &  4,8          \\
+            Prostate                            & \numprint{9012}   & 12,6       & -                          &  -            \\
+            Testicules                          & \numprint{94}     & 0,3        & -                          &  -            \\
+            Vessie                              & \numprint{3535}   & 5,6        & \numprint{1149}            &  1,1          \\
+            Rein                                & \numprint{2470}   & 4,3        & \numprint{1264}            &  1,5          \\
+            Système nerveux central             & \numprint{1678}   & 3,8        & \numprint{1313}            &  2,4          \\
+            Thyroïde                            & \numprint{152}    & 0,3        & \numprint{254}             &  0,3          \\
+            Lymphome malin non hodgkinien       & \numprint{2236}   & 3,9        & \numprint{1987}            &  2,2          \\
+            Maladie de Hodgkin                  & \numprint{167}    & 0,4        & \numprint{115}             &  0,2          \\
+            Myélome multiple                    & \numprint{1367}   & 2,2        & \numprint{1325}            &  1,4          \\
+            Leucémies                           & \numprint{2931}   & 5,1        & \numprint{2412}            &  2,9          \\
+            Site indéfini ou non précisé        & \numprint{6634}   & 12,5       & \numprint{4140}            &  4,8          \\
+            Autres cancers                      & \numprint{4845}   & 8,6        & \numprint{3772}            &  4,5          \\
+            \midrule
+            Tous cancers                        & \numprint{88378}  & 158,6      & \numprint{60359}           &  79,1         \\
+            \bottomrule
+          \end{tabular}
+          \label{tab:Inca2011}
+          \vspace{3ex}
+          \caption*{TSM : Taux standardisés à la population mondiale\\Sources : \acf{InVS}, \acf{CépiDc} - \ac{INSERM}, 2011}
+        \end{center}
+      \end{table}
+
+      La majorité des cas de cancer du sein\index{cancer!cancer du sein} se trouve chez la femme, mais il existe également un cancer du sein\index{cancer!cancer du sein} chez l'homme.
+      Il est cependant environ 100 fois moins fréquent, mais pour cause de diagnostic généralement plus tardif il a souvent un taux de survie moins élevé.
+      Chez la femme, le cancer du sein\index{cancer!cancer du sein} est souvent hormono-dépendant.
+      Les facteurs augmentant les taux d'{\oe}strogènes sont des facteurs de risque.
+      Le nombre de cycles menstruels influençant directement les taux d'{\oe}strogènes, les ménopauses tardives ou les pubertés précoces sont des facteurs de risque.
+      Les cellules préalablement différenciées sont moins sensibles aux hormones, la grossesse protège ainsi le sein par différentiation des cellules mammaires.
+      L'âge de la première grossesse est donc également un facteur de risque.
+      Il est estimé qu'environ entre 5 et 10 \% des cancers du sein peuvent avoir pour origines des prédispositions génétiques.
+      Les gènes \acs{BRCA1} et \acs{BRCA2} sont reconnus responsables de la moitié des cancers ayant une origine génétique.
+
+      Nous allons maintenant explorer quels sont les diagnostics et traitements proposés pour traiter les cancers du sein.
+
+    \subsection{\textcolor{myred}{Diagnostics et traitements}}
+      \mylettrine{N}{ous avons vu} précédemment qu'une détection précoce augmentait grandement les chances de survie.
+      Dans les années 1980, le dépistage systématique du cancer du sein\index{cancer!cancer du sein} par mammographie avait été prévu pour réduire fortement la mortalité liée à cette maladie.
+
+      Cependant ces mammographies détectent souvent des tumeurs qui n'auraient pas évoluées ou qui n'auraient pas eu besoin d'un traitement lourd.
+      Le sur-diagnostic entraîne généralement un sur-traitement.
+      Ainsi, les patientes sans ganglions à un stade précoce subissent une chimiothérapie adjuvante que l'on pourrait éviter dans 70 à 80 \% des cas \citep{Bertucci2002}.
+
+      Il faut néanmoins noter que même si le sur-diagnostic existe, le dépistage est loin d'être inutile et permet d'identifier au plus tôt la tumeur et de la traiter quand sa taille est minimale dans le but d'avoir le meilleur pronostic possible.
+      C'est pourquoi les tumeurs sont analysées cytologiquement ou histologiquement dans le but d'affiner le diagnostic pré-opératoire, et de prévoir le traitement optimal, qui repose sur quatre outils principaux :
+      \begin{description}
+        \item [La chirurgie]      \hfill \\
+          Elle consiste en l'ablation de la tumeur dans le cas de la tumorectomie, de l'ablation d'une partie du sein pour la segmentectomie, ou de l'ablation totale du sein dans le cas de la mastectomie.
+          C'est l'étape indispensable du traitement du cancer du sein\index{cancer!cancer du sein}, les autres traitements visant à réduire le risque de rechute.
+        \item [La chimiothérapie] \hfill \\
+          C'est une injection de produits anti-cancéreux ciblant les cellules se divisant trop rapidement, soit en affectant la mitose soit la synthèse de l'\acs{ADN}.
+          Elle peut être qualifiée d'adjuvante lorsqu'elle suit la chirurgie, ou de néo-adjuvante si elle la précède.
+          Elle permet de réduire le taux de mortalité et de rechute, mais a de nombreux inconvénients pour la patiente (fatigue générale, nausées, vomissement, chute des cheveux).
+          \pagebreak
+        \item [La radiothérapie]  \hfill \\
+          Elle permet de traiter loco-régionalement les cancers, en utilisant des radiations pour détruire les cellules.
+          L'irradiation a pour but de détruire toutes les cellules tumorales tout en épargnant les tissus sains périphériques.
+          Les séances de radiothérapie sont de courte durée et les effets secondaires moindres que lors d'une chimiothérapie.
+        \item [L'hormonothérapie] \hfill \\
+          Les cancers du sein étant souvent hormono-dépendants, les tumeurs sont par conséquence souvent hormono-sensibles.
+          Les traitements hormonaux consistent soit à bloquer les récepteurs hormonaux avec des anti-{\oe}strogènes, soit à diminuer le taux d'{\oe}strogènes présent dans le sang et donc la stimulation des récepteurs via des anti-aromatases.
+      \end{description}
+      \vspace{1.5ex}
+
+      En plus de ces traitements classiques, des thérapies ciblées permettent une action plus précise contre les cellules tumorales avec moins d'effets secondaires.
+      Par exemple, le Trastuzumab, anticorps monoclonal, bloque le récepteur \acs{p-ERBB2} et est ainsi efficace pour les cancers du sein sur-exprimant \acs{ERBB2}.
+      Ces cancers étaient considérés de mauvais pronostic, mais avec un tel traitement le risque de rechute est réduit de moitié, et la mortalité est réduite d'un tiers.
+
+      Le Lapatinib, inhibiteur intracellulaire, bloque l'activité tyrosine kinase des récepteurs \acs{p-ERBB2} et \acs{p-EGFR}.
+      Le Bévacizumab, anticorps monoclonal, se fixe sur le facteur de croissance \acs{p-VEGFA} et bloque ainsi l'angiogenèse, mais il n'augmente pas le temps de survie, il est essentiellement utilisé sur des patientes ne sur-exprimant pas \acs{ERBB2}.
+
+      Nous venons de voir les différents façons de traiter les cancers du sein.
+      Cependant pour savoir quel traitement est le plus approprié il est utile de savoir quels sont les caractéristiques du cancer.
+      C'est pour cela que nous allons approfondir les classifications des cancers du sein.
+
+    \subsection{\textcolor{myred}{Les classifications utilisées dans le cancer du sein\index{cancer!cancer du sein}}}
+      \mylettrine{L}{es cancers,} comme nous venons de le voir ont plusieurs caractéristiques.
+      À chacune de ses caractéristiques correspond un traitement approprié, ainsi qu'un taux de survie ou une probabilité de rechute spécifique.
+      Le système de classification \ac{TNM} est un des plus courant.
+      Il prend en compte la taille de la tumeur, le nombre de ganglions lymphatiques touchés, et la métastase éventuelle.
+
+      Ces trois facteurs sont alors combinés pour obtenir 5 stades :
+      \begin{mylist}{III}
+        \item [0]   Carcinome canalaire in situ (les cellules sont localisées dans un canal galactophore et n'ont pas migré à l'extérieur) ou carcinome lobulaire in situ (les cellules sont localisées dans la membrane d'un lobule).
+        \item [I]   La tumeur est inférieure à 2 cm, et le cancer ne s'est pas propagé aux ganglions.
+        \item [II]  La tumeur fait plus de 2 centimètres (sans atteinte ganglionnaire), ou moins de 5 centimètres et le cancer s'est propagé à 1, 2 ou 3 ganglions.
+        \item [III] Le cancer s'est propagé aux ganglions lymphatiques, et peut-être aux tissus voisins du muscle ou de la peau.
+        \item [IV]  Le cancer a produit des métastases dans d'autres parties du corps.
+      \end{mylist}
+      \vspace{1.5em}
+
+      La classification Scarff-Bloom-Richardson \citep{Bloom1957}, étendue par les critères de Nottingham \citep{Elston1991} se base sur trois critères histologiques  :
+      \begin{description}
+        \item [Le degré de différentiation architecturale]  \hfill \\
+          Ce paramètre évalue le pourcentage de conduits formés par la tumeur.
+          Moins il y en a, plus la structure des tissus est désordonnée.
+        \item [Le nombre de mitoses]                        \hfill \\
+          Plus il y a un nombre important de mitoses (signe que les cellules se divisent activement), et plus le cancer est prolifératif.
+        \item [L'importance du pléiomorphisme nucléaire]    \hfill \\
+          Ce paramètre détermine si les noyaux des cellules sont uniformes comme ceux des cellules épithéliales, ou si ils sont plus grands, plus sombres, ou irréguliers (pléomorphe).
+      \end{description}
+      \vspace{1.5em}
+
+      Pour chacun de ces critères, un score entre 1 et 3 est attribué.
+      Le score cumulé de ces trois critères permet alors de classer le cancer parmi 3 grades :
+      \begin{mylist}{1}
+        \item [1]   Cancer possédant des cellules bien différenciées, à croissance lente, avec des risques faibles de propagation.
+        \item [2]  Grade intermédiaire, où le cancer possède des cellules modérément différenciées.
+        \item [3] Cancer possédant des cellules peu différenciées, d'évolution rapide avec des risques plus élevés de propagation.
+      \end{mylist}
+
+      Le but de ces classifications est de décrire les cancers du sein\index{cancer!cancer du sein} pour permettre le choix d'un traitement approprié en maximisant l'efficacité du traitement et les chances de survie et en minimisant la toxicité du traitement.
+      Une connaissance plus précise de la tumeur permet donc d'affiner ce choix.
+      Par conséquent, l'expression des protéines permet d'affiner ces classifications.
+      Ainsi le dosage des 3 récepteurs hormonaux suivants est souvent effectué :
+      \begin{mylist}{\acs{p-ERBB2}}
+        \item [\acs{p-ESR1}]  récepteur des {\oe}strogènes (souvent dénommé \acs{ER})
+        \item [\acs{p-PGR}]   récepteur de la progestérone (souvent dénommé \acs{PR})
+        \item [\acs{p-ERBB2}] récepteur de la famille des récepteurs \acs{p-EGFR} (souvent dénommé \acs{HER2})
+      \end{mylist}
+      \vspace{1.5em}
+
+      Les cancers possédant les récepteurs \acs{p-ESR1} sont généralement dénommés dans la littérature cancers \acs{ER+}, ceux ne les possédant pas sont des cancers \acs{ER-}.
+      C'est la dénomination que nous utiliserons dans ce document.
+
+      Les cancers \acs{ER+} possédant des récepteurs \acs{p-ESR1} dépendent des {\oe}strogènes pour leur croissance, des traitements bloquant les effets des {\oe}strogènes tel le Tamoxifen peuvent donc être utilisés.
+      Ils sont généralement de bon pronostic.
+
+      Comme nous l'avons vu précédemment, \acs{p-ERBB2} est utilisé comme marqueur pour des thérapies ciblées, ce qui a permis de grandement améliorer le pronostic initialement mauvais des cancers sur-exprimant ce récepteur.
+
+      Les cancers ne possédant aucun de ces récepteurs sont appelés triple négatifs.
+      Ce sont généralement des cancers agressifs de petits tailles, dont le pronostic reste le même quelque soit le nombre de ganglions envahis.
+      Ils se distinguent singulièrement dans leur évolution et réactions aux divers traitements.
+
+      L'expression des gènes peut permettre d'affiner encore plus cette classification, et permet de classer les cancers du sein en 5 sous-types moléculaires (cf figure~\ref{fig:Subtypes}) :
+      \begin{description}
+      \item [Basal-like]  \hfill \\
+        Cancers de haut grade, souvent triple négatifs, ils sont généralement agressifs et de mauvais pronostic.
+        Ils ont été nommés ainsi car ils expriment de manière constitutive les gènes exprimés normalement dans les cellules basales du sein.
+      \item [\acs{HER2+}] \hfill \\
+        Cancers initialement de mauvais pronostic, le Trastuzumab ou le Lapatinib permettent de l'améliorer.
+        Ils ont été nommés ainsi, car ils sur-expriment les récepteurs \acs{p-ERBB2}, souvent dénommés \acs{HER2}.
+      \item [Luminal A]   \hfill \\
+        Cancers \acs{ER+} ayant un grade faible.
+        Ils ont été nommés ainsi par similarité d'expression des gènes avec les cellules luminales du sein.
+      \item [Luminal B]   \hfill \\
+        Cancers \acs{ER+} ayant souvent un grade élevé.
+        Comme le sous-type Luminal A, ces cancers ont été nommés ainsi par similarité d'expression des gènes avec les cellules luminales du sein.
+      \item [Normal-like] \hfill \\
+        Peu caractérisé, il est possible que ce sous-type soit un artefact du à une présence élevée de cellules du stroma.
+        L'expression des gènes de ces cancers se rapproche des cellules normales du sein.
+      \end{description}
+      %\vspace{1.5em}
+
+      \begin{figure}
+        \centering
+        \def\svgwidth{\columnwidth}
+        \input{figures/Subtypes.pdf_tex}
+        \caption{Classification en sous-types moléculaires \citep{Perou2000,Sorlie2001}.}
+        \label{fig:Subtypes}
+      \end{figure}
+      \pagebreak
+
+      Ces sous-types correspondent à des niveaux d'expression de gènes différents qui reflètent la diversité et l'hétérogénéité des cancers du sein.
+      Les progrès permis par la recherche et par l'amélioration des technologies permettent de réévaluer ces classifications et de les compléter.
+
+      Ainsi nous pouvons décrire le sous-type Claudin-low, souvent triple-négatif, mais possédant une faible expression en protéines de jonction cellule-cellule et fréquemment infiltré par des lymphocytes.
+
+      Les classifications par stades, grades, statuts des récepteurs hormonaux ou sous-types moléculaire que nous venons de voir permettent de classifier les cancer dans des groupes ayant la plus grand similarité possible.
+      Mais le cancer du sein\index{cancer!cancer du sein} est très complexe, et il peut y avoir des différences de taux de survie au sein d'un groupe.
+      C'est pourquoi d'autres classifications peuvent être réalisées pour subdiviser ces sous-types et affiner ainsi la classification.
+      Nous allons voir maintenant l'utilisation de puces à \acs{ADN} pour classifier les tumeurs dans le cancer du sein\index{cancer!cancer du sein} en fonction de leur pronostic.
+
+    \subsection{\textcolor{myred}{Intérêts des signatures prédictives dans le cancer du sein\index{cancer!cancer du sein}}}
+
+      \mylettrine{L'}{intérêt de la médecine prédictive} est comme nous l'avons vu précédemment (cf partie~\ref{sub:MedPrePer}) de pouvoir prédire l'évolution de la maladie, et plus spécifiquement dans le cas qui nous concerne des cancers du sein. Les puces à \acs{ADN} ont permis l'amélioration des pronostics avec la classification par sous-typage moléculaire qui permet déjà de séparer les patients en groupes ayant des survies différentes comme le montre la figure~\ref{fig:Subtypes-survival} \citep{Perou2000,Sorlie2001,Hu2006}.
+
+      %Parker2003
+
+      Cependant, s'ils permettent déjà d'améliorer le pronostic ces sous-types moléculaires sont encore trop hétérogènes, et ce pronostic ne reflète que trop peu la complexité des résultats cliniques.
+
+      De ce fait un certain pourcentage de patientes subissent une chimiothérapie qui pourrait être évitée \citep{Bertucci2002} (cf partie~\ref{Sec:RechercheBC}).
+
+      \begin{figure}
+        \centering
+        \def\svgwidth{\columnwidth}
+        \input{figures/Subtypes-survival.pdf_tex}
+        \caption{Courbes de survie en fonction des sous-types moléculaires \citep{Perou2000,Sorlie2001,Hu2006}.}
+        \label{fig:Subtypes-survival}
+      \end{figure}
+
+      Deux études fondatrices dans le domaine des signatures prédictives en cancérologie ont établi des signatures liées à la métastase dans le cancer du sein.
+      La signature MammaPrint composée de 70 gènes permet de classifier les patientes en groupes de bons et mauvais pronostics \citep{vandevijver2002}.
+      De même \citeauthor{Wang2005} ont réalisé une double signature de 76 gènes, spécifique aux statuts des \acp{ER}, c'est à dire 60 gènes pour les \acs{ER+} et 16 gènes pour les \acs{ER-}.
+
+      Le regroupement hiérarchique (\emph{hierarchical clustering}) est utilisé pour la découverte de ces signatures.
+      C'est une méthode de classification automatique dont le but est de répartir tous les individus constituant un ensemble dans un certain nombre de classe.
+      Il est nécessaire d'avoir à disposition une mesure de similarité ou de dissimilarité permettant de différencier les individus.
+
+      \pagebreak
+
+      Deux approches existent :
+      \begin{description}
+
+      \item [L'approche ascendante]part des individus où chacun d'eux appartiennent à une classe constituée d'un seul individu, puis ces classes sont regroupées en classe de plus en plus grandes, jusqu'à l'obtention d'une classe unique.
+
+      \item [L'approche descendante]part d'une seule classe que l'on divise de plus en plus pour arriver jusqu'aux individus.
+      Ces deux méthodes produisent une hiérarchisation qui donne son nom à cette méthode automatique de groupement.
+      \end{description}
+
+      L'approche ascendante est de complexité $O(n^{3})$, tandis que l'approche descendante est de complexité $O(2^{n})$.
+      C'est pourquoi la variante descendante est généralement peu usitée.
+
+      Ici, les individus sont les échantillons tumoraux, et la mesure de similarité se fait à partir de l'expression des gènes.
+
+      Nous allons détailler la façon dont \citeauthor{vandevijver2002} et \citeauthor{Wang2005} ont organisé leurs études pour la découverte de leurs signatures, ainsi que les caractéristiques des patientes constituant leurs jeux de données :
+      \begin{description}
+        \item [van de Vijver \citep{vandevijver2002}] \hfill \\
+          Un premier jeu de données constitué de 98 tumeurs a été utilisé.
+          78 tumeurs sont utilisées pour sélectionner 5000 gènes (qui sont significativement régulés dans au moins 3 tumeurs sur 78) parmi ceux présents sur la puce à \acs{ADN}.
+          Un regroupement hiérarchique est alors utilisé pour regrouper les tumeurs sur la base de ces 5000 gènes.
+          251 gènes sont désignés comme significativement associé avec l'évolution du cancer.
+          Une sélection est ensuite effectuée sur le nombre de gènes suivant leur rang, et au final 70 gènes sont sélectionnes, puis validés sur 19 autres échantillons \citep{vantveer2002}.
+          Cette signature à 70 gènes est finalement utilisé pour classifier un jeu de données contenant 295 tumeurs (dont une partie avait servi à établir la signature) \citep{vandevijver2002}.
+          Le jeu de données final contient 295 échantillons de tumeurs du sein, 151 sans ganglions et 144 avec.
+          110 patientes ont reçu un traitement adjuvant (soit 73 \%) : 90 ont reçu une chimiothérapie, 20 une hormonothérapie et 20 une chimiothérapie combinée avec une hormonothérapie.
+          226 patientes ont un statut \acs{ER+}, et 69 \acs{ER-}.
+\pagebreak
+        \item [Wang \citep{Wang2005}]                  \hfill \\
+          Le jeu de donnée utilisé ici est constitué de 286 échantillons de tumeurs du sein sans ganglions, non traité par chimiothérapie.
+          248 patientes (soit 87 \%) ont été traité par radiothérapie adjuvante.
+          Les tumeurs sont subdivisées en deux groupes suivants leur statuts \acs{ER}.
+          209 sont \acs{ER+}, et 77 \acs{ER-}.
+          Chacun de ces groupes est subdivisé en jeu d'entraînement et jeu de validation.
+          Au final 115 échantillons ont servi pour l'entraînement (80 \acs{ER+} et 35 \acs{ER-}).
+          16 gènes sont sélectionnés par regroupement hiérarchique dans les \acs{ER+} et 60 dans les \acs{ER-}.
+          Les deux ensembles de gènes sont alors combinés pour constituer la signature.
+      \end{description}
+      \vspace{1.5ex}
+
+      Ces deux signatures n'ont que trois gènes en commun, ce qui peut mettre en doute leur fiablilité ainsi que leur reproductibilité.
+      De plus \citeauthor{Michiels2005} en réanalysant le jeu de données ayant permis d'établir la signature Mammaprint ont mis en évidence l'importance du jeu de données d'entraînement dans l'établissement d'une signature.
+
+      Nous allons donc maintenant voir quelles sont les limitations des techniques de regroupement hiérarchique se basant sur les puces à \acs{ADN} pour réaliser des signatures prédictives dans le cancer du sein.
+
+    \subsection{\textcolor{myred}{Les limitations des technologies utilisées}}
+      \mylettrine{L}{e but de la classification} est de fournir un bon modèle prédictif.
+      D'un point de vue biologique, le fait que les signatures ne soient pas reproductibles d'une étude sur l'autre est inacceptable.
+      Cela montre un manque de robustesse dans les méthodes de détection qui pourrait empêcher l'acceptation des technologies de puces à \acs{ADN} pour des tests clinicaux de routine.
+      Cela s'applique également aux nouvelles méthodes dites \ac{NGS}.
+      %Haibe-Kains2008
+
+      Plusieurs raisons simples sont fréquemment citées pour expliquer cette situation :
+      \begin{itemize}
+        \item L'hétérogénéité des plateformes.
+        \item L'hétérogénéité des différents outils d'analyses utilisés.
+        \item La variabilité génétique inhérente à chaque individu.
+        \item Les différentes méthodes statistiques et les classifications.
+      \end{itemize}
+
+       Mais ces raisons sont là insuffisantes et les limitations sont principalement de deux origines :
+      \begin{description}
+        \item [La topologie des données]   \hfill \\
+          Le nombre de patients pour une étude étant généralement de l'ordre de la centaine et le nombre de gène, de l'ordre de la dizaine de milliers.
+          Le nombre de patients profilés est très bas par rapport au nombre de variables.
+          Il y a à la fois trop de variables et pas assez d'échantillons.
+          C'est le double fléau de la dimension et de la parcimonie.
+        \item [La biologie du cancer]      \hfill \\
+          Les puces à \acs{ADN} sont énormément sensibles aux effets des petites dérégulations des gènes en amont des réseaux de régulation des gènes.
+          Les cancers sont très hétérogènes et peuvent dériver de plusieurs caractéristiques variables.
+          Les gènes directeurs en amont des réseaux de régulation des gènes peuvent causer de fortes perturbations qui sont alors très variables d'un cancer à un autre.
+          Les gènes en aval sont alors fortement dérégulés, et facilement détectables.
+          Mais les gènes en amont qui sont les vraies causes de la condition clinique étudiée et qui ont causé ces perturbations ne sont pas détectés.
+      \end{description}
+      \vspace{1.5ex}
+
+      Les puces à \acs{ADN}, ainsi qu'une approche transcriptomique ont comme nous venons de le voir des limitations inhérentes à la technologie.
+      Il y a également des limitations dues à la maladie étudiée.
+      Nous allons maintenant étudier comment remédier à ces limitations.
+
+    \subsection{\textcolor{myred}{Les solutions}}
+
+      \mylettrine{L}{es limitations}, comme nous avons pu le voir ont principalement deux causes.
+      Pour les contrebalancer la première limitation causée par la topologie des données, une solution est d'agrandir le nombre d'échantillons.
+      D'un point de vue purement théorique, pour conserver une couverture équivalente à celle permise par 100 mesures dans un espace à une dimension, il faudrait 10\textsuperscript{20} mesures dans un espace à 10 dimension.
+      Les puces à \acs{ADN} mesurent l'expression des gènes, dont on estime le nombre entre \numprint{20000} à \numprint{30000}.
+      Ces mesures se réalisent donc dans l'espace des gènes.
+
+      Cependant, de nombreux gènes ont leurs expressions liées, ou font partie intégrante d'un réseau de régulation ou d'une voie métabolique.
+      Le nombre de dimension de l'espace des gènes est donc plus réduit que le nombre de gènes, mais il reste néanmoins un espace possédant de multiples dimensions.
+      Le nombre important de gènes entraine également une augmentation du risque de sur-entrainement, ce qui à pour effet d'accroitre l'erreur de généralisation.
+
+      \citeauthor{EinDor2006} estime qu'il est nécessaire d'avoir plusieurs milliers d'échantillons pour l'obtention d'une signature constituée d'une robuste liste de gènes pour prédire l'évolution du cancer.
+      Les jeux de données utilisés pour les études précédentes \citep{vandevijver2002,Wang2005} contiennent au mieux plusieurs centaines d'échantillons.
+      C'est une des raisons généralement avancé pour expliquer le manque de reproductibilité de ces études.
+
+      Pour contrebalancer cette limitation, la solution la plus courante consiste à réaliser une méta-analyse de plusieurs jeux de données, et ainsi augmenter le nombre d'échantillons.
+
+      Plusieurs méthodes de méta-analyses sont reportés dans la littérature : le regroupement hiérarchique basé sur un test de Student \citep{Gentleman2004}, la méthode des produits de rang \citep{Hong2006}, le test de l'inverse-chi-2 de Fisher \citep{Fisher1925}, la mise en commun bayésienne \citep{Conlon2006}, la méthode des paires de haut score \citep{Xu2005}, le Binary Matrix Shuffling Filter \citep{Zhang2012e}.
+
+      Ainsi comme nous l'avons vu précédemment, la biologie du cancer elle-même limite aussi l'efficacité des puces à \acs{ADN} pour ces prédictions.
+
+      En effet les puces à \acs{ADN} sont extrêmement sensibles aux effets des variations de l'expression des gènes en amont.
+
+      Ces deux limitations se combinent, la biologie extrémement hétérogène du cancer et ses effets sur l'expression des gènes, tout comme le grand nombre de dimensions nécessitent un plus grand nombre d'échantillons.
+
+      L'autre solution, qui peut être combinée avec une méta analyse consiste à ajouter des informations supplémentaires (telle les modules (ensemble fonctionnel de gènes) \citep{VanVliet2007} ou des réseaux d'interactions protéines-protéines \citep{Chuang2007}).
+
+      Cette dernière méthode mise en avant par \citeauthor{Chuang2007} permet d'avoir de meilleurs résultats par rapport aux méthodes classiques comme nous le détaillerons dans le chapitre suivant.
+
+      Cependant, \citeauthor{Chuang2007} n'a utilisé qu'un seul jeu de données pour son analyse, et nous avons pensé pouvoir améliorer sa méthode en la combinant avec une approche de méta-analyse.
+
+      Nous détaillerons notre utilisation de cette méthode d'intégration d'interaction protéines-protéines, ainsi que la façon dont nous l'avons adapté dans nos travaux avec une méta-analyse de plusieurs jeux de données transcriptomiques dans le chapitre qui suit.
+
+  \pagebreak
+
+  \section{\textcolor{myred}{Conclusion}}
+
+    \mylettrine{N}{ous avons} détaillé le rôle central de l'expression des gènes et sa régulation dans le développement et la survie d'un être humain.
+    Nous avons ensuite montré comment le cancer pouvait survenir si l'expression et/ou la régulation des gènes était perturbée.
+    Les approches de médecines personnalisée et prédictive ont démontré l'intérêt de classifier les tumeurs pour pouvoir les traiter de manière spécifique et proposer une thérapie adaptée.
+    L'approche transcriptomique à haut-débit, permettant d'étudier les régulations et dérégulations à grande échelle, est déjà utilisée pour étudier le cancer.
+    Cependant cette approche a des limitations intrinsèques en plus des limitations dues à la maladie elle-même.
+    Pour contrer ces limitations nous utilisons l'ajout d'informations d'interactions protéines-protéines aux données transcriptomiques ainsi qu'une méta-analyse sur plusieurs jeux de données transcriptomiques.
+    Nous allons dans le prochain chapitre détailler cette méthode, puis exposer nos résultats dans les chapitres suivants.
