@@ -1,0 +1,147 @@
+\singlespacing
+
+\mychapter{mygreen}{Analyse supervisée}
+  \sectiongreen*{Résumé}
+    \begin{center}
+      \begin{tabular}{c}
+        \fcolorbox{mydarkgreen}{mylightgreen}{
+        \begin{minipage}[][4cm][c]{0.8\linewidth}
+          \sffamily
+            \ref{app:Garcia2012}
+        \end{minipage}}\\
+        \\[2ex]
+        \begin{minipage}[][4cm][c]{0.9\linewidth}
+          \mtcsetdepth{minitoc}{1}
+          \minitoc
+        \end{minipage}
+      \end{tabular}
+    \end{center}
+    \newpage
+
+\doublespacing
+
+  \section{\textcolor{mygreen}{Détails de l'analyse supervisée}}
+    \subsection{\textcolor{mygreen}{Organisation des études}}
+
+    \begin{table}
+        \begin{center}
+          \caption{Liste des jeux de données utilisés dans l'analyse supervisée.}
+          \begin{tabular}{llr@{/}lr@{/}lr@{/}l}
+            \toprule
+            \emph{Jeu de données} & \emph{Plateforme} & \multicolumn{2}{c}{\emph{Nombre d'échantillons}} & \multicolumn{2}{c}{\emph{Statuts DMFS}} & \multicolumn{2}{c}{\emph{Statuts ER}} \\
+            \cmidrule(r){3-8}
+            &  & \emph{(Sélectionnés} & \emph{Total)}           & \emph{(meta} & \emph{non meta)} & \emph{(ER-}     & \emph{ER+)} \\
+            \midrule
+            \textbf{Desmedt}          & \textbf{U133A}          & \textbf{190} & \textbf{198} & \textbf{62} & \textbf{128} & \textbf{61} & \textbf{129} \\
+            Loi                       & U133A + U133B           & 101 & 327                   & 27 & 74                & 29 & 72            \\
+            Sabatier                  & U133 Plus 2.0           & 31 & 255                    & 9 & 22                 & 11 & 20            \\
+            Schmidt                   & U133A                   & 182 & 200                   & 46 & 136               & 37 & 145           \\
+            \textbf{van de Vijver}    & \multirow{2}{2.49cm}{\textbf{Agilent whole human genome}}  & \textbf{150} & \textbf{295} & \textbf{56} & \textbf{94}  & \textbf{36} & \textbf{114} \\
+            & \\
+            Wang                      & U133A                   & 276 & 286                   & 107 & 169              & 72 & 204           \\
+            \midrule
+            Total                     & 7 différentes           & 930 & 1561                  & 307 & 623              & 246 & 684          \\
+            \bottomrule
+          \end{tabular}
+          \label{tab:Res2Data}
+          \vspace{5ex}
+          \caption*{Deux études ont été réalisé en utilisant différentes combinaisons pour les jeux de donnés d'entraînement et ceux de validation (\textbf{en gras}). Dans l'étude 1 \ref{sec:Study1} les échantillons provenant de Desmedt ont été mis de côté pour validation indépendante, et l'entraînement a eu lieu avec les autres jeux de données. Les échantillons provenant de van de Vijver ont été pareillement mis de côté pour validation indépendante dans l'étude 2 \ref{sec:Study2}.}
+        \end{center}
+      \end{table}
+
+
+
+    \subsection{\textcolor{mygreen}{Étude 1}}\label{sec:Study1}
+
+    \subsection{\textcolor{mygreen}{Étude 2}}\label{sec:Study2}
+
+  	\section{\textcolor{mygreen}{Performances}}
+
+        \begin{table}
+        \begin{center}
+          \caption{Taille et p-value de la signature retenue pour chacune des études réalisées.}
+          \begin{tabular}{llrrr}
+            \toprule
+            \emph{Étude} & \emph{Statuts} & \emph{seuil de P-value} & \emph{Nombre de sous-réseaux} & \emph{Nombre de gènes} \\
+            \midrule
+            Étude 1      & ER-            & 1e\textsuperscript{-4}  & 165                           & 2310                    \\
+            Étude 1      & ER+            & 1e\textsuperscript{-4}  & 6                             & 175                     \\
+            Étude 2      & ER-            & 1e\textsuperscript{-4}  & 122                           & 1481                    \\
+            Étude 2      & ER+            & 1e\textsuperscript{-4}  & 14                            & 272                     \\
+            \bottomrule
+          \end{tabular}
+          \label{tab:Res2pvalue}
+          \vspace{5ex}
+          \caption*{Le nombre optimal de sous-réseaux pour une classification dépend des jeux de données utilisés pour l'apprentissage. Le fait qu'il soit plus faible pour les ER+ reflète une plus grande homogénéité des échantillons.}
+        \end{center}
+      \end{table}
+
+      \begin{sidewaystable}
+        \begin{center}
+          \caption{Comparaison des résultats de classification entre ITI et d'autres signatures sur les jeux de données de validation Desmedt et van de Vijver pour les tumeurs ER- et ER+.}
+          \begin{tabular}{crrrrrrrrrrrrrrrr}
+            \toprule
+            \multicolumn{1}{c}{\emph{Statuts}} & \multicolumn{8}{c}{ER-} & \multicolumn{8}{c}{ER+} \\
+            \cmidrule(r){2-9}\cmidrule(r){10-17}
+            \multicolumn{1}{c}{\emph{Jeux de}} & \multicolumn{4}{c}{\multirow{2}{*}{\emph{Desmedt}}} & \multicolumn{4}{c}{\multirow{2}{*}{\emph{van de Vijver}}} & \multicolumn{4}{c}{\multirow{2}{*}{\emph{Desmedt}}} & \multicolumn{4}{c}{\multirow{2}{*}{\emph{van de Vijver}}} \\
+            \multicolumn{1}{c}{\emph{Données}} & & & & \\
+            \cmidrule(r){2-5}\cmidrule(r){6-9}\cmidrule(r){10-13}\cmidrule(r){14-17}
+            \multirow{2}{*}{\emph{Signature}} & \emph{GGI} & \emph{70g} & \emph{76g} & \multicolumn{1}{c}{\emph{\textbf{ITI}}} & \emph{GGI} & \emph{70g} & \emph{76g} & \multicolumn{1}{c}{\emph{\textbf{ITI}}} & \emph{GGI} & \emph{70g} & \emph{76g} & \multicolumn{1}{c}{\emph{\textbf{ITI}}} & \emph{GGI} & \emph{70g} & \emph{76g} & \multicolumn{1}{c}{\emph{\textbf{ITI}}}    \\
+                      &     &     &     & \multicolumn{1}{c}{\emph{\textbf{(165)}}}              &     &     &     & \multicolumn{1}{c}{\emph{\textbf{(122)}}}  &     &     &     & \multicolumn{1}{c}{\emph{\textbf{(6)}}}                &     &     &     & \multicolumn{1}{c}{\emph{\textbf{(14)}}}   \\
+            \midrule
+            N         & 61    & 61    & 61    & \textbf{61}                               & 36    & 36    & 36    & \textbf{36}                   & 129   & 129   & 129   & \textbf{129}                              & 114   & 114   & 114   & \textbf{114}                   \\
+            \midrule
+            VN        & 6     & 0     & 14    & \textbf{22}                               & 3     & 2     & 12    & \textbf{17}                   & 63    & 28    & 53    & \textbf{86}                               & 57    & 39    & 50    & \textbf{49}                    \\
+            FP        & 28    & 34    & 20    & \textbf{12}                               & 16    & 17    & 7     & \textbf{2}                    & 31    & 66    & 41    & \textbf{8}                                & 18    & 36    & 25    & \textbf{26}                    \\
+            VP        & 23    & 27    & 9     & \textbf{11}                               & 14    & 17    & 8     & \textbf{2}                    & 21    & 25    & 25    & \textbf{9}                                & 20    & 32    & 22    & \textbf{10}                    \\
+            FN        & 4     & 0     & 18    & \textbf{16}                               & 3     & 0     & 9     & \textbf{15}                   & 14    & 10    & 10    & \textbf{26}                               & 19    & 7     & 17    & \textbf{29}                    \\
+            \midrule
+            ACC       & 0.46  & 0.42  & 0.38  & \textbf{0.54}                             & 0.47  & 0.53  & 0.56  & \textbf{0.53}                 & 0.65  & 0.41  & 0.60  & \textbf{0.74}                             & 0.68  & 0.62  & 0.63  & \textbf{0.52}                  \\
+            SV        & 0.85  & \multicolumn{1}{l}{1} & 0.33  & \textbf{0.41}             & 0.82  & \multicolumn{1}{l}{1} & 0.57  & \textbf{0.12} & 0.60  & 0.71  & 0.71  & \textbf{0.26}                             & 0.51  & 0.82  & 0.56  & \textbf{0.26}                  \\
+            SP        & 0.18  & \multicolumn{1}{l}{0} & 0.41  & \textbf{0.65}             & 0.16  & 0.11                  & 0.63  & \textbf{0.90} & 0.67  & 0.30  & 0.56  & \textbf{0.92}                             & 0.76  & 0.52  & 0.67  & \textbf{0.65}                  \\
+            \bottomrule
+          \end{tabular}
+          \label{tab:Res2Classif}
+          \vspace{5ex}
+          \caption*{Les quatre ensembles de sous-réseaux xXx ont été utilisés pour mesurer la performance de classification d'ITI (\textbf{en gras}). Les abréviations suivantes ont été utilisées : N - nombre de tumeurs à classifier; VN - Vrai Négatif; FP - Faux Positif; VP - Vrai Positif; FN - Faux Négatif; ACC - Justesse; SV - Sensibilité; SP - Spécificité. La justesse de la classification basée sur des sous-réseaux est supérieure à la classification basé sur des expressions de gènes pour prédire la métastase dans le jeu de données de Desmedt, et autour du même niveau pour le jeu de données de van de Vijver.}
+        \end{center}
+      \end{sidewaystable}
+
+  	\section{\textcolor{mygreen}{Exploration des sous-réseaux}}
+
+    \begin{table}
+        \begin{center}
+          \caption{Enrichissement en terme GO des sous-réseaux ER- et ER+}
+          \begin{tabular}{clccr}
+            \toprule
+            & \multicolumn{1}{c}{\emph{Terme GO}} & \emph{GOID} & \emph{P-value corrigée} \\
+            \midrule
+            \multirow{5}{*}{\emph{ER-}} & Natural killer cell-mediated imunity                      & GO:0002228  & 293e\textsuperscript{-06} \\
+                                        & Positive regulation of MAP kinase activity                & GO:0043406  & 476e\textsuperscript{-10} \\
+                                        & Muscle cell development                                   & GO:0055001  & 106e\textsuperscript{-11} \\
+                                        & Interphase of mitotic cell cycle                          & GO:0051329  & 408e\textsuperscript{-11} \\
+                                        & Wnt receptor signaling pathway through ${\beta}$-catenin  & GO:0060070  & 622e\textsuperscript{-10} \\
+            \midrule
+            \multirow{5}{*}{\emph{ER+}} & mRNA cleavage                                             & GO:0006379  & 125e\textsuperscript{-08} \\
+                                        & Regulation of growth hormone secretion                    & GO:0060123  & 218e\textsuperscript{-07} \\
+                                        & Positive regulation of cytoskeleton organization          & GO:0051495  & 206e\textsuperscript{-04} \\
+                                        & Regulation of insulin secretion                           & GO:0050796  & 155e\textsuperscript{-05} \\
+                                        & Regulation of chemotaxis                                  & GO:0050920  & 429e\textsuperscript{-07} \\
+            \bottomrule
+          \end{tabular}
+          \label{tab:Res2GO}
+          \vspace{5ex}
+          \caption*{Plusieurs enrichissements en terme GO pour les sous-réseaux extraits dans l'étude 1 (ER- et ER+) sont reliés au cancer.}
+        \end{center}
+      \end{table}
+
+      \begin{figure}
+        \begin{center}
+          \def\svgwidth{\columnwidth}\input{figures/Survival.pdf_tex}
+          \caption{Comparatif des courbes de survies des patients.}
+          \label{fig:Survival}
+        \end{center}
+      \end{figure}
+
+
+  \section{\textcolor{mygreen}{Conclusion}}

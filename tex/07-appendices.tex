@@ -1,0 +1,23 @@
+\singlespacing
+
+\nochaptercolor{mygrey}{Annexes}
+	\addstarredchapter{Annexes}
+	\sectiongrey*{Détail}
+		\begin{center}
+			\begin{tabular}{c}
+				\fcolorbox{mydarkgrey}{mylightgrey}{
+				\begin{minipage}[][4cm][c]{0.8\linewidth}
+					\sffamily
+					Dans cette section sont regroupées des informations complémentaires : la nomenclature employée pour nommer les gènes et les protéines, des listes ordonnées des abréviations, noms de gènes et noms des protéines utilisés; ainsi que les publications présentées dans cette thèse.
+				\end{minipage}}\\
+				\\[2ex]
+				\begin{minipage}[][4cm][c]{0.9\linewidth}
+					\mtcsetdepth{minitoc}{1}
+					\minitoc
+				\end{minipage}
+			\end{tabular}
+		\end{center}
+		\input{tex/nomenclature}
+		\input{tex/acronyms}
+%		\input{tex/glossary}
+		\input{tex/publications}
