@@ -9,14 +9,13 @@ At some point during this process, Josep Abril got involved and,
 according to one of the previous people, who knew him, probably rewrote the whole thing.
 
 License
-===
-It's under GNU/GPL copyleft license.
-
+---
+It's under GNU/GPL copyleft license.  
 So FEEL FREE TO USE IT AND IMPROVE IT!!!
 
 Usage
-===
+---
 Type the following command :
-* <code>make</code> to build a pdf of your thesis
-* <code>make log</code> if you want to keep the log when building your thesis
-* <code>make clean</code> to remove your pdf
+* <code>make</code> to build a pdf of your thesis  
+* <code>make log</code> if you want to keep the log when building your thesis  
+* <code>make clean</code> to remove your pdf  
