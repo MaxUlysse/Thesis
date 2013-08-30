@@ -129,10 +129,10 @@
 \let\oldsqrt\sqrt
 \def\sqrt{\mathpalette\DHLhksqrt}
 \def\DHLhksqrt#1#2{
-  \setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
-  \advance\dimen0-0.2\ht0
-  \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}
-  {\box0\lower0.4pt\box2}}
+	\setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
+	\advance\dimen0-0.2\ht0
+	\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}
+	{\box0\lower0.4pt\box2}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                Big numbers                %%%
@@ -145,18 +145,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Provides a new environnement to do a list
-\newenvironment{mylist}[1]{%
-  \begin{list}{}{%
-    \settowidth{\labelwidth}{#1:}
-    \setlength{\labelsep}{0.5cm}
-    \setlength{\leftmargin}{\labelwidth}
-    \addtolength{\leftmargin}{\labelsep}
-    \setlength{\rightmargin}{0pt}
-    \setlength{\parsep}{0.5ex plus 0.2ex minus 0.1ex}
-    \setlength{\itemsep}{0 ex plus 0.2ex}
-    \renewcommand{\makelabel}[1]{\textbf{##1}\hfil}
-    }
-  }
+\newenvironment{mylist}[1]{
+	\begin{list}{}{
+		\settowidth{\labelwidth}{#1:}
+		\setlength{\labelsep}{0.5cm}
+		\setlength{\leftmargin}{\labelwidth}
+		\addtolength{\leftmargin}{\labelsep}
+		\setlength{\rightmargin}{0pt}
+		\setlength{\parsep}{0.5ex plus 0.2ex minus 0.1ex}
+		\setlength{\itemsep}{0 ex plus 0.2ex}
+		\renewcommand{\makelabel}[1]{\textbf{##1}\hfil}
+		}
+	}
 {\end{list}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -193,18 +193,6 @@
 
 \RequirePackage{palatino}
 \RequirePackage{amsfonts}
-
-%%% to add an empty page, output pending figures and resume in an odd-numbered one %%%
-
-\newcommand{\clearemptypage}{\newpage\thispagestyle{empty}\mbox{}}
-
-\newcommand{\clearemptydoublepage}{
-    \clearemptypage
-    \if@twoside
-        \ifodd
-            \clearemptypage
-        \fi
-    \fi}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%               URL inclusion               %%%
@@ -245,19 +233,31 @@
 % shorther command for boldface
 \newcommand{\bb}[1]{\textbf{#1}}
 
+%%% to add an empty page, output pending figures and resume in an odd-numbered one %%%
+
+\newcommand{\clearemptypage}{\newpage\thispagestyle{empty}\mbox{}}
+
+\newcommand{\clearemptydoublepage}{
+	\clearemptypage
+	\if@twoside
+		\ifodd
+			\clearemptypage
+		\fi
+	\fi}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                 PDF infos                 %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \hypersetup{
-    pdftitle        = {\mytitlefr},
-    pdfsubject      = {Thèse de doctorat en Bioinformatique et Génomique à Aix-Marseille Université},
-    pdfkeywords     = {\mykeywordsfr},
-    pdfauthor       = {\myauthor},
-    pdfcreator      = {\LaTeX},
-    pdfproducer     = {pdfeTeX-0.\the\pdftexversion\pdftexrevision}
-    pdfpagemode     = FullScreen,
-    pdffitwindow    = true}
+	pdftitle		= {\mytitlefr},
+	pdfsubject		= {Thèse de doctorat en Bioinformatique et Génomique à Aix-Marseille Université},
+	pdfkeywords		= {\mykeywordsfr},
+	pdfauthor		= {\myauthor},
+	pdfcreator		= {\LaTeX},
+	pdfproducer		= {pdfeTeX-0.\the\pdftexversion\pdftexrevision}
+	pdfpagemode		= FullScreen,
+	pdffitwindow	= true}
 
 \AtBeginDocument{\pdfpagewidth=176mm\pdfpageheight=250mm}
 
@@ -272,7 +272,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \date{}
- 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                 Footnotes                 %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
