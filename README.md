@@ -1,4 +1,4 @@
-mythesis template
+myThesis template
 ===
 I got this thesis template from Charles Chapple, who probably save my thesis whith it.
 I'll probably never be able to thank him enough.

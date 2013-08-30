@@ -9,19 +9,19 @@ data/
 
 .dropbox
 
-mythesis.aux
-mythesis.bbl
-mythesis.blg
-mythesis.idx
-mythesis.ilg
-mythesis.ind
-mythesis.lof
-mythesis.log
-mythesis.lot
-mythesis.maf
-mythesis.mtc*
-mythesis.out
-mythesis.toc
+myThesis.aux
+myThesis.bbl
+myThesis.blg
+myThesis.idx
+myThesis.ilg
+myThesis.ind
+myThesis.lof
+myThesis.log
+myThesis.lot
+myThesis.maf
+myThesis.mtc*
+myThesis.out
+myThesis.toc
 
 tex/01-introduction.tex
 tex/02-methods.tex

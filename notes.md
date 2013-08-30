@@ -1,4 +1,4 @@
-mythesis template
+myThesis template
 ===
 Include png version of Figure
 ---
