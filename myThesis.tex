@@ -14,16 +14,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% Preamble: LaTeX parameters and extensions %%%
-
 \input{preamble} % Call layout and other LaTeX parameters from file preamble.tex
 
-%%% Body: actual text with some control commands %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   Body: text with some control commands   %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% The whole writing starts here divided into %%%
-%%%   frontmatter, mainmatter and backmatter   %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%       The whole writing starts here       %%%
+%%%         divided into frontmatter,         %%%
+%%%         mainmatter and backmatter         %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Each \input command searches for a .tex file in a directory
 
@@ -38,21 +39,23 @@
 % The main body lies within the \begin{document} and \end{document} commands.
 \begin{document}
 
-%%% frontmatter %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                frontmatter                %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \frontmatter
 \input{tex/title}
 \clearemptypage
 
-% Institutional logos and others
-\input{tex/logos}      
+\input{tex/logos}				% Institutional logos
 \clearemptypage
 
-% Dedicatory
-\input{tex/dedicatory} 
-% Acknowledgements
-\input{tex/acknowledgements}
+\input{tex/dedicatory}			% Dedicatory
+\input{tex/acknowledgements}	% Acknowledgements
 
-%%% TOC and List of figures and tables %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%             TOC, TOT, and TOF             %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % For a more compact index layout 
 \setlength{\parskip}{0.4ex plus0.2ex minus0.2ex}
@@ -61,42 +64,44 @@
 \tableofcontents
 \mtcaddchapter %prevent shifting due to TOC, TOT and TOF
 
-% Table of tables
+% TOT
 \listoftables
 \mtcaddchapter
 
-% Table of figures
+% TOF
 \listoffigures
 \mtcaddchapter
 
-%%% mainmatter %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                 mainmatter                %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \mainmatter
 \clearemptydoublepage
 
-% State of the art
-\input{tex/01-introduction}
+\input{tex/01-introduction}% State of the art
 \clearemptydoublepage
 
-% Papers' supplementary material
-\input{tex/02-methods}
+\input{tex/02-methods}% Papers' supplementary material
 \clearemptydoublepage
 
-% Got papers? great!
-\input{tex/03-results}
+\input{tex/03-results}% Got papers? great!
 \clearemptydoublepage
 
-% Got papers? great!
-\input{tex/04-results}
+\input{tex/04-results}% Got papers? great!
 \clearemptydoublepage
 
-% Make sense of the whole of it
-\input{tex/05-discussion}
+\input{tex/05-discussion}% Make sense of the whole of it
 \clearemptydoublepage
 
-% Your contribution in short points
-\input{tex/06-conclusions}
+\input{tex/06-conclusions}% Your contribution in short points
 \clearemptydoublepage
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                 backmatter                %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\backmatter
 \begin{appendices}
 \input{tex/07-appendices}
 \end{appendices}
