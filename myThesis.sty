@@ -14,9 +14,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%
-%%% LANGUAGE %%%
-%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                  Language                 %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage[french]{babel}
 \RequirePackage[utf8]{inputenc}
@@ -32,9 +32,9 @@
     \renewcommand\listfigurename{Index des figures}
     \renewcommand\bibname{Références}}
 
-%%%%%%%%%%%%%%%%
-%%% CHAPTERS %%%
-%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                  Chapters                 %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Make fancy headings different colors for each chapter
 \newcommand{\mychapter}[2]{\textcolor{#1}{\chapter{#2}}}
@@ -43,10 +43,10 @@
 
 % fancy chapters
 \RequirePackage[Glenn]{fncychap}
-%Sonny, Lenny, Conny, Rejne, Bjarne, Bjornstrup (other option for fancy chapters)
+%Sonny, Lenny, Conny, Rejne, Bjarne, Bjornstrup (other options)
 
 % This is to create a fake chapter (like the acknowledgments).  It doesn't
-% get ennumerated, but it does get added to the Table of Contents (ToC),
+% get ennumerated, but it does get added to the TOC,
 % and since the \chapter* doesn't define the markright or markboth
 % commands, we force it here to do so.
 
@@ -96,9 +96,9 @@
     \DOTI{#1}}
 \color{black}}
 
-%%%%%%%%%%%%%%
-%%% TABLES %%%
-%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                   Tables                  %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Better tables
 \RequirePackage{booktabs}
@@ -107,9 +107,9 @@
 % Let you make a second caption with \caption*
 \RequirePackage{caption}
 
-%%%%%%%%%%%
-%%% TOC %%%
-%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                    TOC                    %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage{tocbibind}
 \RequirePackage{appendix}
@@ -127,9 +127,9 @@
 % Better spacing
 \usepackage{microtype}
 
-%%%%%%%%%%%%%%%%%
-%%%% SECTIONS %%%
-%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%                 Sections                 %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Section in arabic
 \renewcommand\thesection{\thechapter.\arabic{section}}
@@ -202,9 +202,9 @@
   {\color{mydarkgrey}\raggedright\textcolor{mydarkgrey}{\rule{3mm}{0.75cm}}\textcolor{mylightgrey}{\rule{3mm}{0.75cm}}
   \medskip\fontsize{18}{16}\sffamily}}
 
-%%%%%%%%%%%%%%%%%%%
-%%% SUBSECTIONS %%%
-%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                Subsections                %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Subsection in alphanumeric lowercase
 \renewcommand\thesubsection{\thesection.\alph{subsection}}
@@ -218,9 +218,9 @@
   {0pt}{-\baselineskip}{\baselineskip}
   {\raggedright\medskip\fontsize{14}{16}\sffamily}}
 
-%%%%%%%%%%%%%%%%%%%%%%
-%%% SUBSUBSECTIONS %%%
-%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%               Subsubsections              %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}
   {-3.25ex\@plus -1ex \@minus -.2ex}

@@ -12,69 +12,66 @@
 %%%   FEEL FREE TO USE IT AND IMPROVE IT!!!   %%%
 %%%                                           %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Preamble: LaTeX parameters and extensions %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% Preamble: LaTeX parameters and extensions %%%
-
-%%%%%%%%%%%%%%%%%%%%%
-%%% Document type %%%
-%%%%%%%%%%%%%%%%%%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%               Document type               %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % While working to see output errors
 %\documentclass[draft,pdftex,oneside]{book}
 
 % To produce final printable version
 \documentclass[pdftex,oneside]{book}
 
-% For Fancyhdr
-\setlength{\headheight}{13pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%              Tweaking errors              %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % To remove "No room for a new \dimen" when using tikz
 \RequirePackage{etex}
+% For fancyhdr
+\setlength{\headheight}{13pt}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Our own style file %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%             Our own style file            %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Style file for this template myThesis.sty
 \RequirePackage{myThesis}
 \RequirePackage{newicktree}
 
-%%%%%%%%%%%%%%%%%%%
-%%%   Colors    %%%
-%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                   Colors                  %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage{color}
 \input{colors}
 
-%%%%%%%%%%%%%%%%%%%%
-%%% Paper layout %%%
-%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                Paper layout               %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-% Book size e-version
 \RequirePackage[paperwidth=170mm,paperheight=240mm,hmargin={2cm,1cm},vmargin={2cm,1.75cm},headheight=14pt]{geometry}
 
-%\RequirePackage[frame,noaxes,a4,center]{crop}
-
-%%%%%%%%%%%%%%%%
-%%% Headings %%%
-%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                  Headings                 %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %For memoir class
 \let\footruleskip\undefined
 
 % To produce nice headings
 \RequirePackage{fancyhdr}
-
 \pagestyle{fancy} 
 
 % Big first letter.
 \RequirePackage{lettrine}
 \newcommand{\mylettrine}[1]{\lettrine[lines=4,loversize=-0.1,lraise=0.1,lhang=.2]{#1}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% MARKS AND DRAFTMARKS %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%            Marks and draftmarks           %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\myversion}{V 0.5}
 
@@ -97,24 +94,19 @@
 %%% Line Spacing %%%
 \RequirePackage{setspace}
 
-%%%%%%%%%%%%%%%%%%%%
-%%% PDF commands %%%
-%%%%%%%%%%%%%%%%%%%%
-
-%\RequirePackage[draft]{pdfpages} % To include pdf documents with pdflatex. It does NOT work with latex.
-                              % Declare it before \RequirePackage{graphicx}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                PDF commands               %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % To produce final version
 \RequirePackage{pdfpages}
 
-%%% Global pdfpages options %%%
-
 % Used in each \%includepdf call unless overwritten locally
 \includepdfset{frame=false,pagecommand={\thispagestyle{fancy}}}
 
-%%%%%%%%%%%%%%%
-%%% FIGURES %%%
-%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                  Figures                  %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Path to figures
 \graphicspath{{figures//}}
@@ -127,16 +119,14 @@
 % to rotate figures and tables
 \RequirePackage{rotating}
 
-%%%%%%%%%%%%%%%%%
-%%% EQUATIONS %%%
-%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                 Equations                 %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage{mathtools}
 
-% New definition of square root:
-% Renames \sqrt as \oldsqrt
+% Redefine the square root:
 \let\oldsqrt\sqrt
-% Defines the new \sqrt in terms of the old one
 \def\sqrt{\mathpalette\DHLhksqrt}
 \def\DHLhksqrt#1#2{
   \setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
@@ -144,15 +134,15 @@
   \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}
   {\box0\lower0.4pt\box2}}
 
-%%%%%%%%%%%%%%%%%%%
-%%% BIG NUMBERS %%%
-%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                Big numbers                %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage{numprint}
 
-%%%%%%%%%%%%%%%%%
-%%%   LISTS   %%%
-%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                   Lists                   %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Provides a new environnement to do a list
 \newenvironment{mylist}[1]{%
@@ -169,48 +159,40 @@
   }
 {\end{list}}
 
-
-%%%%%%%%%%%%%%%%
-%%% ACRONYMS %%%
-%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                  Acronyms                 %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage{suffix}
 \RequirePackage[printonlyused]{acronym}
 
-%%%%%%%%%%%%%%%%
-%%% VERBATIM %%%
-%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                  Verbatim                 %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage{moreverb}
 
-%%%%%%%%%%%%%%%%%%
-%%% REFERENCES %%%
-%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                 References                %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Natural Sciences Citations: author-year and numerical citations
 \RequirePackage[round,sort&compress]{natbib}
 
-%%%%%%%%%%%%%
-%%% INDEX %%%
-%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                   Index                   %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % To make a subject index
 \RequirePackage{makeidx}
-
-% Subject index. It is added at the very end of the book
 \makeindex
 
-%%%%%%%%%%%%%
-%%% FONTS %%%
-%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                   Fonts                   %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage{palatino}
-% To get \checkmark
 \RequirePackage{amsfonts}
-
-%\selectfont
-
-%\font\avantgarnormal = pagk at 10pt
 
 %%% to add an empty page, output pending figures and resume in an odd-numbered one %%%
 
@@ -224,21 +206,16 @@
         \fi
     \fi}
 
-% shorther command for boldface
-\newcommand{\bb}[1]{\textbf{#1}}
-
-%%%%%%%%%%%%%%%%%%%%%
-%%% URL INCLUSION %%%
-%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%               URL inclusion               %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage[pdftex,colorlinks=true,linkcolor=black,menucolor=red,pdfhighlight=/P,citecolor=steelblue,urlcolor=brickred,linktocpage=false]{hyperref}
-%Enter URLs like this: \url{http://genome.imim.es/}
+%Enter URLs like this: \url{http://ithake.eu/}
 
-%\RequirePackage[pdftex,a4paper,colorlinks=true,linkcolor=black,menucolor=black,pagecolor=black,pdfhighlight=/P,citecolor=black,urlcolor=black,linktocpage=true]{hyperref} % For printing
-
-%%%%%%%%%%%%%%%%%%%%%%
-%%% DEFINING TERMS %%%
-%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%               Defining terms              %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\myauthor{Maxime U. Garcia}
 
@@ -255,24 +232,22 @@
 \def\mykeywordsen{Transcriptome; Interactome; Data Integration; Gene Networks; classification; SVM; Signature; Biomarkers; Cancer; Breast Cancer}
 
 % To get subscript easily
-
 \newcommand{\textunderscript}[1]{$_{\text{#1}}$}
 
 % To get e and er in superscript easily
-
 \newcommand{\eme}{\textsuperscript{e} }
-
 \newcommand{\er}{\textsuperscript{er} }
 
 % To get CO2 and O2 easily
-
 \newcommand{\COO}{CO\textunderscript{2} }
-
 \newcommand{\OO}{O\textunderscript{2} }
 
-%%%%%%%%%%%%%%%%%
-%%% PDF INFOS %%%
-%%%%%%%%%%%%%%%%%
+% shorther command for boldface
+\newcommand{\bb}[1]{\textbf{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                 PDF infos                 %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \hypersetup{
     pdftitle        = {\mytitlefr},
@@ -286,22 +261,21 @@
 
 \AtBeginDocument{\pdfpagewidth=176mm\pdfpageheight=250mm}
 
-
-%%%%%%%%%%%%%%%%%%
-%%% PARAGRAPHS %%%
-%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                 Paragraphs                %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \setlength{\parskip}{1ex plus0.2ex minus0.2ex}
 
-%%%%%%%%%%%%
-%%% DATE %%%
-%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                    Date                   %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\date{} % Keep it empty
+\date{}
  
-%%%%%%%%%%%%%%%%%
-%%% FOOTNOTES %%%
-%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                 Footnotes                 %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Vertical spacing between footnotes
 \setlength{\footnotesep}{2ex}
