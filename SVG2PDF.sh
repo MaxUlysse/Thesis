@@ -19,13 +19,9 @@
 for i in `ls -1 figures | grep svg`
 do
 	file=$(echo $i | sed 's/\.svg$//g')
-	if [[ -e figures/$file.pdf ]]; then
-		rm figures/$file.pdf
-	fi
-	if [[ -e figures/$file.pdf_tex ]]; then
-		rm figures/$file.pdf_tex
-	fi
-	inkscape -D -z --file=figures/$file.svg --export-pdf=figures/$file.pdf --export-latex
 	echo "File : $file"
+	rm -f figures/$file.pdf
+	rm -f figures/$file.pdf_tex
+	inkscape -D -z --file=figures/$file.svg --export-pdf=figures/$file.pdf --export-latex
 done;
 echo "Done."
