@@ -41,8 +41,8 @@ log:
 		pdflatex ${MAIN}; \
 	done
 
-clean: remove
-	rm -f ${MAIN}.pdf
+clean:
+	rm -f ${MAIN}.pdf ${LOG}
 
 remove:
 	rm -f ${LOG}
