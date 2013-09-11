@@ -20,7 +20,8 @@
 #################################################
 #################################################
 
-MAIN = myThesis
+MAIN	= myThesis
+LOG		= ${MAIN}.aux ${MAIN}.bbl ${MAIN}.blg ${MAIN}.idx ${MAIN}.ilg ${MAIN}.ind ${MAIN}.lof ${MAIN}.log ${MAIN}.lot ${MAIN}.maf ${MAIN}.mtc* ${MAIN}.out ${MAIN}.toc
 
 all: pdf
 
@@ -44,17 +45,4 @@ clean: remove
 	rm -f ${MAIN}.pdf
 
 remove:
-	rm -f \
-	${MAIN}.aux \
-	${MAIN}.bbl \
-	${MAIN}.blg \
-	${MAIN}.idx \
-	${MAIN}.ilg \
-	${MAIN}.ind \
-	${MAIN}.lof \
-	${MAIN}.log \
-	${MAIN}.lot \
-	${MAIN}.maf \
-	${MAIN}.mtc* \
-	${MAIN}.out \
-	${MAIN}.toc
+	rm -f ${LOG}
