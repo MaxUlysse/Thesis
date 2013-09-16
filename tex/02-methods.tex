@@ -84,6 +84,8 @@
 
 		\subsection{\textcolor{mygreen}{Constitution d'un compendium de données d'expression des gènes dans le cancer du sein}}
 			\mylettrine{N}{ous avons} exploré les sites de dépôts de données publiques, ainsi que la littérature, et avons sélectionné les jeux de données dont les conditions cliniques étaient disponibles.
+			Nous avons téléchargé sur Gene Expression Omnibus, ou sur le site dédié de l'auteur l'ensemble des jeux de données. Si cela était possible nous avons téléchargé les données brutes, et avons réalisé une normalisation gcrma (package affy du package bioconductor) via R.
+
 			\begin{table}
 				\begin{center}
 					\caption{Liste des jeux de données inclus dans notre compendium de données d'expression dans le cancer du sein.}
@@ -132,8 +134,6 @@
 				\end{center}
 			\end{table}
 
-			Nous avons téléchargé sur Gene Expression Omnibus, ou sur le site dédié de l'auteur l'ensemble des jeux de données. Si cela était possible nous avons téléchargé les données brutes, et avons réalisé une normalisation gcrma (package affy du package bioconductor) via R.
-
 			Nous avons utilisé ces jeux de données d'expression dans le cancer du sein pour deux analyses.
 			Pour la première analyse, non supervisée, nous avons uniquement utilisé comme données cliniques l'événement DMFS.
 			Voici les jeux de données que nous avons finalement utilisés pour notre première analyse (\emph{cf} ~\ref{chap:results1}).
@@ -180,6 +180,7 @@
 				\end{center}
 			\end{table}
 
+			\pagebreak
 			Pour notre seconde analyse, supervisée, nous avons choisi par soucis d'homogénéisation de ne sélectionner que les patientes sans traitements supplémentaires, et ainsi éviter de séparer les patientes en fonction de la réponse au traitement.
 			Dans les données cliniques nous récupérions également les expressions des \aclp{ER}.
 			Dans le but d'avoir un ensemble d'échantillons le plus homogène possible, nous les avons soigneusement choisi en nous basant sur les données cliniques accessibles.
@@ -219,7 +220,9 @@
 				\end{center}
 			\end{table}
 
-			Après avoir détaillé les jeux de données, leur constitutions
+			Après avoir détaillé les jeux de données, leur constitutions, nous allons étudier les interactions protéine-protéine.
+
+			\pagebreak
 
 	\section{\textcolor{mygreen}{Interactions protéine-protéine}}\label{sec:IPP}
 
@@ -328,6 +331,30 @@
 			Pour permettre plus facilement la navigation d'un sous-réseau à un autre, pour chaque gène il existe une page listant les sous-réseaux dans lesquels il apparait.
 			Enfin, pour chacun des sous-réseaux un enrichissement en terme GO est calculé, par jeux de données d'expression, se basant sur l'apport des gènes du sous-réseaux par rapport à l'ensemble des gènes présents sur la plateforme de puce à \acs{DNA} utilisée pour constituer le jeu de données.
 
+		\subsection{\textcolor{mygreen}{Stratification, organisation des données et classification}}
+			\mylettrine{P}{our les besoins} de notre analyse supervisée (cf partie ~\ref{chap:results2}), nous avons organisé laissé de coté un jeu de données d'expression, dans le but d'effectuer une classification finale indépendante.
+			Avec les autres jeux de données d'expression, nous avons réalisé une stratification à dix couches, utilisant 90\% des données pour apprentissage, et les 10\% restant pour classification.
+			Nous avons utilisé notre algorithme ITI pour sélectionner des sous-réseaux sur chacune de ces dix couches.
+			Nous avons utilisés la librarie libSMV pour cela.
+			Chaque liste de sous-réseaux sélectionnée après validation statistique a été utilisé pour trouver la taille maximisant les performances de la classification.
+			Chaque liste de sous-réseaux nous a permis de créer un modèle SVM pour chacun des jeux de données d'expression utilisés.
+			Nous avons réalisé un vote à la majorité pondéré par la taille de la population du jeux de données.
+			Chacun de ces ensembles de sous-réseaux a été utilisé pour classifier les 10\% restant.
+			Ces dix classifications nous ont permis d'arriver à un ensemble de sous-réseaux optimaux que nous avons alors regroupés.
+			Chacun des sous-réseaux a été comparé avec les autres, et s'il y avait une superposition entre deux jeux de données, seul celui avec le meilleur score était gardé.
+			Ce dernier ensemble de sous-réseaux a finalement été utilisé pour classifier le jeu de donnés d'expression préalablement mis de coté, et donc indépendant.
+
+			La figure ~\ref{fig:Workflow} détaille cette organisation des données.
+
+			\begin{figure}
+				\begin{center}
+					\def\svgwidth{\columnwidth}\input{figures/Workflow.pdf_tex}
+					\caption{Workflow complet des données.}
+					\label{fig:Workflow}
+				\end{center}
+			\end{figure}
+
+			Les résultats seront exploités dans la partie ~\ref{chap:results2}
 
 	\section{\textcolor{mygreen}{Conclusion}}
 		\mylettrine{A}{près} avoir détaillé notre méthode, nous allons maintenant présenter les résultats que nous avons obtenus. Tout d'abord, nous allons détailler nos résultats sur une analyse non-supervisée~\ref{chap:results1}, puis par la suite nous allons détailler nos résultats sur une analyse supervisée~\ref{chap:results2}.
