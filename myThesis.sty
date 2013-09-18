@@ -43,8 +43,8 @@
 \newcommand{\nochaptercolor}[2]{\textcolor{#1}{\chapter*{#2}}}
 
 % fancy chapters
-\RequirePackage[Glenn]{fncychap}
-%Sonny, Lenny, Conny, Rejne, Bjarne, Bjornstrup (other options)
+\RequirePackage[Rejne]{fncychap}
+%Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, PetersLenny, Bjornstrup
 
 % This is to create a fake chapter (like the acknowledgments).  It doesn't
 % get ennumerated, but it does get added to the TOC,
@@ -58,44 +58,6 @@
 
 % Chapter numbering in Roman
 \renewcommand\thechapter{\Roman{chapter}}
-
-\def\@makechapterhead#1{
-	\vspace*{50\p@}
-	{\parindent \z@ \raggedright \normalfont
-	\raggedleft
-	\ifnum \c@secnumdepth >\m@ne
-		\if@mainmatter
-		\par\nobreak
-		\vskip 20\p@
-		\fi
-	\fi
-	\interlinepenalty\@M
-	\avantgarboldHuge #1\par\nobreak
-	\vskip 40\p@}}
-
-\def\@schapter#1{
-	\if@twocolumn
-		\@topnewpage[\@makeschapterhead{#1}]
-	\else
-		\@makeschapterhead{#1}
-		\@afterheading
-	\fi}
-
-\renewcommand{\ChNameVar}{\fontsize{14}{16}\usefont{OT1}{phv}{m}{n}\selectfont}
-\renewcommand{\ChNumVar}{\fontsize{60}{62}\usefont{OT1}{ptm}{m}{n}\selectfont}
-\ChTitleVar{\fontsize{26}{16}\sffamily}
-
-\def\@makechapterhead#1{
-	\vspace*{50\p@}
-	{\parindent \z@ \raggedright \normalfont
-		\ifnum \c@secnumdepth >\m@ne
-			\if@mainmatter %%%%% Fix for frontmatter, mainmatter, and backmatter
-				\DOCH
-			\fi
-		\fi
-		\interlinepenalty\@M
-		\DOTI{#1}}
-\color{black}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                   Tables                  %%%
