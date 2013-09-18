@@ -1,29 +1,23 @@
 \singlespacing
 
-\mychapter{green!60!black}{Méthodes}
+\mychapter{green!45!black}{Méthodes}
 	\sectiongreen*{Résumé}
 		\begin{center}
-			\begin{tabular}{c}
-				\begin{minipage}[][4cm][c]{0.8\linewidth}
-					\begin{tcolorbox}[colback=green!5!white,colframe=green!45!black]
-						\sffamily
-						Nous détaillerons ici notre méthode d'Intégration Transcriptome Interactome. J'ai choisi d'inclure dans cette section nos chapitres \citep{Garcia2011,Garcia2013}. Ces chapitres étant trop long, ils se trouvent dans les Annexes. Les données utilisées, ainsi que l'algorithme ITI\index{ITI} seront décrit en détail, et les outils utilisés seront décrits briévement.
-					\end{tcolorbox}
-				\end{minipage}\\
-				\\[2ex]
-				\begin{minipage}[][4cm][c]{0.9\linewidth}
-					\mtcsetdepth{minitoc}{1}
-					\minitoc
-				\end{minipage}
-			\end{tabular}
+			\begin{tcolorbox}[colback=green!5!white,colframe=green!45!black,arc=0mm]
+				\sffamily
+				Nous détaillerons ici notre méthode d'Intégration Transcriptome Interactome. J'ai choisi d'inclure dans cette section nos chapitres \citep{Garcia2011,Garcia2013}. Ces chapitres étant trop long, ils se trouvent dans les Annexes. Les données utilisées, ainsi que l'algorithme ITI\index{ITI} seront décrit en détail, et les outils utilisés seront décrits briévement.
+			\end{tcolorbox}
+			\vspace{5ex}
+			\mtcsetdepth{minitoc}{1}
+			\minitoc
 		\end{center}
 		\newpage
 
 \doublespacing
 
-	\section{\textcolor{green!60!black}{Les avantages de l'intégration de données}}
+	\section{\textcolor{green!45!black}{Les avantages de l'intégration de données}}
 
-		\subsection{\textcolor{green!60!black}{Les avantages de l'intégration de données d'expression des gènes et d'interactions protéine-protéine}}
+		\subsection{\textcolor{green!45!black}{Les avantages de l'intégration de données d'expression des gènes et d'interactions protéine-protéine}}
 			\mylettrine{N}{ous} avons introduit dans le chapitre précédent les signatures prédictives dans le cancer du sein, ainsi que les limitations des technologies utilisées.
 			Nous allons maintenant voir quels sont les avantages de l'intégration de données sur les performances de ces signatures.
 			Reprenant les travaux de \citeauthor{vandevijver2002} et \citeauthor{Wang2005} sur l'analyse des jeux de données ayant permis l'établissement de signatures, \citeauthor{Chuang2007} rappellent les problèmes soulevés par ces prédentes études.
@@ -49,7 +43,7 @@
 				\label{fig:Chuang2007figS1}
 			\end{figure}
 
-		\subsection{\textcolor{green!60!black}{L'intégration de données d'expression des gènes et d'interactions protéine-protéine}}
+		\subsection{\textcolor{green!45!black}{L'intégration de données d'expression des gènes et d'interactions protéine-protéine}}
 			\mylettrine{C}{omme} nous venons de le détailler, cette méthode présente des avantages comparé aux méthodes classiques d'analyse de données d'expression des gènes.
 			Nous allons détailler rapidement ici la méthode de \citeauthor{Chuang2007}.
 			Plusieurs types de données sont nécessaires pour réaliser cette intégration.
@@ -68,9 +62,9 @@
 				\label{fig:Chuang2007IntegrationAlgorithm}
 			\end{figure}
 		
-	\section{\textcolor{green!60!black}{L'\acl{ITIfr}}}
+	\section{\textcolor{green!45!black}{L'\acl{ITIfr}}}
 
-		\subsection{\textcolor{green!60!black}{L'intégration massive de données d'expression des gènes et de données d'interactions protéine-protéine}}
+		\subsection{\textcolor{green!45!black}{L'intégration massive de données d'expression des gènes et de données d'interactions protéine-protéine}}
 
 			\mylettrine{L'}{intégration} massive de données d'expression des gènes et de données d'interactions protéine-protéine est la solution que nous avons dévelloppé pour circonvenir aux inconvénients des approches classiques des méthodes de prédiction de la rechute métastatique dans le cancer du sein.
 
@@ -81,9 +75,9 @@
 			Nous allons d'abord détailler les données que nous avons utilisés tout au long de ces travaux.
 			Et ensuite nous détaillerons l'algorithme.
 
-	\section{\textcolor{green!60!black}{Données d'expression des gènes}}\label{sec:GEP}
+	\section{\textcolor{green!45!black}{Données d'expression des gènes}}\label{sec:GEP}
 
-		\subsection{\textcolor{green!60!black}{Constitution d'un compendium de données d'expression des gènes dans le cancer du sein}}
+		\subsection{\textcolor{green!45!black}{Constitution d'un compendium de données d'expression des gènes dans le cancer du sein}}
 			\mylettrine{N}{ous avons} exploré les sites de dépôts de données publiques, ainsi que la littérature, et avons sélectionné les jeux de données dont les conditions cliniques étaient disponibles.
 			Nous avons téléchargé sur Gene Expression Omnibus, ou sur le site dédié de l'auteur l'ensemble des jeux de données. Si cela était possible nous avons téléchargé les données brutes, et avons réalisé une normalisation gcrma (package affy du package bioconductor) via R.
 
@@ -225,16 +219,16 @@
 
 			\pagebreak
 
-	\section{\textcolor{green!60!black}{Interactions protéine-protéine}}\label{sec:IPP}
+	\section{\textcolor{green!45!black}{Interactions protéine-protéine}}\label{sec:IPP}
 
-		\subsection{\textcolor{green!60!black}{Assemblage d'interactomes humains}}
+		\subsection{\textcolor{green!45!black}{Assemblage d'interactomes humains}}
 			\mylettrine{L}{a} biologie moléculaire décrit les différents constituants de la cellule (protéines, \acs{ADN}, \acs{ARN} et autres molécules). Mais un organisme vivant est une entité complexe, et il est difficile de le comprendre totalement en analysant des parties spécifiques. C'est pour cela que l'on envisage l'organisme comme un système ou un réseau d'interactions.
 			Les protéines interagissent les unes avec les autres dans une cellule, et ces interactions donnent lieu à des fonctions biologiques et un comportement dynamique du système cellulaire. Généralement ces interactions protéine-protéine sont temporelles, spatiales, ou dépendantes d'une condition spécifique.
 			L'un des plus grands enjeux dans l'ère post-génomique de la biologie est de récolter des informations d'interactions entre protéines, \acsp{ADN} et autres petites molécules, et de comprendre comment ces interactions sont organisées.
 			Les techniques à haut débit ont permis la génération d'un grand nombre de données d'interactions protéine-protéine.
 			Pour \acs{ITIfr} nous avons récupéré différentes bases de données d'interactions protéine-protéine.
 
-		\subsection{\textcolor{green!60!black}{Nature des interactions et bases de données d'interactions utilisées}}
+		\subsection{\textcolor{green!45!black}{Nature des interactions et bases de données d'interactions utilisées}}
 			\mylettrine{L}{es} interactions contenues dans les bases de données d'interactions protéine-protéine sont récoltés par différentes techniques, et sont également de différente nature.
 			Nous considérons commes sûres les interactions décrites dans la littérature et celle vérifiées par une technique de double hybride dans la levure.
 			Les interactions de complexes par Co-immuno-précipitation ne sont pas directes, mais concernent des protéines qui font parties d'un même complexe.
@@ -246,7 +240,7 @@
 			Cocite \citep{Ramani2005} contient des interactions prédites in silico.
 
 
-	\section{\textcolor{green!60!black}{Données et outils supplémentaires}}
+	\section{\textcolor{green!45!black}{Données et outils supplémentaires}}
 		\mylettrine{N}{ous} utilisons également des données supplémentaires pour les besoins de notre algorithme.
 			Pour l'annotation des différentes plateformes de puces à \acs{ADN}, nous utilisons les fichiers fournis par Resourcerer \citep{Tsai2001}.
 			Pour l'annotation des gènes, nous utilisons le fichier Homo\_sapiens.gene\_info.gz fourni par le \acs{NCBI}\footnote{\url{ftp://ftp.ncbi.nlm.nih.gov/gene/DATA/GENE_INFO/Mammalia/}}.
@@ -258,9 +252,9 @@
 
 	\pagebreak
 
-	\section{\textcolor{green!60!black}{Algorithme}}
+	\section{\textcolor{green!45!black}{Algorithme}}
 
-		\subsection{\textcolor{green!60!black}{Détection des sous-réseaux}}
+		\subsection{\textcolor{green!45!black}{Détection des sous-réseaux}}
 			\mylettrine{L}{a première} étape de notre algorithme est la détection de sous-réseaux.
 			Les données utilisées par \acs{ITIfr} en entrée sont d'une part des données d'expressions des gènes, ainsi que les conditions cliniques correspondantes aux patients, et des données d'interactions protéine-protéine que nous avons détaillés précédemment (données d'expressions des gènes \ref{sec:GEP}, données d'interactions protéine-protéine \ref{sec:IPP}).
 			Les données d'interactions protéine-protéine sont rassemblées pour ne former qu'un seul interactome.
@@ -295,7 +289,7 @@
 			Reprenant cette étape de détection des sous-réseaux, nous construisons, dans le but de valider statistiquement les sous-réseaux que nous venons de détecter, des sous-réseaux de manière aléatoires.
 			Nous allons détailler cette étape dans la prochaine partie.
 
-		\subsection{\textcolor{green!60!black}{Validation statistique}}
+		\subsection{\textcolor{green!45!black}{Validation statistique}}
 			\mylettrine{N}{ous utilisons} trois méthodes pour générer des sous-réseaux aléatoires, se basant sur le principe de construction de sous-réseaux expliqué précédement.
 			Premièrement, nous mélangeons les conditions cliniques, et essayons de détecter des sous-réseaux.
 			Secondement, la décision d'ajout d'un gène à un sous-réseau ne dépend plus de la corrélation des conditions cliniques avec les \acs{GEP}, mais est aléatoire.
@@ -307,7 +301,7 @@
 			Le mélange des interactions protéine-protéines ne permet pas de génerer un nombre important de sous-réseaux, confirmant l'importance du lien entre les intéractions protéines-protéines et le niveau d'expression des gènes.
 			La validation statistique est réalisée avec Matlab Statistical Toolbox R2010b.
 
-		\subsection{\textcolor{green!60!black}{Sélection de sous-réseaux}}
+		\subsection{\textcolor{green!45!black}{Sélection de sous-réseaux}}
 			\mylettrine{L}{es p-values} calculées lors de l'étape de validation statistique sont utilisées pour filtrer les sous-réseaux détectés statistiquement significatifs.
 			Les distributions des trois ensembles de sous-réseaux aléatoires nous ont permis d'attribuer 3 p-values différentes pour chacun des sous-réseaux.
 			Nous sélectionnons un seuil de p-value pour chacune des distributions aléatoires et l'utilisons pour filtrer les sous-réseaux détectés et générons trois ensembles de sous-réseaux stastitiquement significatifs suivant chacune des méthodes précédemment expliquées.
@@ -317,7 +311,7 @@
 			Nous détaillerons ces résultats dans la partie ~\ref{chap:results2}.
 			Nous allons maintenant détailler la réalisation d'une ressource bioinformatique contenant les différents sous-réseaux trouvés lors de nos analyses.
 
-		\subsection{\textcolor{green!60!black}{Création d'une ressource bioinformatique permettant l'analyse des sous-réseaux}}
+		\subsection{\textcolor{green!45!black}{Création d'une ressource bioinformatique permettant l'analyse des sous-réseaux}}
 			\mylettrine{P}{our permettre} le parcours des différents ensembles de sous-réseaux trouvés lors de nos analyses, nous avons créé une ressource bioinformatique permettant, l'affichage, l'interprétation et l'analyse des sous-réseaux.
 			Cette ressource est accessible par internet, et constitue le site internet companion de nos publications \footnote{\url{http://iti.sourceforge.net/}}.
 			Dans un soucis de reproductibilité de la recherche, le code source du projet \ac{ITIfr} est disponible sous licence CeCILL sur sourceforge \footnote{\url{http://sourceforge.net/projects/iti/}}.
@@ -332,7 +326,7 @@
 			Pour permettre plus facilement la navigation d'un sous-réseau à un autre, pour chaque gène il existe une page listant les sous-réseaux dans lesquels il apparait.
 			Enfin, pour chacun des sous-réseaux un enrichissement en terme GO est calculé, par jeux de données d'expression, se basant sur l'apport des gènes du sous-réseaux par rapport à l'ensemble des gènes présents sur la plateforme de puce à \acs{DNA} utilisée pour constituer le jeu de données.
 
-		\subsection{\textcolor{green!60!black}{Stratification, organisation des données et classification}}
+		\subsection{\textcolor{green!45!black}{Stratification, organisation des données et classification}}
 			\mylettrine{P}{our les besoins} de notre analyse supervisée (cf partie ~\ref{chap:results2}), nous avons organisé laissé de coté un jeu de données d'expression, dans le but d'effectuer une classification finale indépendante.
 			Avec les autres jeux de données d'expression, nous avons réalisé une stratification à dix couches, utilisant 90\% des données pour apprentissage, et les 10\% restant pour classification.
 			Nous avons utilisé notre algorithme ITI pour sélectionner des sous-réseaux sur chacune de ces dix couches.
@@ -357,5 +351,5 @@
 
 			Les résultats seront exploités dans la partie ~\ref{chap:results2}
 
-	\section{\textcolor{green!60!black}{Conclusion}}
+	\section{\textcolor{green!45!black}{Conclusion}}
 		\mylettrine{A}{près} avoir détaillé notre méthode, nous allons maintenant présenter les résultats que nous avons obtenus. Tout d'abord, nous allons détailler nos résultats sur une analyse non-supervisée~\ref{chap:results1}, puis par la suite nous allons détailler nos résultats sur une analyse supervisée~\ref{chap:results2}.
