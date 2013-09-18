@@ -39,15 +39,12 @@
 
 % Style file for this template myThesis.sty
 \RequirePackage{myThesis}
-\RequirePackage{newicktree}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                   Colors                  %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage{color}
-\input{colors}
-\RequirePackage{tcolorbox}
+\RequirePackage[usenames,dvipsnames,svgnames,table]{xcolor}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -70,6 +67,9 @@
 % Big first letter.
 \RequirePackage{lettrine}
 \newcommand{\mylettrine}[1]{\lettrine[lines=4,loversize=-0.1,lraise=0.1,lhang=.2]{#1}}
+
+% Fancy looking boxes
+\RequirePackage{tcolorbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%            Marks and draftmarks           %%%
@@ -200,7 +200,7 @@
 %%%               URL inclusion               %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage[pdftex,colorlinks=true,linkcolor=black,menucolor=red,pdfhighlight=/P,citecolor=steelblue,urlcolor=brickred,linktocpage=false]{hyperref}
+\RequirePackage[pdftex,colorlinks=true,linkcolor=black,menucolor=red,pdfhighlight=/P,citecolor=MidnightBlue,urlcolor=BrickRed,linktocpage=false]{hyperref}
 %Enter URLs like this: \url{http://ithake.eu/}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
