@@ -34,7 +34,7 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%                  Chapters                 %%%
+%%%               Fancy headings              %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Make fancy headings different colors for each chapter
@@ -46,18 +46,18 @@
 \RequirePackage[Rejne]{fncychap}
 %Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, PetersLenny, Bjornstrup
 
-% This is to create a fake chapter (like the acknowledgments).  It doesn't
-% get ennumerated, but it does get added to the TOC,
-% and since the \chapter* doesn't define the markright or markboth
-% commands, we force it here to do so.
-
-\newcommand{\nochapter}[2][]{
-	\chapter*{#1}{
-		\addstarredchapter{#1}
-		\markboth{ #1 }{ #1 }}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                 Numbering                 %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Chapter numbering in Roman
 \renewcommand\thechapter{\Roman{chapter}}
+
+% Section in arabic
+\renewcommand\thesection{\thechapter.\arabic{section}}
+
+% Subsection in alphanumeric lowercase
+\renewcommand\thesubsection{\thesection.\alph{subsection}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                   Tables                  %%%
@@ -91,48 +91,13 @@
 \usepackage{microtype}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%                 Sections                 %%%
+%%%%                   Boxes                  %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Section in arabic
-\renewcommand\thesection{\thechapter.\arabic{section}}
-
-\renewcommand\section{\@startsection {section}{1}{\z@}
-	{-3.5ex \@plus -1ex \@minus -.2ex}
-	{2.3ex \@plus.2ex}
-	{\avantgarboldLarge}}
-
-% Redefine the format of section's number
-\renewcommand\@seccntformat[1]{
-	\fontsize{18}{16}\sffamily
-	\csname the#1\endcsname
-	\hspace{0.5em}}
-
-% Redefine the format of section's title
-\let\LaTeX@startsection\@startsection
-\renewcommand{\@startsection}[6]{\LaTeX@startsection{#1}{#2}{#3}{#4}{#5}{\raggedright #6}} 
-
-%section generica
-\renewcommand\section{\@startsection{section}{1}
-	{0pt}{-\baselineskip}{\baselineskip}
-	{\raggedright\medskip\fontsize{18}{16}\sffamily}}
 
 % Red box
 \newcommand\sectionred{\@startsection{section}{1}
 	{0pt}{-\baselineskip}{\baselineskip}
 	{\color{red!45!black}\raggedright\textcolor{red!45!black}{\rule{3mm}{0.75cm}}\textcolor{red!5!white}{\rule{3mm}{0.75cm}}
-	\medskip\fontsize{18}{16}\sffamily}}
-
-% Orange box
-\newcommand\sectionorange{\@startsection{section}{1}
-	{0pt}{-\baselineskip}{\baselineskip}
-	{\color{orange!45!black}\raggedright\textcolor{orange!45!black}{\rule{3mm}{0.75cm}}\textcolor{orange!5!white}{\rule{3mm}{0.75cm}}
-	\medskip\fontsize{18}{16}\sffamily}}
-
-% Yellow box
-\newcommand\sectionyellow{\@startsection{section}{1}
-	{0pt}{-\baselineskip}{\baselineskip}
-	{\color{yellow!45!black}\raggedright\textcolor{yellow!45!black}{\rule{3mm}{0.75cm}}\textcolor{yellow!5!white}{\rule{3mm}{0.75cm}}
 	\medskip\fontsize{18}{16}\sffamily}}
 
 % Green box
@@ -147,49 +112,8 @@
 	{\color{blue!45!black}\raggedright\textcolor{blue!45!black}{\rule{3mm}{0.75cm}}\textcolor{blue!5!white}{\rule{3mm}{0.75cm}}
 	\medskip\fontsize{18}{16}\sffamily}}
 
-% Indigo box
-\newcommand\sectionindigo{\@startsection{section}{1}
-	{0pt}{-\baselineskip}{\baselineskip}
-	{\color{indigo!45!black}\raggedright\textcolor{indigo!45!black}{\rule{3mm}{0.75cm}}\textcolor{indigo!5!white}{\rule{3mm}{0.75cm}}
-	\medskip\fontsize{18}{16}\sffamily}}
-
-% Violet box
-\newcommand\sectionviolet{\@startsection{section}{1}
-	{0pt}{-\baselineskip}{\baselineskip}
-	{\color{violet!45!black}\raggedright\textcolor{violet!45!black}{\rule{3mm}{0.75cm}}\textcolor{violet!5!white}{\rule{3mm}{0.75cm}}
-	\medskip\fontsize{18}{16}\sffamily}}
-
-% grey box
+% Grey box
 \newcommand\sectiongrey{\@startsection{section}{1}
 	{0pt}{-\baselineskip}{\baselineskip}
 	{\color{white!15!black}\raggedright\textcolor{white!15!black}{\rule{3mm}{0.75cm}}\textcolor{black!5!white}{\rule{3mm}{0.75cm}}
 	\medskip\fontsize{18}{16}\sffamily}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%                Subsections                %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Subsection in alphanumeric lowercase
-\renewcommand\thesubsection{\thesection.\alph{subsection}}
-
-\renewcommand\subsection{\@startsection{subsection}{2}{\z@}
-	{-3.25ex\@plus -1ex \@minus -.2ex}
-	{1.5ex \@plus .2ex}
-	{\avantgarboldlarge}}
-
-\renewcommand\subsection{\@startsection{subsection}{1}
-	{0pt}{-\baselineskip}{\baselineskip}
-	{\raggedright\medskip\fontsize{14}{16}\sffamily}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%               Subsubsections              %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}
-	{-3.25ex\@plus -1ex \@minus -.2ex}
-	{1.5ex \@plus .2ex}
-	{\avantgarbold}}
-
-\renewcommand\subsubsection{\@startsection{subsubsection}{1}
-	{0pt}{-\baselineskip}{\baselineskip}
-	{\raggedright\medskip\fontsize{12}{16}\sffamily}}
