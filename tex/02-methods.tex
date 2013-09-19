@@ -18,11 +18,13 @@
 	\section{\textcolor{green!45!black}{Les avantages de l'intégration de données}}
 
 		\subsection{\textcolor{green!45!black}{Les avantages de l'intégration de données d'expression des gènes et d'interactions protéine-protéine}}
-			\mylettrine{N}{ous} avons introduit dans le chapitre précédent les signatures prédictives dans le cancer du sein, ainsi que les limitations des technologies utilisées.
+			\mylettrine{N}{ous} avons introduit dans le chapitre précédent les signatures prédictives dans le cancer du sein, ainsi que les limitations des technologies utilisées ~\label{def:limitations}.
+			Ces limitations sont dues d'une part à la topologie des données et du double fléau de la dimension et de la parcimonie.
+			Et d'autres part, à la biologie du cancer et des gènes directeurs en amont qui non seulement sont à l'origine du cancer mais qui dérégulent les gènes en aval et ne sont de ce fait pas détectés.
 			Nous allons maintenant voir quels sont les avantages de l'intégration de données sur les performances de ces signatures.
 			Reprenant les travaux de \citeauthor{vandevijver2002} et \citeauthor{Wang2005} sur l'analyse des jeux de données ayant permis l'établissement de signatures, \citeauthor{Chuang2007} rappellent les problèmes soulevés par ces prédentes études.
 
-			Les ensembles de gènes permettant de prédire la rechute métastatique dans une étude sont moins efficaces quand il s'agit de prédire la rechute métastique sur le jeu de données de l'autre étude \citep{EinDor2006}.
+			Les signatures de gènes permettant de prédire la rechute métastatique dans une étude sont moins efficaces, ne permettent pas suffisament de généraliser, quand il s'agit de prédire la rechute métastique sur le jeu de données de l'autre étude \citep{EinDor2006}.
 			De plus, seulement trois gènes sont communs entre ces deux signatures à 70 et 76 gènes.
 			L'hypothèse des gènes directeurs, à l'origine du cancer, pertubant les gènes en aval est reprise ici pour expliquer ces différences entre ces deux ensembles de gènes.
 			Pour circonvenir à ces inconvénients, l'utilisation de données d'interaction protéine-protéine permet de combiner les mesures d'expression des gènes issus de réseaux communs.
@@ -46,11 +48,11 @@
 		\subsection{\textcolor{green!45!black}{L'intégration de données d'expression des gènes et d'interactions protéine-protéine}}
 			\mylettrine{C}{omme} nous venons de le détailler, cette méthode présente des avantages comparé aux méthodes classiques d'analyse de données d'expression des gènes.
 			Nous allons détailler rapidement ici la méthode de \citeauthor{Chuang2007}.
-			Plusieurs types de données sont nécessaires pour réaliser cette intégration.
-			Il faut tout d'abord des données d'expression des gènes, ainsi que les données cliniques correspondantes, que nous détaillerons dans la partie ~\ref{sec:GEP}.
-			Des données d'interactions protéine-protéine, que nous nous détaillerons dans la partie ~\ref{sec:IPP}, sont également indispensables.
-			Elles sont utilisés pour assigner des ensembles de gènes sur des sous-réseaux.
+			Cette méthode d'intégration utilise deux types de données.
+			Le premier type est les données d'expression des gènes, ainsi que les données cliniques correspondantes, que nous détaillerons dans la partie ~\ref{sec:GEP}.
+			Le second type de données utilisée est les données d'interactions protéine-protéine, que nous nous détaillerons dans la partie ~\ref{sec:IPP}.
 			Les conditions cliniques des patients (\emph{ie} métastatique ou non-métastatique) permettent de différencier l'expression des gènes constituant les sous-réseaux pour constituer une matrice d'activité.
+			Elles sont utilisés pour assigner des ensembles de gènes sur des sous-réseaux.
 			Cette matrice d'activité sert à attribuer un score global à chaque sous-réseau, dérivé de l'expression de chacun des gènes le constituant.
 			Des sous-réseaux générés par permutation permettent alors de sélectionner les sous-réseaux discrimants.
 			Les sous-réseaux ainsi sélectionnés sont utilisés pour identifier les gènes causant la maladie, et la matrice d'activité du sous-réseau est utilisé pour entrainer un classifieur.
@@ -73,13 +75,13 @@
 			Notre approche est une réimplémentation totale de l'algorithme développé par \citeauthor{Chuang2007}, avec la capacité supplémentaire de pouvoir prendre en compte plusieurs jeux de données d'expression des gènes.
 
 			Nous allons d'abord détailler les données que nous avons utilisés tout au long de ces travaux.
-			Et ensuite nous détaillerons l'algorithme.
+			Ensuite, nous détaillerons l'algorithme.
 
-	\section{\textcolor{green!45!black}{Données d'expression des gènes}}\label{sec:GEP}
+	\section{\textcolor{green!45!black}{Données transcriptome}}\label{sec:GEP}
 
-		\subsection{\textcolor{green!45!black}{Constitution d'un compendium de données d'expression des gènes dans le cancer du sein}}
-			\mylettrine{N}{ous avons} exploré les sites de dépôts de données publiques, ainsi que la littérature, et avons sélectionné les jeux de données dont les conditions cliniques étaient disponibles.
-			Nous avons téléchargé sur Gene Expression Omnibus, ou sur le site dédié de l'auteur l'ensemble des jeux de données. Si cela était possible nous avons téléchargé les données brutes, et avons réalisé une normalisation gcrma (package affy du package bioconductor) via R.
+		\subsection{\textcolor{green!45!black}{Constitution d'un compendium de données transcriptome dans le cancer du sein}}
+			\mylettrine{P}{our constituer} une compendium de données d'expression, nous avons exploré les sites de dépôts de données publiques, ainsi que la littérature, et avons sélectionné les jeux de données dont les conditions cliniques étaient disponibles.
+			Nous avons téléchargé l'ensemble des jeux de données sur le dépôt du Gene Expression Omnibus (REF), ou sur le site dédié de l'auteur. Si cela était possible nous avons téléchargé les données brutes, et avons réalisé une normalisation gcrma (package affy du package Bioconductor) sous R.
 
 			\begin{table}
 				\begin{center}
@@ -131,7 +133,7 @@
 
 			Nous avons utilisé ces jeux de données d'expression dans le cancer du sein pour deux analyses.
 			Pour la première analyse, non supervisée, nous avons uniquement utilisé comme données cliniques l'événement DMFS.
-			Voici les jeux de données que nous avons finalement utilisés pour notre première analyse (\emph{cf} ~\ref{chap:results1}).
+			Voici les jeux de données que nous avons sélectionnés pour notre première analyse (\emph{cf} ~\ref{chap:results1}).
 
 			\begin{table}
 				\begin{center}
@@ -176,18 +178,21 @@
 			\end{table}
 
 			\pagebreak
-			Pour notre seconde analyse, supervisée, nous avons choisi par soucis d'homogénéisation de ne sélectionner que les patientes sans traitements supplémentaires, et ainsi éviter de séparer les patientes en fonction de la réponse au traitement.
-			Dans les données cliniques nous récupérions également les expressions des \aclp{ER}.
+			Pour notre seconde analyse, supervisée, nous avons choisi de ne sélectionner que les patientes sans traitements supplémentaires par soucis d'homogénéisation, et ainsi éviter de séparer les patientes en fonction de la réponse au traitement.
+			Nous avons également tenu compte de l'expression des \aclp{ER}.
 			Dans le but d'avoir un ensemble d'échantillons le plus homogène possible, nous les avons soigneusement choisi en nous basant sur les données cliniques accessibles.
-			Toutes les informations cliniques ont été téléchargés sur \acs{GEO} le site de dépôt de bases de données publiques du \acs{NCBI}, pour les jeux de données préalablement récupérés sur ce même site \citep{Desmedt2008, Loi2008, Sabatier2011, Schmidt2008, Wang2005}, ou sur le site internet de l'auteur\footnote{\url{bioinformatics.nki.nl/data.php}} pour le jeu de données de van de Vijver \citep{vandevijver2002}.
+			%Toutes les informations cliniques ont été téléchargés sur \acs{GEO} le site de dépôt de bases de données publiques du \acs{NCBI}, pour les jeux de données préalablement récupérés sur ce même site \citep{Desmedt2008, Loi2008, Sabatier2011, Schmidt2008, Wang2005}, ou sur le site internet de l'auteur\footnote{\url{bioinformatics.nki.nl/data.php}} pour le jeu de données de van de Vijver \citep{vandevijver2002}.
 			Les données cliniques qui nous intéressaient, étaient :
 			\begin{itemize}
 				\item Le status \acs{DMFS}
 				\item Le temps de mesure de ce status \acs{DMFS}
 				\item Le status \acs{ER}
 				\item La présence ou non de traitement, et sa nature éventuelle
-				\item La présence ou non de ganglions, et leur nombre éventuel
 			\end{itemize}
+
+			Le status \acs{DMFS} et son temps de mesure, nous ont permi de censurer les échantillons (DEV).
+			Le satus \acs{ER} nous a permi de diviser les échantillons en deux groupes pour nos analyses.
+			Traitement (DEV)
 
 			\begin{table}
 				\begin{center}
@@ -211,7 +216,7 @@
 					\end{tabular}
 					\label{tab:Met:DSS}
 					\vspace{5ex}
-					\caption*{L'utilisation de 6 jeux données nous donne l'accès à plus de 1500 tumeurs pour notre analyse supervisée.}
+					\caption*{L'utilisation de 6 jeux de données nous donne l'accès à plus de 1500 tumeurs pour notre analyse supervisée.}
 				\end{center}
 			\end{table}
 
@@ -231,8 +236,8 @@
 		\subsection{\textcolor{green!45!black}{Nature des interactions et bases de données d'interactions utilisées}}
 			\mylettrine{L}{es} interactions contenues dans les bases de données d'interactions protéine-protéine sont récoltés par différentes techniques, et sont également de différente nature.
 			Nous considérons commes sûres les interactions décrites dans la littérature et celle vérifiées par une technique de double hybride dans la levure.
-			Les interactions de complexes par Co-immuno-précipitation ne sont pas directes, mais concernent des protéines qui font parties d'un même complexe.
-			Enfin, les interactions sont des prédictions obtenues par divers algorithmes, et ne sont pas vérifiés.
+			Les interactions de complexes par co-immuno-précipitation ne sont pas directes, mais concernent des protéines qui font parties d'un même complexe.
+			Enfin, les interactions \emph{in silico} sont des prédictions obtenues par divers algorithmes, et ne sont pas validées \emph{in vivo} ou \emph{in vitro}.
 			Elles sont donc moins sûres que les autres interactions. 
 
 			HPRD \citep{Prasad2009}, INTAct \citep{Aranda2010}, DIP \citep{Xenarios2000} et MINT \citep{Zanzoni2002} contiennent des interactions décrites dans la littérature et vérifiées par double hybride.
@@ -242,10 +247,10 @@
 
 	\section{\textcolor{green!45!black}{Données et outils supplémentaires}}
 		\mylettrine{N}{ous} utilisons également des données supplémentaires pour les besoins de notre algorithme.
-			Pour l'annotation des différentes plateformes de puces à \acs{ADN}, nous utilisons les fichiers fournis par Resourcerer \citep{Tsai2001}.
+			Pour l'annotation des différentes plateformes de puces à \acs{ADN}, nous utilisons les fichiers fournis par la plateforme d'annotation de puces à \acs{ADN} Resourcerer \citep{Tsai2001}.
 			Pour l'annotation des gènes, nous utilisons le fichier Homo\_sapiens.gene\_info.gz fourni par le \acs{NCBI}\footnote{\url{ftp://ftp.ncbi.nlm.nih.gov/gene/DATA/GENE_INFO/Mammalia/}}.
 
-			Nous avons également utilisés des outils supplémentaires pour la vizualisation et les analyses de nos résultats.
+			Nous avons également utilisé des outils supplémentaires pour la visualisation et les analyses de nos résultats.
 			Pour visualiser nos sous-réseaux, nous avons utilisé le logiciel libre Graphviz\footnote{\url{http://graphviz.org/}} développé par AT\&T Research et le modèle de rendu neato.
 			Pour analyser l'enrichissement en terme GO, nous avons utilisé le programme ErmineJ \citep{Gillis2010}.
 			Pour notre analyse supervisée ~\ref{chap:results2} nous utilisons la librarie libSVM \citep{Chang2007} pour classifier nos échantillons.
@@ -256,13 +261,13 @@
 
 		\subsection{\textcolor{green!45!black}{Détection des sous-réseaux}}
 			\mylettrine{L}{a première} étape de notre algorithme est la détection de sous-réseaux.
-			Les données utilisées par \acs{ITIfr} en entrée sont d'une part des données d'expressions des gènes, ainsi que les conditions cliniques correspondantes aux patients, et des données d'interactions protéine-protéine que nous avons détaillés précédemment (données d'expressions des gènes \ref{sec:GEP}, données d'interactions protéine-protéine \ref{sec:IPP}).
+			Les données utilisées par \acs{ITIfr} en entrée sont d'une part des profils d'expressions des gènes, ainsi que les conditions cliniques correspondantes aux patients, et des données d'interactions protéine-protéine, détaillés précédemment (données d'expressions des gènes \ref{sec:GEP}, données d'interactions protéine-protéine \ref{sec:IPP}).
 			Les données d'interactions protéine-protéine sont rassemblées pour ne former qu'un seul interactome.
-			Les interactions d'une protéine vers elle même n'ont pas été gardées.
-			Nous avons gardés les interactions en nous basant sur l'unicité de l'identifiant gene ID fourni par les fichiers d'annotations du NCBI. 
+			Les auto-interactions (une protéine vers elle) même n'ont pas été gardées.
+			Nous avons gardés les interactions en nous basant sur l'unicité du numéro d'accession gene ID fourni par les fichiers d'annotations du NCBI. 
 			Les données d'expressions des gènes sont considérées séparément pour chacun des jeux de données utilisés.
 			Chaque gène est utilisé successivement comme graine pour créer un sous-réseau.
-			Ce processus est parallèlisé sur un cluster de calcul de type BEOWULF.
+			Ce processus est parallèlisé sur un cluster de calcul de type Beowulf.
 			Pour chacun des jeux de données d'expression des gènes, la corrélation des conditions cliniques avec les \acs{GEP} est calculé.
 			Ainsi, si un gène n'a pas d'expression dans un jeu de données particulier, à cause des différences entre les plateformes, il peut quand même être pris en compte pour la constitution d'un sous-réseaux.
 			Récursivement nous considérons le premier voisin du gène graine, et l'ajoutons à notre sous-réseau en construction, si l'ajout de ce gène améliore le score du sous-réseau, suivant l'équation \ref{eq:score} :
@@ -349,7 +354,7 @@
 				\end{center}
 			\end{figure}
 
-			Les résultats seront exploités dans la partie ~\ref{chap:results2}
+			Les résultats seront exploités dans la partie ~\ref{chap:results2}.
 
 	\section{\textcolor{green!45!black}{Conclusion}}
-		\mylettrine{A}{près} avoir détaillé notre méthode, nous allons maintenant présenter les résultats que nous avons obtenus. Tout d'abord, nous allons détailler nos résultats sur une analyse non-supervisée~\ref{chap:results1}, puis par la suite nous allons détailler nos résultats sur une analyse supervisée~\ref{chap:results2}.
+		\mylettrine{A}{près} avoir détaillé notre méthode, nous allons maintenant présenter les résultats que nous avons obtenus. Tout d'abord, nous allons détailler nos résultats sur une analyse non-supervisée~\ref{chap:results1}, puis sur une analyse supervisée~\ref{chap:results2}.
