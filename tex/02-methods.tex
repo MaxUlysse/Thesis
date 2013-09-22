@@ -18,7 +18,7 @@
 	\section{\textcolor{green!45!black}{Les avantages de l'intégration de données}}
 
 		\subsection{\textcolor{green!45!black}{Les avantages de l'intégration de données d'expression des gènes et d'interactions protéine-protéine}}
-			\mylettrine{N}{ous} avons introduit dans le chapitre précédent les signatures prédictives dans le cancer du sein, ainsi que les limitations des technologies utilisées ~\label{def:limitations}.
+			\mylettrine{N}{ous avons introduit} dans le chapitre précédent les signatures prédictives dans le cancer du sein, ainsi que les limitations des technologies utilisées ~\ref{def:limitations}.
 			Ces limitations sont dues d'une part à la topologie des données et du double fléau de la dimension et de la parcimonie.
 			Et d'autres part, à la biologie du cancer et des gènes directeurs en amont qui non seulement sont à l'origine du cancer mais qui dérégulent les gènes en aval et ne sont de ce fait pas détectés.
 			Nous allons maintenant voir quels sont les avantages de l'intégration de données sur les performances de ces signatures.
@@ -46,7 +46,7 @@
 			\end{figure}
 
 		\subsection{\textcolor{green!45!black}{L'intégration de données d'expression des gènes et d'interactions protéine-protéine}}
-			\mylettrine{C}{omme} nous venons de le détailler, cette méthode présente des avantages comparé aux méthodes classiques d'analyse de données d'expression des gènes.
+			\mylettrine{C}{omme nous venons} de le détailler, cette méthode présente des avantages comparé aux méthodes classiques d'analyse de données d'expression des gènes.
 			Nous allons détailler rapidement ici la méthode de \citeauthor{Chuang2007}.
 			Cette méthode d'intégration utilise deux types de données.
 			Le premier type est les données d'expression des gènes, ainsi que les données cliniques correspondantes, que nous détaillerons dans la partie ~\ref{sec:GEP}.
@@ -64,23 +64,23 @@
 				\label{fig:Chuang2007IntegrationAlgorithm}
 			\end{figure}
 		
-	\section{\textcolor{green!45!black}{L'\acl{ITIfr}}}
+	\section{\textcolor{green!45!black}{L'Intégration Transcriptome-Interactome}}
 
 		\subsection{\textcolor{green!45!black}{L'intégration massive de données d'expression des gènes et de données d'interactions protéine-protéine}}
 
-			\mylettrine{L'}{intégration} massive de données d'expression des gènes et de données d'interactions protéine-protéine est la solution que nous avons dévelloppé pour circonvenir aux inconvénients des approches classiques des méthodes de prédiction de la rechute métastatique dans le cancer du sein.
+			\mylettrine{L'}{intégration massive de données} d'expression des gènes et de données d'interactions protéine-protéine est la solution que nous avons développé pour circonvenir aux inconvénients des approches classiques des méthodes de prédiction de la rechute métastatique dans le cancer du sein.
 
 			Nous avons vu précedemment que les approches classiques manquaient de reproductibilité, dépendaient grandement des jeux d'apprentissage et étaient moins performantes utilisées sur un jeu de données indépendant.
 
-			Notre approche est une réimplémentation totale de l'algorithme développé par \citeauthor{Chuang2007}, avec la capacité supplémentaire de pouvoir prendre en compte plusieurs jeux de données d'expression des gènes.
+			Notre approche est une réimplémentation totale de l'algorithme développé par \citeauthor{Chuang2007}, avec la capacité supplémentaire de pouvoir prendre en compte plusieurs jeux de données d'expression des gènes pour réduire l'effet du fléau de la dimension par l'augmentation du nombre d'échantillons utilisés.
 
-			Nous allons d'abord détailler les données que nous avons utilisés tout au long de ces travaux.
+			Nous allons d'abord détailler les données que nous avons utilisées tout au long de ces travaux.
 			Ensuite, nous détaillerons l'algorithme.
 
 	\section{\textcolor{green!45!black}{Données transcriptome}}\label{sec:GEP}
 
 		\subsection{\textcolor{green!45!black}{Constitution d'un compendium de données transcriptome dans le cancer du sein}}
-			\mylettrine{P}{our constituer} une compendium de données d'expression, nous avons exploré les sites de dépôts de données publiques, ainsi que la littérature, et avons sélectionné les jeux de données dont les conditions cliniques étaient disponibles.
+			\mylettrine{P}{our constituer un compendium} de données d'expression, nous avons exploré les sites de dépôts de données publiques, ainsi que la littérature, et avons sélectionné les jeux de données dont les conditions cliniques étaient disponibles.
 			Nous avons téléchargé l'ensemble des jeux de données sur le dépôt du Gene Expression Omnibus (REF), ou sur le site dédié de l'auteur. Si cela était possible nous avons téléchargé les données brutes, et avons réalisé une normalisation gcrma (package affy du package Bioconductor) sous R.
 
 			\begin{table}
@@ -177,7 +177,6 @@
 				\end{center}
 			\end{table}
 
-			\pagebreak
 			Pour notre seconde analyse, supervisée, nous avons choisi de ne sélectionner que les patientes sans traitements supplémentaires par soucis d'homogénéisation, et ainsi éviter de séparer les patientes en fonction de la réponse au traitement.
 			Nous avons également tenu compte de l'expression des \aclp{ER}.
 			Dans le but d'avoir un ensemble d'échantillons le plus homogène possible, nous les avons soigneusement choisi en nous basant sur les données cliniques accessibles.
@@ -222,45 +221,41 @@
 
 			Après avoir détaillé les jeux de données, leur constitutions, nous allons étudier les interactions protéine-protéine.
 
-			\pagebreak
-
 	\section{\textcolor{green!45!black}{Interactions protéine-protéine}}\label{sec:IPP}
 
 		\subsection{\textcolor{green!45!black}{Assemblage d'interactomes humains}}
-			\mylettrine{L}{a} biologie moléculaire décrit les différents constituants de la cellule (protéines, \acs{ADN}, \acs{ARN} et autres molécules). Mais un organisme vivant est une entité complexe, et il est difficile de le comprendre totalement en analysant des parties spécifiques. C'est pour cela que l'on envisage l'organisme comme un système ou un réseau d'interactions.
+			\mylettrine{L}{a biologie moléculaire} décrit les différents constituants de la cellule (protéines, \acs{ADN}, \acs{ARN} et autres molécules). Mais un organisme vivant est une entité complexe, et il est difficile de le comprendre totalement en analysant des parties spécifiques. C'est pour cela que l'on envisage l'organisme comme un système ou un réseau d'interactions.
 			Les protéines interagissent les unes avec les autres dans une cellule, et ces interactions donnent lieu à des fonctions biologiques et un comportement dynamique du système cellulaire. Généralement ces interactions protéine-protéine sont temporelles, spatiales, ou dépendantes d'une condition spécifique.
 			L'un des plus grands enjeux dans l'ère post-génomique de la biologie est de récolter des informations d'interactions entre protéines, \acsp{ADN} et autres petites molécules, et de comprendre comment ces interactions sont organisées.
 			Les techniques à haut débit ont permis la génération d'un grand nombre de données d'interactions protéine-protéine.
 			Pour \acs{ITIfr} nous avons récupéré différentes bases de données d'interactions protéine-protéine.
 
 		\subsection{\textcolor{green!45!black}{Nature des interactions et bases de données d'interactions utilisées}}
-			\mylettrine{L}{es} interactions contenues dans les bases de données d'interactions protéine-protéine sont récoltés par différentes techniques, et sont également de différente nature.
+			\mylettrine{L}{es interactions contenues} dans les bases de données d'interactions protéine-protéine sont récoltés par différentes techniques, et sont également de différente nature.
 			Nous considérons commes sûres les interactions décrites dans la littérature et celle vérifiées par une technique de double hybride dans la levure.
 			Les interactions de complexes par co-immuno-précipitation ne sont pas directes, mais concernent des protéines qui font parties d'un même complexe.
 			Enfin, les interactions \emph{in silico} sont des prédictions obtenues par divers algorithmes, et ne sont pas validées \emph{in vivo} ou \emph{in vitro}.
 			Elles sont donc moins sûres que les autres interactions. 
 
-			HPRD \citep{Prasad2009}, INTAct \citep{Aranda2010}, DIP \citep{Xenarios2000} et MINT \citep{Zanzoni2002} contiennent des interactions décrites dans la littérature et vérifiées par double hybride.
-			CORUM \citep{Ruepp2008} contient des interactions de complexes.
+			\ac{HPRD} \citep{Prasad2009}, INTAct \citep{Kerrien2012}, \ac{DIP} \citep{Xenarios2000} et \ac{MINT} \citep{Zanzoni2002} contiennent des interactions décrites dans la littérature et vérifiées par double hybride.
+			\ac{CORUM} \citep{Ruepp2008} contient des interactions de complexes.
 			Cocite \citep{Ramani2005} contient des interactions prédites in silico.
 
 
 	\section{\textcolor{green!45!black}{Données et outils supplémentaires}}
-		\mylettrine{N}{ous} utilisons également des données supplémentaires pour les besoins de notre algorithme.
+		\mylettrine{N}{ous utilisons} également des données supplémentaires pour les besoins de notre algorithme.
 			Pour l'annotation des différentes plateformes de puces à \acs{ADN}, nous utilisons les fichiers fournis par la plateforme d'annotation de puces à \acs{ADN} Resourcerer \citep{Tsai2001}.
 			Pour l'annotation des gènes, nous utilisons le fichier Homo\_sapiens.gene\_info.gz fourni par le \acs{NCBI}\footnote{\url{ftp://ftp.ncbi.nlm.nih.gov/gene/DATA/GENE_INFO/Mammalia/}}.
 
 			Nous avons également utilisé des outils supplémentaires pour la visualisation et les analyses de nos résultats.
 			Pour visualiser nos sous-réseaux, nous avons utilisé le logiciel libre Graphviz\footnote{\url{http://graphviz.org/}} développé par AT\&T Research et le modèle de rendu neato.
 			Pour analyser l'enrichissement en terme GO, nous avons utilisé le programme ErmineJ \citep{Gillis2010}.
-			Pour notre analyse supervisée ~\ref{chap:results2} nous utilisons la librarie libSVM \citep{Chang2007} pour classifier nos échantillons.
-
-	\pagebreak
+			Pour notre analyse supervisée ~\ref{chap:results2} nous utilisons la librarie libSVM \citep{Chang2007} pour classifier nos échantillons ~\ref{sub:classification}.
 
 	\section{\textcolor{green!45!black}{Algorithme}}
 
 		\subsection{\textcolor{green!45!black}{Détection des sous-réseaux}}
-			\mylettrine{L}{a première} étape de notre algorithme est la détection de sous-réseaux.
+			\mylettrine{L}{a première étape} de notre algorithme est la détection de sous-réseaux.
 			Les données utilisées par \acs{ITIfr} en entrée sont d'une part des profils d'expressions des gènes, ainsi que les conditions cliniques correspondantes aux patients, et des données d'interactions protéine-protéine, détaillés précédemment (données d'expressions des gènes \ref{sec:GEP}, données d'interactions protéine-protéine \ref{sec:IPP}).
 			Les données d'interactions protéine-protéine sont rassemblées pour ne former qu'un seul interactome.
 			Les auto-interactions (une protéine vers elle) même n'ont pas été gardées.
@@ -271,14 +266,20 @@
 			Pour chacun des jeux de données d'expression des gènes, la corrélation des conditions cliniques avec les \acs{GEP} est calculé.
 			Ainsi, si un gène n'a pas d'expression dans un jeu de données particulier, à cause des différences entre les plateformes, il peut quand même être pris en compte pour la constitution d'un sous-réseaux.
 			Récursivement nous considérons le premier voisin du gène graine, et l'ajoutons à notre sous-réseau en construction, si l'ajout de ce gène améliore le score du sous-réseau, suivant l'équation \ref{eq:score} :
-			\begin{equation}\label{eq:score}
-				S_{s,d}=\frac{\sqrt{n_{d}}}{\sqrt{\max n_{d}(DS)}}\Bigg|corr\Bigg(\frac{1}{n}\sum_{g\in S}e(g,d),cc(d)\Bigg)\Bigg|
-			\end{equation}
-			Le score du sous-réseaux étant calculé en fonction de la corrélation entre les conditions cliniques et les \acs{GEP}.
-			Au fur et à mesure de l'ajout de gènes au sous-réseau, l'apport d'un nouveau gène peut n'augmenter que de très peu le score du sous-réseau.
-			C'est pourquoi nous avons ici mis une valeur de seuil pour l'amélioration des sous-réseaux.
+				\begin{equation}\label{eq:score}
+					S_{s,d}=\frac{\sqrt{n_{d}}}{\sqrt{\max n_{d}(DS)}}\Bigg|corr\Bigg(\frac{1}{n}\sum_{g\in S}e(g,d),cc(d)\Bigg)\Bigg|
+				\end{equation}
+			$S_{s,d}$ est le score du sous-réseau $s$ calculé sur le jeu de données $d$.
+			$d$ est un des jeux de données du compendium $DS$, de taille $NS$.
+			$corr$ est la corrélation de Pearson mesurée entre la moyenne de l'expression des gènes $e(g,d)$ appartenants au sous-réseau $s$ et le vecteur $cc$ contenant les conditions cliniques des patients du jeux de données $d$.
+			Le score est pondéré par la racine carrée du nombre d'échantillons $nd$ du jeu de données $d$ divisé par le nombre maximum d'échantillons des jeux de données de $DS$.
+	
+			Le nombre de gènes ajoutés au sous-réseau influence la corrélation entre la moyenne de l'expression des gènes du sous-réseau et les conditions cliniques, et donc le score du sous-réseau.
 
-			Un score global, non utilisé pour le calcul, mais pour simplifier l'affichage des résultats est calculé en faisant la moyenne des scores sur les différents jeux de donnés d'expression utilisés, suivant l'équation \ref{eq:global} :
+			Au plus des sous-réseaux sont ajoutés, au moins l'apport d'un nouveau gène au sous-réseau influencera la valeur du score.
+			C'est pourquoi une valeur de seuil nous sert ici pour sélectionner les gènes à ajouter, et ainsi éviter d'ajouter à chaque sous-réseaux la totalité des gènes de l'interactome.
+
+			Un score global, non utilisé pour le calcul, mais pour simplifier l'affichage des résultats est calculé suivant l'équation \ref{eq:global} :
 			\begin{equation}\label{eq:global}
 				S_{s}=\frac{1}{NS}\sum_{d\in DS}S(s,d)
 			\end{equation}
@@ -290,24 +291,37 @@
 					\label{fig:Algorithme}
 				\end{center}
 			\end{figure}
-			
-			Reprenant cette étape de détection des sous-réseaux, nous construisons, dans le but de valider statistiquement les sous-réseaux que nous venons de détecter, des sous-réseaux de manière aléatoires.
-			Nous allons détailler cette étape dans la prochaine partie.
+			$S_{s}$ est le score global du sous-réseau $s$.
+			La moyenne des scores est calculé en sommant pour chaque jeu de données $s$ du compendium $DS$, le score $S_{s,d}$ du sous-réseau $s$ sur le jeu de données $s$
+			Et en divisant cette somme par $NS$, le nombre de jeux de données dans le compendium $DS$.
+		
+			Reprenant cette méthode de construction des sous-réseau lors de cette détection, nous construisons, dans le but de valider statistiquement les sous-réseaux que nous venons de détecter, des distributions aléatoires de sous-réseaux.
 
 		\subsection{\textcolor{green!45!black}{Validation statistique}}
-			\mylettrine{N}{ous utilisons} trois méthodes pour générer des sous-réseaux aléatoires, se basant sur le principe de construction de sous-réseaux expliqué précédement.
-			Premièrement, nous mélangeons les conditions cliniques, et essayons de détecter des sous-réseaux.
+			\mylettrine{D}{ans le but de définir} des distributions aléatoires de scores, nous permettant de vérifier l'hyphothèse nulle, reliant l'expression des gènes et les réseaux d'interactions, nous utilisons trois méthodes pour générer des sous-réseaux aléatoires
+			Ces méthodes se basent sur le principe de construction de sous-réseaux expliqué précédement.
+			Premièrement, nous mélangeons les conditions cliniques.
 			Secondement, la décision d'ajout d'un gène à un sous-réseau ne dépend plus de la corrélation des conditions cliniques avec les \acs{GEP}, mais est aléatoire.
-			Troisièment, nous mélangeons nos interactions protéines-protéines, et essayons de détecter des sous-réseaux.
-			Ces trois méthodes différentes nous permettent de générer trois ensemble de sous-réseaux qui vont servir pour valider statistiquement les véritables sous-réseaux détectés précédemment.
+			Troisièment, nous mélangeons nos interactions protéines-protéines.
+			
+			Ces trois méthodes différentes nous permettent de générer trois distributions aléatoires de scores qui vont servir pour valider statistiquement les véritables sous-réseaux détectés précédemment.
 			Pour garder les ensembles des sous-réseaux aléatoires comparables avec les sous-réseaux détectés, les distributions de leurs tailles sont forcés pour correspondre à celle des sous-réseaux détectés par modèle gaussien.
-			Les distributions des scores des sous-réseaux aléatoires sont modelés par mixture de deux distributions gaussiennes.
+			Les distributions des scores des sous-réseaux aléatoires sont modelisés par mixture de deux distributions gaussiennes.
 			Ces distributions sont utiliser pour fixer des seuils sur les scores, indépendamment des jeux de donnés d'expression, et ainsi leurs attribuer des p-values.
 			Le mélange des interactions protéine-protéines ne permet pas de génerer un nombre important de sous-réseaux, confirmant l'importance du lien entre les intéractions protéines-protéines et le niveau d'expression des gènes.
 			La validation statistique est réalisée avec Matlab Statistical Toolbox R2010b.
 
+			\begin{figure}
+				\begin{center}
+					\def\svgwidth{\columnwidth}\input{figures/DistributionScore.pdf_tex}
+					\caption{Distribution des scores des sous-réseaux pour le jeu de données Desmedt.}
+					\caption*{Histogramme rouge : distribution aléatoire de sous-réseaux. Courbe bleue : distribution normale (moyenne = 0,0669, $\sigma$ = 0,0777. Histogramme bleu : distribution réelle des sous-réseaux (en A l'ensemble des sous-réseaux avant filtrage, en B les sous-réseaux obtenus après filtrage).}
+					\label{fig:Distribution}
+				\end{center}
+			\end{figure}
+
 		\subsection{\textcolor{green!45!black}{Sélection de sous-réseaux}}
-			\mylettrine{L}{es p-values} calculées lors de l'étape de validation statistique sont utilisées pour filtrer les sous-réseaux détectés statistiquement significatifs.
+			\mylettrine{L}{es p-values calculées} lors de l'étape de validation statistique sont utilisées pour filtrer les sous-réseaux détectés statistiquement significatifs.
 			Les distributions des trois ensembles de sous-réseaux aléatoires nous ont permis d'attribuer 3 p-values différentes pour chacun des sous-réseaux.
 			Nous sélectionnons un seuil de p-value pour chacune des distributions aléatoires et l'utilisons pour filtrer les sous-réseaux détectés et générons trois ensembles de sous-réseaux stastitiquement significatifs suivant chacune des méthodes précédemment expliquées.
 			Nous réalisons alors l'intersection de ces trois ensemble pour constituer un ensemble de sous-réseaux dont la significativité est validé par trois distributions aléatoires.
@@ -317,9 +331,9 @@
 			Nous allons maintenant détailler la réalisation d'une ressource bioinformatique contenant les différents sous-réseaux trouvés lors de nos analyses.
 
 		\subsection{\textcolor{green!45!black}{Création d'une ressource bioinformatique permettant l'analyse des sous-réseaux}}
-			\mylettrine{P}{our permettre} le parcours des différents ensembles de sous-réseaux trouvés lors de nos analyses, nous avons créé une ressource bioinformatique permettant, l'affichage, l'interprétation et l'analyse des sous-réseaux.
-			Cette ressource est accessible par internet, et constitue le site internet companion de nos publications \footnote{\url{http://iti.sourceforge.net/}}.
-			Dans un soucis de reproductibilité de la recherche, le code source du projet \ac{ITIfr} est disponible sous licence CeCILL sur sourceforge \footnote{\url{http://sourceforge.net/projects/iti/}}.
+			\mylettrine{P}{our permettre le parcours} des différents ensembles de sous-réseaux trouvés lors de nos analyses, nous avons créé une ressource bioinformatique permettant, l'affichage, l'interprétation et l'analyse des sous-réseaux.
+			Cette ressource est accessible par internet, et constitue le site internet companion des publications \footnote{\url{http://iti.sourceforge.net/}}.
+			Dans un soucis de reproductibilité des résultats, le code source du projet \ac{ITIfr} est disponible sous licence CeCILL sur sourceforge \footnote{\url{http://sourceforge.net/projects/iti/}}.
 			Chaque analyse est présentée.
 			Pour chaque analyse nous avons accès aux sous sous-réseaux détectés statistiquement significatifs.
 			Une page présente chacun des sous-réseaux.
@@ -327,24 +341,40 @@
 			Une image en format png est générée par jeux de données d'expression pour chacun des sous-réseaux.
 			Les scores et les p-values du sous-réseau en fonction du jeu de données d'expression permet de vérifier la significativité des sous-réseaux.
 			Pour chacun des gènes du sous-réseau se trouve la valeur de la corrélation des conditions cliniques avec son expression pour chacun des jeux de données d'expression.
-			Pour chacun des gènes, un lien vers la page du gène sur le site du NCBI est fournie, et permet d'utiliser les ressources du NCBI pour analyser plus en détail le gène.
+			Pour chacun des gènes, un lien vers la page du gène sur le site du NCBI est fournie, pour une analyse plus détaillée.
 			Pour permettre plus facilement la navigation d'un sous-réseau à un autre, pour chaque gène il existe une page listant les sous-réseaux dans lesquels il apparait.
 			Enfin, pour chacun des sous-réseaux un enrichissement en terme GO est calculé, par jeux de données d'expression, se basant sur l'apport des gènes du sous-réseaux par rapport à l'ensemble des gènes présents sur la plateforme de puce à \acs{DNA} utilisée pour constituer le jeu de données.
 
+		\subsection{\textcolor{green!45!black}{Utilisation des SVM pour la classification}}\label{sub:classification}
+
+			\mylettrine{L}{es \ac{SVM}}, généralisation des classifieurs linéaires, sont un ensemble de techniques d'apprentissage supervisé destinées à résoudre des problèmes de discrimination et de régression.
+			Ils reposent sur deux idées clés : la notion de marge maximale et la notion de fonction noyau.
+			La marge est la distance entre la frontière de séparation et les échantillons les plus proches.
+			Ces derniers sont appelés vecteurs de support.
+			La frontière de séparation est choisie comme celle qui maximise la marge et minimise la capacité (complexité de la classification).
+			Pour trouver cette frontière séparatrice optimale, à partir d'un ensemble d'apprentissage, le problème est reformulé comme un problème d'optimisation quadratique, pour lequel des solutions existent déjà.
+
+			La deuxième idée clé la fonction noyau.
+			Pour résoudre les problèmes de discrimination non-linéaire, l'espace de représentation des données d'entrées est transformé en un espace de plus grande dimension (potentiellement infinie), dans lequel il est probable qu'il existe une séparatrice linéaire.
+			Une fonction noyau permet de réaliser cela, et a l'avantage de ne pas nécessiter la connaissance explicite de la transformation à appliquer pour le changement d'espace.
+			Elle permet d'éviter la transformation coûteuse d'un produit scalaire dans un espace de grande dimension, en une simple évaluation ponctuelle d'une fonction.
+
+			Les \ac{SVM} permettent de traiter des problèmes de discrimination non-linéaire et sont capables de gérer des données de grandes dimensions, c'est pourquoi nous les utilisons pour classifier nos échantillons.
+
 		\subsection{\textcolor{green!45!black}{Stratification, organisation des données et classification}}
-			\mylettrine{P}{our les besoins} de notre analyse supervisée (cf partie ~\ref{chap:results2}), nous avons organisé laissé de coté un jeu de données d'expression, dans le but d'effectuer une classification finale indépendante.
+			\mylettrine{P}{our les besoins de notre analyse supervisée} (cf partie ~\ref{chap:results2}), nous avons laissé de coté un jeu de données d'expression, dans le but d'effectuer une classification finale indépendante.
 			Avec les autres jeux de données d'expression, nous avons réalisé une stratification à dix couches, utilisant 90\% des données pour apprentissage, et les 10\% restant pour classification.
 			Nous avons utilisé notre algorithme ITI pour sélectionner des sous-réseaux sur chacune de ces dix couches.
-			Nous avons utilisés la librarie libSMV pour cela.
-			Chaque liste de sous-réseaux sélectionnée après validation statistique a été utilisé pour trouver la taille maximisant les performances de la classification.
-			Chaque liste de sous-réseaux nous a permis de créer un modèle SVM pour chacun des jeux de données d'expression utilisés.
-			Nous avons réalisé un vote à la majorité pondéré par la taille de la population du jeux de données.
+			Nous utilisons la librarie libSVM pour créer des modèles \ac{SVM} pour chacun des jeux de données d'expression utilisés ~\ref{sub:classification}.
+			Chaque liste de sous-réseaux sélectionnée après validation statistique a été utilisée pour trouver la taille maximisant les performances de la classification.
+			Pour combiner les différents modèles \ac{SVM}, nous avons réalisé un vote à la majorité pondéré par la taille de la population du jeux de données.
+
 			Chacun de ces ensembles de sous-réseaux a été utilisé pour classifier les 10\% restant.
 			Ces dix classifications nous ont permis d'arriver à un ensemble de sous-réseaux optimaux que nous avons alors regroupés.
 			Chacun des sous-réseaux a été comparé avec les autres, et s'il y avait une superposition entre deux jeux de données, seul celui avec le meilleur score était gardé.
 			Ce dernier ensemble de sous-réseaux a finalement été utilisé pour classifier le jeu de donnés d'expression préalablement mis de coté, et donc indépendant.
-
 			La figure ~\ref{fig:Workflow} détaille cette organisation des données.
+			Les résultats seront exploités dans la partie ~\ref{chap:results2}.
 
 			\begin{figure}
 				\begin{center}
@@ -354,7 +384,5 @@
 				\end{center}
 			\end{figure}
 
-			Les résultats seront exploités dans la partie ~\ref{chap:results2}.
-
 	\section{\textcolor{green!45!black}{Conclusion}}
-		\mylettrine{A}{près} avoir détaillé notre méthode, nous allons maintenant présenter les résultats que nous avons obtenus. Tout d'abord, nous allons détailler nos résultats sur une analyse non-supervisée~\ref{chap:results1}, puis sur une analyse supervisée~\ref{chap:results2}.
+		\mylettrine{A}{près avoir détaillé} notre méthode, nous allons maintenant présenter les résultats que nous avons obtenus et publiés \citep{Garcia2011,Garcia2012}. Tout d'abord, nous allons détailler nos résultats sur une analyse non-supervisée~\ref{chap:results1}, puis sur une analyse supervisée~\ref{chap:results2}.
