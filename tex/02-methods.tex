@@ -5,7 +5,7 @@
 		\begin{center}
 			\begin{tcolorbox}[colback=green!5!white,colframe=green!45!black,arc=0mm]
 				\sffamily
-				Nous détaillerons ici notre méthode d'Intégration Transcriptome Interactome. J'ai choisi d'inclure dans cette section nos chapitres \citep{Garcia2011,Garcia2013}. Ces chapitres étant trop long, ils se trouvent dans les Annexes. Les données utilisées, ainsi que l'algorithme ITI\index{ITI} seront décrit en détail, et les outils utilisés seront décrits briévement.
+				Nous détaillerons ici notre méthode d'Intégration Transcriptome Interactome. J'ai choisi d'inclure dans cette section nos chapitres \citep{Garcia2011,Garcia2013}. Ces chapitres étant trop longs, ils se trouvent dans les Annexes. Les données utilisées, ainsi que l'algorithme ITI\index{ITI} seront décrit en détail, et les outils utilisés seront décrits briévement.
 			\end{tcolorbox}
 			\vspace{5ex}
 			\mtcsetdepth{minitoc}{1}
@@ -41,9 +41,11 @@
 			\begin{figure}
 				\centering
 				\includegraphics[width=\columnwidth]{figures/Chuang2007figS1.png}
-				\caption{Avantages de l'intégration de données d'expression des gènes et d'interactions protéine-protéine sur la précision de la classification de la rechute métastatique par rapport à une analyse classique sur des données d'expression des gènes\citep{Chuang2007}.}
+				\caption{Avantages de l'intégration de données d'expression des gènes et d'interactions protéine-protéine sur la précision de la classification de la rechute métastatique par rapport à une analyse classique sur des données d'expression des gènes par \citeauthor{Chuang2007}.}
 				\label{fig:Chuang2007figS1}
 			\end{figure}
+
+			\pagebreak
 
 		\subsection{\textcolor{green!45!black}{L'intégration de données d'expression des gènes et d'interactions protéine-protéine}}
 			\mylettrine{C}{omme nous venons} de le détailler, cette méthode présente des avantages comparé aux méthodes classiques d'analyse de données d'expression des gènes.
@@ -60,7 +62,7 @@
 			\begin{figure}
 				\centering
 				\includegraphics[width=\columnwidth]{figures/Chuang2007IntegrationAlgorithm.png}
-				\caption{Algorithme détaillant l'intégration de données d'expression des gènes et d'interactions protéine-protéine\citep{Chuang2007}.}
+				\caption{Algorithme détaillant l'intégration de données d'expression des gènes et d'interactions protéine-protéine par \citeauthor{Chuang2007}.}
 				\label{fig:Chuang2007IntegrationAlgorithm}
 			\end{figure}
 		
@@ -137,38 +139,26 @@
 
 			\begin{table}
 				\begin{center}
-					\caption{Liste des jeux de données inclus pour notre analyse non supervisée \citep{Garcia2011} (\emph{cf} ~\ref{chap:results1}).}
-					\begin{tabular}{lccc}
+					\caption{Liste des jeux de données inclus pour notre analyse non supervisée (\emph{cf} ~\ref{chap:results1}).}
+					\begin{tabular}{lcccc}
 						\toprule
-						\multirow{2}{3cm}{\emph{Jeu de données}}	& \multirow{2}{3cm}{\centering\emph{Nombre d'échantillons}}	& \multirow{2}{3cm}{\centering\emph{Nombre de status \acs{DMFS} positif}} & \multirow{2}{3cm}{\centering\emph{Nombre de status \acs{DMFS} négatif}} \\
-									&									&		&		\\
+						\multirow{2}{3cm}{\emph{Jeu de données}}	&  & \multirow{2}{3cm}{\centering\emph{Nombre d'échantillons}}	& \multirow{2}{3cm}{\centering\emph{Nombre de status \acs{DMFS} positif}} & \multirow{2}{3cm}{\centering\emph{Nombre de status \acs{DMFS} négatif}} \\
+						&&&&\\
 						\midrule
-						Desmedt						& 198	& 62	&	136		\\
-						\citep{Desmedt2008}			&		&		&			\\
-						Ivshina						& 249	& 89	&	160		\\
-						\citep{Ivshina2006}			&		&		&			\\
-						Loi							& 117	& 26	&	91		\\
-						\citep{Loi2008}				&		&		&			\\
-						Parker						& 199	& 45	&	154		\\
-						\citep{Parker2009}			&		&		&			\\
-						Pawitan						& 159	& 40	&	119		\\
-						\citep{Pawitan2005}			&		&		&			\\
-						Schmidt						& 200	& 46	&	154		\\
-						\citep{Schmidt2008}			&		&		&			\\
-						Sabatier					& 31	& 9		&	22		\\
-						\citep{Sabatier2011}		&		&		&			\\
-						Sotiriou					& 179	& 40	&	139		\\
-						\citep{Sotiriou2009}		&		&		&			\\
-						van de Vijver				& 295	& 88	&	207		\\
-						\citep{vandevijver2002}		&		&		&			\\
-						Wang						& 286	& 107	&	179		\\
-						\citep{Wang2005}			&		&		&			\\
-						Zhang						& 136	& 20	&	116		\\
-						\citep{Zhang2009a}			&		&		&			\\
-						Zhou						& 54	& 9		&	45		\\
-						\citep{Zhou2007}			&		&		&			\\
+						Desmedt			& \citep{Desmedt2008}		& 198	& 62	&	136		\\
+						Ivshina			& \citep{Ivshina2006}		& 249	& 89	&	160		\\
+						Loi				& \citep{Loi2008}			& 117	& 26	&	91		\\
+						Parker			& \citep{Parker2009}		& 199	& 45	&	154		\\
+						Pawitan			& \citep{Pawitan2005}		& 159	& 40	&	119		\\
+						Schmidt			& \citep{Schmidt2008}		& 200	& 46	&	154		\\
+						Sabatier		& \citep{Sabatier2011}		& 31	& 9		&	22		\\
+						Sotiriou		& \citep{Sotiriou2009}		& 179	& 40	&	139		\\
+						van de Vijver	& \citep{vandevijver2002}	& 295	& 88	&	207		\\
+						Wang			& \citep{Wang2005}			& 286	& 107	&	179		\\
+						Zhang			& \citep{Zhang2009a}		& 136	& 20	&	116		\\
+						Zhou			& \citep{Zhou2007}			& 54	& 9		&	45		\\
 						\midrule
-						Total						& 2103	& 581	&	1522	\\
+						Total			&							& 2103	& 581	&	1522	\\
 						\bottomrule
 					\end{tabular}
 					\label{tab:Met:DSNS}
@@ -177,10 +167,13 @@
 				\end{center}
 			\end{table}
 
+			%Toutes les informations cliniques ont été téléchargés sur \acs{GEO} le site de dépôt de bases de données publiques du \acs{NCBI}, pour les jeux de données préalablement récupérés sur ce même site \citep{Desmedt2008, Loi2008, Sabatier2011, Schmidt2008, Wang2005}, ou sur le site internet de l'auteur\footnote{\url{bioinformatics.nki.nl/data.php}} pour le jeu de données de van de Vijver \citep{vandevijver2002}.
+
+			\pagebreak
+
 			Pour notre seconde analyse, supervisée, nous avons choisi de ne sélectionner que les patientes sans traitements supplémentaires par soucis d'homogénéisation, et ainsi éviter de séparer les patientes en fonction de la réponse au traitement.
 			Nous avons également tenu compte de l'expression des \aclp{ER}.
 			Dans le but d'avoir un ensemble d'échantillons le plus homogène possible, nous les avons soigneusement choisi en nous basant sur les données cliniques accessibles.
-			%Toutes les informations cliniques ont été téléchargés sur \acs{GEO} le site de dépôt de bases de données publiques du \acs{NCBI}, pour les jeux de données préalablement récupérés sur ce même site \citep{Desmedt2008, Loi2008, Sabatier2011, Schmidt2008, Wang2005}, ou sur le site internet de l'auteur\footnote{\url{bioinformatics.nki.nl/data.php}} pour le jeu de données de van de Vijver \citep{vandevijver2002}.
 			Les données cliniques qui nous intéressaient, étaient :
 			\begin{itemize}
 				\item Le status \acs{DMFS}
@@ -195,7 +188,7 @@
 
 			\begin{table}
 				\begin{center}
-					\caption{Liste des jeux de données inclus pour notre analyse supervisée \citep{Garcia2012} (\emph{cf} ~\ref{chap:results2}).}
+					\caption{Liste des jeux de données inclus pour notre analyse supervisée (\emph{cf} ~\ref{chap:results2}).}
 					\begin{tabular}{llr@{/}lr@{/}lr@{/}l}
 						\toprule
 						\emph{Jeu de données} & \emph{Plateforme}	& \multicolumn{2}{c}{\emph{Nombre d'échantillons}}	& \multicolumn{2}{c}{\emph{Statuts DMFS}} & \multicolumn{2}{c}{\emph{Statuts ER}} \\
@@ -237,6 +230,8 @@
 			Enfin, les interactions \emph{in silico} sont des prédictions obtenues par divers algorithmes, et ne sont pas validées \emph{in vivo} ou \emph{in vitro}.
 			Elles sont donc moins sûres que les autres interactions. 
 
+			\pagebreak
+
 			\ac{HPRD} \citep{Prasad2009}, INTAct \citep{Kerrien2012}, \ac{DIP} \citep{Xenarios2000} et \ac{MINT} \citep{Zanzoni2002} contiennent des interactions décrites dans la littérature et vérifiées par double hybride.
 			\ac{CORUM} \citep{Ruepp2008} contient des interactions de complexes.
 			Cocite \citep{Ramani2005} contient des interactions prédites in silico.
@@ -245,14 +240,16 @@
 	\section{\textcolor{green!45!black}{Données et outils supplémentaires}}
 		\mylettrine{N}{ous utilisons} également des données supplémentaires pour les besoins de notre algorithme.
 			Pour l'annotation des différentes plateformes de puces à \acs{ADN}, nous utilisons les fichiers fournis par la plateforme d'annotation de puces à \acs{ADN} Resourcerer \citep{Tsai2001}.
-			Pour l'annotation des gènes, nous utilisons le fichier Homo\_sapiens.gene\_info.gz fourni par le \acs{NCBI}\footnote{\url{ftp://ftp.ncbi.nlm.nih.gov/gene/DATA/GENE_INFO/Mammalia/}}.
+			Pour l'annotation des gènes, nous utilisons le fichier gene info \footnote{Homo\_sapiens.gene\_info.gz} fourni par le \acs{NCBI}\footnote{\url{ftp://ftp.ncbi.nlm.nih.gov/gene/DATA/GENE_INFO/Mammalia/}}.
 
 			Nous avons également utilisé des outils supplémentaires pour la visualisation et les analyses de nos résultats.
-			Pour visualiser nos sous-réseaux, nous avons utilisé le logiciel libre Graphviz\footnote{\url{http://graphviz.org/}} développé par AT\&T Research et le modèle de rendu neato.
+			Pour visualiser nos sous-réseaux, nous avons utilisé le logiciel libre \emph{Graphviz}\footnote{\url{http://graphviz.org/}} développé par AT\&T Research et le modèle de rendu \emph{neato}.
 			Pour analyser l'enrichissement en terme GO, nous avons utilisé le programme ErmineJ \citep{Gillis2010}.
 			Pour notre analyse supervisée ~\ref{chap:results2} nous utilisons la librarie libSVM \citep{Chang2007} pour classifier nos échantillons ~\ref{sub:classification}.
 
-	\section{\textcolor{green!45!black}{Algorithme}}
+			\pagebreak
+
+	\section{\textcolor{green!45!black}{Présentation de l'algorithme ITI}}
 
 		\subsection{\textcolor{green!45!black}{Détection des sous-réseaux}}
 			\mylettrine{L}{a première étape} de notre algorithme est la détection de sous-réseaux.
@@ -263,6 +260,10 @@
 			Les données d'expressions des gènes sont considérées séparément pour chacun des jeux de données utilisés.
 			Chaque gène est utilisé successivement comme graine pour créer un sous-réseau.
 			Ce processus est parallèlisé sur un cluster de calcul de type Beowulf.
+
+
+
+
 			Pour chacun des jeux de données d'expression des gènes, la corrélation des conditions cliniques avec les \acs{GEP} est calculé.
 			Ainsi, si un gène n'a pas d'expression dans un jeu de données particulier, à cause des différences entre les plateformes, il peut quand même être pris en compte pour la constitution d'un sous-réseaux.
 			Récursivement nous considérons le premier voisin du gène graine, et l'ajoutons à notre sous-réseau en construction, si l'ajout de ce gène améliore le score du sous-réseau, suivant l'équation \ref{eq:score} :
@@ -345,16 +346,17 @@
 			Pour permettre plus facilement la navigation d'un sous-réseau à un autre, pour chaque gène il existe une page listant les sous-réseaux dans lesquels il apparait.
 			Enfin, pour chacun des sous-réseaux un enrichissement en terme GO est calculé, par jeux de données d'expression, se basant sur l'apport des gènes du sous-réseaux par rapport à l'ensemble des gènes présents sur la plateforme de puce à \acs{DNA} utilisée pour constituer le jeu de données.
 
+			\pagebreak
+
 		\subsection{\textcolor{green!45!black}{Utilisation des SVM pour la classification}}\label{sub:classification}
 
-			\mylettrine{L}{es \ac{SVM}}, généralisation des classifieurs linéaires, sont un ensemble de techniques d'apprentissage supervisé destinées à résoudre des problèmes de discrimination et de régression.
+			\mylettrine{L}{es \ac{SVM}}, ou Séparateurs à Vaste Marge, généralisation des classifieurs linéaires, sont un ensemble de techniques d'apprentissage supervisé destinées à résoudre des problèmes de discrimination et de régression.
 			Ils reposent sur deux idées clés : la notion de marge maximale et la notion de fonction noyau.
-			La marge est la distance entre la frontière de séparation et les échantillons les plus proches.
-			Ces derniers sont appelés vecteurs de support.
-			La frontière de séparation est choisie comme celle qui maximise la marge et minimise la capacité (complexité de la classification).
+			La marge est la distance entre la frontière de séparation et les échantillons les plus proches, appelés vecteurs de support.
+			La frontière de séparation est choisie comme celle qui maximise la marge et ainsi minimise la capacité (complexité de la classification).
 			Pour trouver cette frontière séparatrice optimale, à partir d'un ensemble d'apprentissage, le problème est reformulé comme un problème d'optimisation quadratique, pour lequel des solutions existent déjà.
 
-			La deuxième idée clé la fonction noyau.
+			La deuxième idée clé est la fonction noyau.
 			Pour résoudre les problèmes de discrimination non-linéaire, l'espace de représentation des données d'entrées est transformé en un espace de plus grande dimension (potentiellement infinie), dans lequel il est probable qu'il existe une séparatrice linéaire.
 			Une fonction noyau permet de réaliser cela, et a l'avantage de ne pas nécessiter la connaissance explicite de la transformation à appliquer pour le changement d'espace.
 			Elle permet d'éviter la transformation coûteuse d'un produit scalaire dans un espace de grande dimension, en une simple évaluation ponctuelle d'une fonction.
@@ -364,6 +366,12 @@
 		\subsection{\textcolor{green!45!black}{Stratification, organisation des données et classification}}
 			\mylettrine{P}{our les besoins de notre analyse supervisée} (cf partie ~\ref{chap:results2}), nous avons laissé de coté un jeu de données d'expression, dans le but d'effectuer une classification finale indépendante.
 			Avec les autres jeux de données d'expression, nous avons réalisé une stratification à dix couches, utilisant 90\% des données pour apprentissage, et les 10\% restant pour classification.
+
+
+
+
+
+			
 			Nous avons utilisé notre algorithme ITI pour sélectionner des sous-réseaux sur chacune de ces dix couches.
 			Nous utilisons la librarie libSVM pour créer des modèles \ac{SVM} pour chacun des jeux de données d'expression utilisés ~\ref{sub:classification}.
 			Chaque liste de sous-réseaux sélectionnée après validation statistique a été utilisée pour trouver la taille maximisant les performances de la classification.
