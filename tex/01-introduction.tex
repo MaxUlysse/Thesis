@@ -23,7 +23,7 @@
 		Ceci en fait une préoccupation majeure de santé publique.
 		En 1918, avec la création de La Ligue franco-anglo-américaine contre le cancer\footnote{actuellement La Ligue nationale contre le cancer}, une action associative est mise en place pour lutter contre le cancer.
 		Les gouvernements s'impliquent eux aussi.
-		Ainsi en 1937 aux États-Unis d'Amérique, le National Cancer Institute Act a établi le \ac{NCI}, institut fédéral de recherche contre le cancer, qui fut par la suite renforcé par le président Nixon et le National Cancer Act en 1971.
+		Ainsi en 1937 aux États-Unis d'Amérique, le National Cancer Institute Act\citep{NCA1937} a établi le \ac{NCI}, institut fédéral de recherche contre le cancer, qui fut par la suite renforcé par le président Nixon et le National Cancer Act en 1971.
 
 		L'\ac{ONG} \ac{EORTC} a été fondée en 1962 dans le but de stimuler la recherche clinique en Europe.
 		L'\ac{OMS} a créé en 1965 l'\ac{IARC}, agence intergouvernementale de recherche contre le cancer, dans le but de coordonner la recherche sur les causes du cancer.
@@ -80,11 +80,11 @@
 			En découle une amélioration de la survie post-opératoire.
 			En 1914, Theodor Boveri met en évidence l'importance des mutations chromosomiques dans le cancer.
 			Dès le milieu du XX\eme siècle, les découvertes de la transmission de l'information cellulaire par l'\acs{ADN}, et le décodage du code génétique ont posé les jalons des recherches actuelles sur le génome humain.
-			Le tableau~\ref{tab:Devita2012} nous présente une fresque historique intégrant les différentes découvertes et événements majeurs dans le domaine de la recherche sur le cancer.
+			Le tableau~\ref{tab:Devita2012}, inspiré par \citet{Devita2012}, nous présente une fresque historique intégrant les différentes découvertes et événements majeurs dans le domaine de la recherche sur le cancer.
 
 			\begin{table}
 				\begin{center}
-					\caption{Découvertes et événements majeurs dans le domaine du cancer\index{cancer}, inspiré de \citet{Devita2012}.}
+					\caption{Découvertes et événements majeurs dans le domaine du cancer\index{cancer}.}
 					\begin{tabular}{cl}
 						\toprule
 						\emph{Année}  & \multicolumn{1}{c}{\emph{Découverte ou événement}}                                      \\
@@ -162,6 +162,7 @@
 						Étape au cours de laquelle les extrémités de l'\acs{ARNm} sont modifiées (ajout de la coiffe en 5' et polyadénylation en en 3').
 						S'il y en a les introns sont épissés (excision des régions non-codantes).
 						Cette étape se déroule dans le noyau de la cellule et est nécessaire pour que l'\acs{ARNm} puisse sortir du noyau.
+			\pagebreak
 					\item [La traduction]                 \hfill \\
 						Étape lors de laquelle l'\acs{ARNm} mature est traduit en protéine.
 						Cette étape se déroule dans le cytoplasme de la cellule, dans le réticulum endoplasmique et nécessite les \acs{ARNt} et les ribosomes.
@@ -212,7 +213,7 @@
 			\begin{figure}
 				\begin{center}
 					\def\svgwidth{\columnwidth}\input{figures/Wirth2011.pdf_tex}
-					\caption{Profil d'expression de 42 tissus en représentation par cartes auto-organisatrices de Kohonen \citep{Wirth2011}.}
+					\caption{Profil d'expression de 42 tissus en représentation par cartes auto-organisatrices de Kohonen inspiré par \citeauthor{Wirth2011}.}
 					\label{fig:Wirth2011}
 				\end{center}
 			\end{figure}
@@ -295,6 +296,8 @@
 			Avant de considérer les réseaux et les mécanismes impliqués dans le processus de cancérisation, nous allons nous intéresser aux gènes.
 			Les gènes associées au cancer ont été classés en deux catégories sur la base de leurs caractères cancérogènes ou protecteurs :
 
+			\pagebreak
+
 			\begin{description}
 				\item [Les oncogènes] \hfill \\
 					L'expression des oncogènes\footnote{du grec \emph{onkos}, signifiant vrac, masse ou tumeur} favorise la survenue de cancers.
@@ -341,7 +344,7 @@
 				\begin{center}
 					\def\svgwidth{\columnwidth}
 					\input{figures/Hallmarks.pdf_tex}
-					\caption{Caractéristiques du Cancer inspiré de \citet{Hanahan2000,Hanahan2011}.}
+					\caption{Caractéristiques du Cancer inspiré par \citeauthor{Hanahan2000,Hanahan2011}.}
 					\label{fig:Hanahan2011}
 				\end{center}
 			\end{sidewaysfigure}
@@ -357,6 +360,8 @@
 
 					Une mutation de \acs{HRAS} par exemple, oncogène de la famille \acs{RAS}, active constamment la protéine \acs{p-HRAS} normalement activée par le facteur de croissance \acs{p-EGF} et donc augmente la prolifération cellulaire.
 					De par la nature proliférative du cancer, il est probable que les voies des signaux de croissance subissent une dérégulation dans toutes les tumeurs \citep{Hanahan2000}.
+
+			\pagebreak
  
 				\item [L'insensibilité au signaux inhibiteurs de la croissance] \hfill \\
 					En parallèle de l'autosuffisance en signaux de croissance, les cellules cancéreuses sont insensibles aux mécanismes d'inhibitions de la prolifération cellulaire.
@@ -438,6 +443,8 @@
 					Cette capacité découle directement de l'inactivation ou perturbation de l'activité des gènes de réparation de l'\acs{ADN} précédemment décrits.
 					Et si elle n'est pas la cause première du cancer, elle y contribue fortement.
 
+			\pagebreak
+
 				\item [L'inflammation favorisant les tumeurs]       \hfill \\
 					Il est reconnu que certaines tumeurs sont fortement infiltrées par des cellules du système immunitaire et qu'elles génèrent des conditions inflammatoires dans les tissus proches \citep{Dvorak1986}.
 					Une telle réponse immunitaire est généralement comprise comme une tentative du système immunitaire d'éliminer la tumeur.
@@ -503,6 +510,8 @@
 			Découlant de la technique du southern blot, les puces à \acs{ADN} permettent en une seule expérience la mesure des niveaux d'expression de plus 30 000 gènes, le tout sur une courte période de temps (de l'ordre de deux jours).
 			Encore très utilisée, il est cependant difficile avec cette technologie d'estimer avec précision la quantification des \acp{GEP} \citep{Heller2002, Hardiman2004, Wang2005b, Zakharkin2005, Draghici2006}.
 
+			\pagebreak
+
 			Le \acs{RNA}-seq est une technique de séquençage à haut-débit appliquée au transcriptome.
 			Avec les capacités de couverture et de résolution du séquençage à haut-débit, le \acs{RNA}-seq permet d'avoir des informations qualitatives, il est par conséquent de plus en plus utilisé et sera probablement amené à remplacer les puces à \acs{ADN} \citep{Maher2009, Fu2009, Wang2009, Sirbu2012}.
 
@@ -554,7 +563,7 @@
 
 			\begin{table}
 				\begin{center}
-					\caption{Effectif annuel moyen de décès et taux observé (standardisé monde) de mortalité des cancers pour la période 2004-2008, tiré de \citet{Inca2011}.}
+					\caption{Effectif annuel moyen de décès et taux observé (standardisé monde) de mortalité des cancers pour la période 2004-2008.}
 					\begin{tabular}{lrrrr}
 						\toprule
 						\multicolumn{1}{c}{\multirow{3}{*}{Organe}} & \multicolumn{2}{c}{\emph{Homme}} & \multicolumn{2}{c}{\emph{Femme}} \\
@@ -595,7 +604,7 @@
 					\end{tabular}
 					\label{tab:Inca2011}
 					\vspace{3ex}
-					\caption*{TSM : Taux standardisés à la population mondiale\\Sources : \acf{InVS}, \acf{CépiDc} - \ac{INSERM}, 2011}
+					\caption*{TSM : Taux standardisés à la population mondiale\\Sources : \acf{InVS}, \acf{CépiDc} - \ac{INSERM}, 2011\citet{Inca2011}}
 				\end{center}
 			\end{table}
 
@@ -649,6 +658,8 @@
 			Nous venons de voir les differents traitements connus du cancer du sein.
 			Cependant, ce sont les charactéristiques moléculaires de la tumeur à traiter qui vont guider le praticien vers le traitement le plus approprié.
 			C'est pour cela que nous allons approfondir les différents types de classifications des cancers du sein.
+
+			\pagebreak
 
 		\subsection{\textcolor{red!45!black}{Les classifications utilisées dans le cancer du sein\index{cancer!cancer du sein}}}
 			\mylettrine{L}{es cancers}, comme nous venons de le voir ont plusieurs caractéristiques.
@@ -732,9 +743,11 @@
 				\centering
 				\def\svgwidth{\columnwidth}
 				\input{figures/Subtypes.pdf_tex}
-				\caption{Classification en sous-types moléculaires \citep{Perou2000,Sorlie2001}.}
+				\caption{Classification en sous-types moléculaires par \citeauthor{Perou2000,Sorlie2001}.}
 				\label{fig:Subtypes}
 			\end{figure}
+
+			\pagebreak
 
 			Ces sous-types correspondent à des niveaux d'expression de gènes différents qui reflètent la diversité et l'hétérogénéité des cancers du sein.
 			Les progrès permis par la recherche et par l'amélioration des technologies permettent de réévaluer ces classifications et de les compléter.
@@ -757,7 +770,7 @@
 				\centering
 				\def\svgwidth{\columnwidth}
 				\input{figures/Subtypes-survival.pdf_tex}
-				\caption{Courbes de survie en fonction des sous-types moléculaires \citep{Perou2000,Sorlie2001,Hu2006}.}
+				\caption{Courbes de survie en fonction des sous-types moléculaires par \citeauthor{Perou2000,Sorlie2001,Hu2006}.}
 				\label{fig:Subtypes-survival}
 			\end{figure}
 
@@ -768,20 +781,16 @@
 			Le regroupement hiérarchique (\emph{hierarchical clustering}) est utilisé pour la découverte de ces signatures.
 			C'est une méthode de classification automatique dont le but est de répartir tous les individus constituant un ensemble dans un certain nombre de classe.
 			Il est nécessaire d'avoir à disposition une mesure de similarité ou de dissimilarité permettant de différencier les individus.
-
-
-			Deux approches existent :
+			Deux approches existent, produisant une hiérarchisation qui donne son nom à cette méthode automatique de groupement :
 			\begin{description}
 
-			\item [L'approche ascendante]part des individus où chacun d'eux appartiennent à une classe constituée d'un seul individu, puis ces classes sont regroupées en classe de plus en plus grandes, jusqu'à l'obtention d'une classe unique.
+				\item [L'approche ascendante]part des individus où chacun d'eux appartiennent à une classe constituée d'un seul individu, puis ces classes sont regroupées en classe de plus en plus grandes, jusqu'à l'obtention d'une classe unique.
 
-			\item [L'approche descendante]part d'une seule classe que l'on divise de plus en plus pour arriver jusqu'aux individus.
-			Ces deux méthodes produisent une hiérarchisation qui donne son nom à cette méthode automatique de groupement.
+				\item [L'approche descendante]part d'une seule classe que l'on divise de plus en plus pour arriver jusqu'aux individus.
 			\end{description}
 
 			L'approche ascendante est de complexité $O(n^{3})$, tandis que l'approche descendante est de complexité $O(2^{n})$.
 			C'est pourquoi la variante descendante est généralement peu usitée.
-
 			Ici, les individus sont les échantillons tumoraux, et la mesure de similarité se fait à partir de l'expression des gènes.
 
 			Nous allons détailler la façon dont \citeauthor{vandevijver2002} et \citeauthor{Wang2005} ont organisé leurs études pour la découverte de leurs signatures, ainsi que les caractéristiques des patientes constituant leurs jeux de données :
@@ -858,6 +867,8 @@
 			Le nombre de dimension de l'espace des gènes est donc plus réduit que le nombre de gènes, mais il reste néanmoins un espace possédant de multiples dimensions.
 			Le nombre important de gènes entraine également une augmentation du risque de sur-apprentissage, ce qui à pour effet d'accroitre l'erreur de généralisation.
 
+			\pagebreak
+
 			\citeauthor{EinDor2006} estime qu'il est nécessaire d'avoir plusieurs milliers d'échantillons pour l'obtention d'une signature constituée d'une liste robuste de gènes pour prédire l'évolution du cancer.
 			Les jeux de données utilisés pour les études précédentes \citep{vandevijver2002,Wang2005} contiennent au mieux plusieurs centaines d'échantillons.
 			C'est une des raisons généralement avancé pour expliquer le manque de reproductibilité de ces études.
@@ -881,9 +892,8 @@
 			L'autre solution, qui peut être combinée avec une méta analyse consiste à ajouter des informations supplémentaires (telle les modules (ensemble fonctionnel de gènes) \citep{VanVliet2007} ou des réseaux d'interactions protéines-protéines \citep{Chuang2007}).
 			Cette dernière méthode, mise en avant par \citeauthor{Chuang2007} permet l'obtention de meilleurs résultats par rapport aux méthodes classiques comme nous le détaillerons dans le chapitre suivant.
 
-			Cependant, \citeauthor{Chuang2007} n'a utilisé qu'un seul jeu de données pour son analyse, et nous avons significativement amélioré cette méthode en la combinant avec une approche de méta-analyse.
+			Cependant, \citeauthor{Chuang2007} n'ont utilisé qu'un seul jeu de données pour leur analyse, et nous avons significativement amélioré cette méthode en la combinant avec une approche de méta-analyse.
 			Nous détaillerons notre utilisation de cette méthode d'intégration d'interaction protéines-protéines, ainsi que la façon dont nous l'avons adapté dans nos travaux avec une méta-analyse sur plusieurs jeux de données transcriptomiques dans le chapitre qui suit.
-
 
 	\section{\textcolor{red!45!black}{Conclusion}}
 
