@@ -44,13 +44,20 @@
 %%%                   Colors                  %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\RequirePackage[usenames,
+	dvipsnames,
+	svgnames,
+	table]{xcolor}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                Paper layout               %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\RequirePackage[paperwidth=170mm,paperheight=240mm,hmargin={2cm,1cm},vmargin={2cm,1.75cm},headheight=14pt]{geometry}
+\RequirePackage[paperwidth=170mm,
+	paperheight=240mm,
+	hmargin={2cm,1cm},
+	vmargin={2cm,1.75cm},
+	headheight=14pt]{geometry}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                  Headings                 %%%
@@ -74,7 +81,7 @@
 %%%            Marks and draftmarks           %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\myversion}{V 0.5}
+\newcommand{\myversion}{V 0.7}
 
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter. #1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
@@ -177,14 +184,12 @@
 %%%                 References                %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Natural Sciences Citations: author-year and numerical citations
 \RequirePackage[round,comma,numbers,super,sort&compress]{natbib}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                   Index                   %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% To make a subject index
 \RequirePackage{makeidx}
 \makeindex
 
@@ -199,7 +204,14 @@
 %%%               URL inclusion               %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage[pdftex,colorlinks=true,linkcolor=black,menucolor=red,pdfhighlight=/P,citecolor=MidnightBlue,urlcolor=BrickRed,linktocpage=false]{hyperref}
+\RequirePackage[pdftex,
+	colorlinks=true,
+	linkcolor=black,
+	menucolor=red,
+	pdfhighlight=/P,
+	citecolor=MidnightBlue,
+	urlcolor=BrickRed,
+	linktocpage=false]{hyperref}
 %Enter URLs like this: \url{http://ithake.eu/}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -267,12 +279,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \setlength{\parskip}{1ex plus0.2ex minus0.2ex}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%                    Date                   %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\date{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                 Footnotes                 %%%
