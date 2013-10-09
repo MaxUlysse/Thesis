@@ -1,0 +1,215 @@
+\singlespacing
+
+\mychapter{green!45!black}{Analyse supervisée}\label{chap:results2}
+	\sectiongreen*{Résumé}
+		\begin{center}
+			\begin{tcolorbox}[colback=green!5!white,colframe=green!45!black,arc=0mm]
+				\sffamily
+				Dans ce chapitre nous allons présenter les résultats que nous avons obtenus lors de l'utilisation d'ITI sur une analyse supervisée.
+				Ces résultats sont détaillés dans notre article\citet{Garcia2012} présent dans les Annexes~\ref{app:Garcia2012} de cet ouvrage.
+			\end{tcolorbox}
+			\vspace{5ex}
+			\mtcsetdepth{minitoc}{1}
+			\minitoc
+		\end{center}
+		\newpage
+
+\doublespacing
+
+	\section{\textcolor{green!45!black}{Détails de l'analyse supervisée}}
+		\subsection{\textcolor{green!45!black}{Organisation des jeux de données transcriptome en deux études}}
+		\mylettrine{N}{ous avons organisé} notre analyse supervisée en deux études.
+		Ces deux études se basent sur le même compendium de donnés transcriptomique (cf Tableau~\ref{tab:Met:DSS}), en mettant de coté, pour validation indépendante, un jeu de données différent à chaque fois (Desmedt ou van de Vijver, cf Tableau~\ref{tab:Res2Data}).
+		Pour chacune de ces deux études nous avons de plus séparé les échantillons suivant leurs status \acs{ER} pour permettre une plus grande homogénéité des données.
+		Pour éviter un sur-entrainement lors de la détection des sous-réseaux, nous avons organisé une stratification à 10 couches.
+		La stratification a été réalisé en conservant entre les différentes populations des couches de la stratification la même proportion en individus, se basant sur les status \acs{ER} et les conditions cliniques (cf Section~\ref{sub:stratification}).
+
+		La détection des sous-réseaux a été ensuite réalisé comme présenté dans la Section~\ref{sec:ITI} et a mené à la détection de 165 sous-réseaux (pour les échantillons ER-) et de 6 sous-réseaux (pour les échantillons ER+) pour la première étude, et de 122 sous-réseaux (pour les échantillons ER-) et de 14 sous-réseaux (pour les échantillons ER+) pour la seconde étude.
+		Le nombre de sous-réseaux est moins important pour les échantillons ER+, cela reflète une plus grande homogénéité des échantillons.
+		Ces résultats sont détaillés dans le Tableau~\ref{tab:Res2pvalue}.
+
+		Nous allons maintenant passé à l'analyse des performances de signatures obtenues avec ces différentes études.
+
+		\begin{table}
+				\begin{center}
+					\caption{Liste des jeux de données utilisés dans l'analyse supervisée.}
+					\begin{tabular}{llr@{/}lr@{/}lr@{/}l}
+						\toprule
+						\emph{Jeu de données} & \emph{Plateforme} & \multicolumn{2}{c}{\emph{Nombre d'échantillons}} & \multicolumn{2}{c}{\emph{Statuts DMFS}} & \multicolumn{2}{c}{\emph{Statuts ER}} \\
+						\cmidrule(r){3-8}
+						&  & \emph{(Sélectionnés} & \emph{Total)}           & \emph{(meta} & \emph{non meta)} & \emph{(ER-}     & \emph{ER+)} \\
+						\midrule
+						\textbf{Desmedt}          & \textbf{U133A}          & \textbf{190} & \textbf{198} & \textbf{62} & \textbf{128} & \textbf{61} & \textbf{129} \\
+						Loi                       & U133A + U133B           & 101 & 327                   & 27 & 74                & 29 & 72            \\
+						Sabatier                  & U133 Plus 2.0           & 31 & 255                    & 9 & 22                 & 11 & 20            \\
+						Schmidt                   & U133A                   & 182 & 200                   & 46 & 136               & 37 & 145           \\
+						\textbf{van de Vijver}    & \multirow{2}{2.49cm}{\textbf{Agilent whole human genome}}  & \textbf{150} & \textbf{295} & \textbf{56} & \textbf{94}  & \textbf{36} & \textbf{114} \\
+						& \\
+						Wang                      & U133A                   & 276 & 286                   & 107 & 169              & 72 & 204           \\
+						\midrule
+						Total                     & 7 différentes           & 930 & 1561                  & 307 & 623              & 246 & 684          \\
+						\bottomrule
+					\end{tabular}\label{tab:Res2Data}
+					\vspace{5ex}
+					\caption*{Deux études ont été réalisées en utilisant différentes combinaisons pour les jeux de donnés d'entraînement et ceux de validation (\textbf{en gras}). Dans l'étude 1 les échantillons provenant de Desmedt ont été mis de côté pour validation indépendante, et l'entraînement a eu lieu avec les autres jeux de données. Les échantillons provenant de van de Vijver ont été pareillement mis de côté pour validation indépendante dans l'étude 2.}
+				\end{center}
+			\end{table}
+				\begin{table}
+
+				\begin{center}
+					\caption{Taille et p-value de la signature retenue pour chacune des études réalisées.}
+					\begin{tabular}{ccccc}
+						\toprule
+						\multirow{2}{2cm}{\centering\emph{Étude}} & \multirow{2}{1.5cm}{\centering\emph{Statuts}} & \multirow{2}{1.5cm}{\centering\emph{seuil de P-value}} & \multirow{2}{2cm}{\centering\emph{Nombre de sous-réseaux}} & \multirow{2}{1.5cm}{\centering\emph{Nombre de gènes}} \\
+						&&&&\\
+						\midrule
+						Étude 1      & ER-            & 1e\textsuperscript{-4}  & 165                           & 2310                    \\
+						Étude 1      & ER+            & 1e\textsuperscript{-4}  & 6                             & 175                     \\
+						Étude 2      & ER-            & 1e\textsuperscript{-4}  & 122                           & 1481                    \\
+						Étude 2      & ER+            & 1e\textsuperscript{-4}  & 14                            & 272                     \\
+						\bottomrule
+					\end{tabular}
+					\label{tab:Res2pvalue}
+					\vspace{5ex}
+					\caption*{Le nombre optimal de sous-réseaux pour une classification dépend des jeux de données utilisés pour l'apprentissage. Le fait qu'il soit plus faible pour les ER+ reflète une plus grande homogénéité des échantillons.}
+				\end{center}
+			\end{table}
+
+		\section{\textcolor{green!45!black}{Performances des signatures obtenues}}
+		\mylettrine{D}{eux signatures séparées} ont été générées pour les sous-types ER+ et ER- pour nos deux différentes études.
+		Nous avons donc obtenus au final quatre ensembles de sous-réseaux.
+		La taille optimale retenue dans le Tableau~\ref{tab:Res2pvalue} est celle qui maximise la précision moyenne sur les dix couches de la stratification pour chacune des études.
+		Pour l'étude 1, les sous-réseaux discriminatifs retenus avait un score moyen de 0.49 (ER+) et 0.54 (ER-) confirmant la haute corrélation entre la co-expression et la proximité dans l'interactome.
+		La taille des signatures était respectivement de 6 (ER+) et 165 sous-réseaux (ER-).
+		Pour l'étude 2, la signature ER+ avait un score de classification optimal pour 14 sous-réseaux, et la signature ER- pour 122 sous-réseaux.
+		Ces sous-réseaux correspondent respectivement à des listes de 175 (Étude 1, ER+), 2310 (Étude 1, ER-), 272 (Étude 2, ER+) et 1481 (Étude 2, ER-) gènes.
+		Un grand nombre de gènes étant représentés dans plusieurs sous-réseaux.
+		Ces nombre sont plus larges que ceux reporté pour les autre signature.
+		Ceci suggère que nous avons détecté un nombre important de gènes significativement liés à la rechute métastatique, reflétant de façon réaliste à la fois l'empreinte biologique de la métastase et l'ampleur des perturbations au niveau de l'expression des gènes.
+		La redondance des gènes dans les sous-réseaux peut être expliqué par la haute connectivité de certains hubs (comme \acs{TP53}), ce qui augmente leur propabilité d'être intégré dans plusieurs sous-réseaux.
+
+		Pour évaluer la performance des signatures découvertes avec ITI, nous les avons comparé avec des signatures déjà établies.
+		Les 128 sondes du \acs{GGI} \citet{Sotiriou2006}, la signature Mammaprint à 70 gènes \citet{vandeVijver2002} et la signature status ER spécifique à 76 gène \citet{Wang2005} ont été testées.
+		La performance a été mesuré sur les mêmes échantillons (jeux de données Desmedt et van de Vijver), séparément sur les tumeurs ER+ et ER-.
+		La méthode de classification originale des signatures a été utilisée.
+		Pour la signature de van de Vijver, les distances aux centroïdes moyens entre les groupes avec et sans rechute ont été calculé \citet{vandeVijver2002}.
+		Pour la signature de Wang, un score de rechute est calculé pour chaque patient par combinaison linéaire de l'expression des gènes pondéré par des coefficients de Cox standardisés \citet{Wang2005}.
+		Les signature GGI et Mammaprint étant sondes-spécifiques, les tests ont donc été réalisés avec les sondes présentes dans le jeu de données de validation.
+		Les résultats et les mesures des performances sont détaillés dans le Tableau~\ref{tab:Res2Classif}.
+		Ces résultats montre que notre algorithme ITI possède une performance largement plus généralisable que les autres signatures précédements publiées.
+		La classification par le GGI montre une précision maximale entre 47 et 68 \%, la signature à 70 gènes entre 41 et 62 \% et la signature à 76 gènes entre 37 et 63\%.
+		ITI a une meilleure précision comparée à la signature de Wang sur les données de Desmedt (ER+) : une précision de 74\% (spécificité de 92\%) a été obtenue contre une précision de 60\% (spécificité de 56\%) pour la signature à 76 gènes.
+		ITI donne aussi des résultats plus performants sur les échantillons ER- des données Desmedt avec une précision de 54\% (spécificité de 65\%) contre une précision de 38\% (spécificité de 41\%) contre la signature de Wang.
+		Ceci reste également vrai pour la signature Mammaprint à 70 gènes qui marche essentiellement sur le jeu de données van de Vijver.
+		ITI montre une performance de 53\% associée à une specificité de 90\% sur les données van de Vijver (ER-) et une précision de 52\% avec une spécificité de 65\% sur les données van de Vijver (ER-). 
+		Cette performance est inférieure à celle obtenu sur l'étude 1 et pourrait refléter un biais vers les plateformes Affymetrix introduit par l'apprentissage sur le compendium. 
+		Le signature Mammaprint a une moins bonne précision de 41\% sur les tumeurs ER+ et de 42\% sur les tumeurs ER- du jeu de données Desmedt.
+		De la même manière, ITI a montré une performance supérieure à la classification GGI sur les patiens ER-.
+		Globalement, ITI a été capable de mieux généralisé avec valeur minimale pour la précision de 52\%.
+
+		Pour une autre comparaison, \citet{Chuang2007} ont achevé une performance de 48.8\% sur les échantillons issus du jeu de données van de Vijver en les entrainant sur ceux du jeu de données Wang et 55.8\% reciproquement.
+		Les contributions spécifiques des données d'interactions ou des données d'expression des gènes ne sont pas quantifiées, elles sont difficilement séparable dans le contexte actuel.
+		Cependant, \citet{Chuang2007} ont déjà démontré que qu'une approche intégrative augmentait la robustesse de la signature, et plusieurs études ont démontré que des méta-analyses de données d'expression des gènes augmentaient également les performances de classification \citep{Fishel2007,Xu2005}.
+		Nous avons réalisé une analyse du temps de survie entre les groupes de bon et mauvais pronostics dans l'étude 1 (cf Figure~\ref{fig:Survival}).
+		Le test Log-rank donne une p-value de 4.89x10\textsuperscript{-5}, suggérant une bonne séparation entre les deux groupes.
+		Cette valeur est plus élevée que les p-values obtenues avec les autres signatures (la signature de Wang donne P = 4.11x10\textsuperscript{-3} et celle du GGI donne P = 1.34x10\textsuperscript{-3}).
+		La signature Mammaprint n'a pas été capable de séparer significativement dans des groupes les patients issus du jeu de données de Desmedt.
+		Même si ITI n'a pas été spęcifiquement prévu pour obtenir un bon score au test Log-rank, il a été capable de séparer les patients avec une haute espérance de survie de ceux avec une espérance de survie faible.
+		Une alternative aurait pu être de caculer directement les scores des sous-réseaux en se basant sur les P-values du log-rank des gènes.
+
+			\begin{sidewaystable}
+				\begin{center}
+					\caption{Comparaison des résultats de classification entre ITI et d'autres signatures sur les jeux de données de validation Desmedt et van de Vijver pour les tumeurs ER- et ER+.}
+					\begin{tabular}{crrrrrrrrrrrrrrrr}
+						\toprule
+						\multicolumn{1}{c}{\emph{Statuts}} & \multicolumn{8}{c}{ER-} & \multicolumn{8}{c}{ER+} \\
+						\cmidrule(r){2-9}\cmidrule(r){10-17}
+						\multicolumn{1}{c}{\emph{Jeux de}} & \multicolumn{4}{c}{\multirow{2}{*}{\emph{Desmedt}}} & \multicolumn{4}{c}{\multirow{2}{*}{\emph{van de Vijver}}} & \multicolumn{4}{c}{\multirow{2}{*}{\emph{Desmedt}}} & \multicolumn{4}{c}{\multirow{2}{*}{\emph{van de Vijver}}} \\
+						\multicolumn{1}{c}{\emph{Données}} & & & & \\
+						\cmidrule(r){2-5}\cmidrule(r){6-9}\cmidrule(r){10-13}\cmidrule(r){14-17}
+						\multirow{2}{*}{\emph{Signature}} & \emph{GGI} & \emph{70g} & \emph{76g} & \multicolumn{1}{c}{\emph{\textbf{ITI}}} & \emph{GGI} & \emph{70g} & \emph{76g} & \multicolumn{1}{c}{\emph{\textbf{ITI}}} & \emph{GGI} & \emph{70g} & \emph{76g} & \multicolumn{1}{c}{\emph{\textbf{ITI}}} & \emph{GGI} & \emph{70g} & \emph{76g} & \multicolumn{1}{c}{\emph{\textbf{ITI}}}    \\
+											&     &     &     & \multicolumn{1}{c}{\emph{\textbf{(165)}}}              &     &     &     & \multicolumn{1}{c}{\emph{\textbf{(122)}}}  &     &     &     & \multicolumn{1}{c}{\emph{\textbf{(6)}}}                &     &     &     & \multicolumn{1}{c}{\emph{\textbf{(14)}}}   \\
+						\midrule
+						N         & 61    & 61    & 61    & \textbf{61}                               & 36    & 36    & 36    & \textbf{36}                   & 129   & 129   & 129   & \textbf{129}                              & 114   & 114   & 114   & \textbf{114}                   \\
+						\midrule
+						VN        & 6     & 0     & 14    & \textbf{22}                               & 3     & 2     & 12    & \textbf{17}                   & 63    & 28    & 53    & \textbf{86}                               & 57    & 39    & 50    & \textbf{49}                    \\
+						FP        & 28    & 34    & 20    & \textbf{12}                               & 16    & 17    & 7     & \textbf{2}                    & 31    & 66    & 41    & \textbf{8}                                & 18    & 36    & 25    & \textbf{26}                    \\
+						VP        & 23    & 27    & 9     & \textbf{11}                               & 14    & 17    & 8     & \textbf{2}                    & 21    & 25    & 25    & \textbf{9}                                & 20    & 32    & 22    & \textbf{10}                    \\
+						FN        & 4     & 0     & 18    & \textbf{16}                               & 3     & 0     & 9     & \textbf{15}                   & 14    & 10    & 10    & \textbf{26}                               & 19    & 7     & 17    & \textbf{29}                    \\
+						\midrule
+						ACC       & 0.46  & 0.42  & 0.38  & \textbf{0.54}                             & 0.47  & 0.53  & 0.56  & \textbf{0.53}                 & 0.65  & 0.41  & 0.60  & \textbf{0.74}                             & 0.68  & 0.62  & 0.63  & \textbf{0.52}                  \\
+						SV        & 0.85  & \multicolumn{1}{l}{1} & 0.33  & \textbf{0.41}             & 0.82  & \multicolumn{1}{l}{1} & 0.57  & \textbf{0.12} & 0.60  & 0.71  & 0.71  & \textbf{0.26}                             & 0.51  & 0.82  & 0.56  & \textbf{0.26}                  \\
+						SP        & 0.18  & \multicolumn{1}{l}{0} & 0.41  & \textbf{0.65}             & 0.16  & 0.11                  & 0.63  & \textbf{0.90} & 0.67  & 0.30  & 0.56  & \textbf{0.92}                             & 0.76  & 0.52  & 0.67  & \textbf{0.65}                  \\
+						\bottomrule
+					\end{tabular}
+					\label{tab:Res2Classif}
+					\vspace{5ex}
+					\caption*{Les quatre ensembles de sous-réseaux xXx ont été utilisés pour mesurer la performance de classification d'ITI (\textbf{en gras}). Les abréviations suivantes ont été utilisées : N - nombre de tumeurs à classifier; VN - Vrai Négatif; FP - Faux Positif; VP - Vrai Positif; FN - Faux Négatif; ACC - Justesse; SV - Sensibilité; SP - Spécificité. La justesse de la classification basée sur des sous-réseaux est supérieure à la classification basé sur des expressions de gènes pour prédire la métastase dans le jeu de données de Desmedt, et autour du même niveau pour le jeu de données de van de Vijver.}
+				\end{center}
+			\end{sidewaystable}
+
+		\section{\textcolor{green!45!black}{Exploration des sous-réseaux}}
+
+			\mylettrine{D}{ous avons examiné} les enrichissements en termes Gene Ontology pour la catégorie "biological process" pour les sous-réseaux obtenus dans l'étude 1.
+			La Table~\ref{tab:Res2GO} montre plusieurs enrichissements en termes \acs{GO} pour les deux signatures ER+ et ER-.
+			Les termes \acs{GO} trouvés dans les sous-réseaux discriminatifs sont reliés à des processus regulationnels perturbé dans le cancer (cycle cellulaire, contrôle des dégâts de l'ADN) et dans la métastase (système immunitaire, prolifération cellulaire, adhésion focale, migration cellulaire et organisation du cytosquelette) à la fois dans les tumeurs ER+ et dans les ER-. 
+			Comme exemple, nous décrivons ici un sous-réseau significativement associé avec la métastase dans l'étude 1 (ER-), le sous-réseau 6693 (cf Figure~\ref{fig:Subnetwork6693}).
+			Le sous-réseau 6693 contient des gènes avec des fonctions connues pour leur implication dans les cancers du sein ER- et la métastase, comme le \acs{TSG} \acs{TP53} et les récepteurs \acs{ERBB2} et \acs{EGFR}.
+			Ce sous-réseau contenait aussi plusieurs kinases et régulateurs du cycle cellulaire (\acs{CDK2}, \acs{CDKN1A}, \acs{CDKN2A}, \acs{NQO1}), dont l'altération de l'expression a été précédement associée avec plusieurs types de cancer.
+			\acs{PIN1} est présent dans ce sous-réseau et il a été récemment trouvé qu'il promouvait l'agressivité des tumeurs dans le cancer du sein.
+			Le récepteur à l'insuline est également présent; la dérégulation de son expression est corrélée avec une mauvaise réponse aux traitements anti-\acs{IGFR} dans les cancers du sein triple négatif.
+			Ce sous-réseau contient également de nombreux oncogènes et des gènes non-précédemment reliés au cancer, mais qui pourrait agir comme des gènes directeurs du cancer du sein.
+
+		\begin{table}
+				\begin{center}
+					\caption{Enrichissement en terme GO des sous-réseaux ER- et ER+}
+					\begin{tabular}{clccr}
+						\toprule
+						& \multicolumn{1}{c}{\emph{Terme GO}} & \emph{GOID} & \emph{P-value corrigée} \\
+						\midrule
+						\multirow{5}{*}{\emph{ER-}} & Natural killer cell-mediated imunity                      & GO:0002228  & 293e\textsuperscript{-06} \\
+																				& Positive regulation of MAP kinase activity                & GO:0043406  & 476e\textsuperscript{-10} \\
+																				& Muscle cell development                                   & GO:0055001  & 106e\textsuperscript{-11} \\
+																				& Interphase of mitotic cell cycle                          & GO:0051329  & 408e\textsuperscript{-11} \\
+																				& Wnt receptor signaling pathway through ${\beta}$-catenin  & GO:0060070  & 622e\textsuperscript{-10} \\
+						\midrule
+						\multirow{5}{*}{\emph{ER+}} & mRNA cleavage                                             & GO:0006379  & 125e\textsuperscript{-08} \\
+																				& Regulation of growth hormone secretion                    & GO:0060123  & 218e\textsuperscript{-07} \\
+																				& Positive regulation of cytoskeleton organization          & GO:0051495  & 206e\textsuperscript{-04} \\
+																				& Regulation of insulin secretion                           & GO:0050796  & 155e\textsuperscript{-05} \\
+																				& Regulation of chemotaxis                                  & GO:0050920  & 429e\textsuperscript{-07} \\
+						\bottomrule
+					\end{tabular}
+					\label{tab:Res2GO}
+					\vspace{5ex}
+					\caption*{Plusieurs enrichissements en terme GO pour les sous-réseaux extraits dans l'étude 1 (ER- et ER+) sont reliés au cancer.}
+				\end{center}
+			\end{table}
+
+			\begin{figure}
+				\begin{center}
+					\def\svgwidth{\columnwidth}\input{figures/Survival.pdf_tex}
+					\caption{Comparatif des courbes de survies des patients.}
+					\label{fig:Survival}
+				\end{center}
+			\end{figure}
+
+			\begin{figure}
+				\begin{center}
+					\def\svgwidth{\columnwidth}\input{figures/Subnetwork6693.pdf_tex}
+					\caption{Représentation graphique d'une partie du sous-réseau 6693, Étude 1 ER-.}
+					\label{fig:Subnetwork6693}
+					\caption*{Ce sous-réseau discriminatif a été découvert sur les données issues de \citet{Sabatier2011}.
+					Les noeuds et les arcs correspondent respectivement aux gènes codant pour des protéines et aux \acs{PPI}.
+					Les couleurs jaunes et bleues des noeuds montrent respectivement une sur-expression et une sous-expression en comparant les patients avec métastases et ceux sans.}
+				\end{center}
+			\end{figure}
+
+
+\pagebreak
+	\section{\textcolor{green!45!black}{Conclusion}}
+
+	\mylettrine{L'}{analyse} supervisée réalisée avec ITI nous a permis de confirmer la significativité biologique des sous-réseaux découverts.
+		La classification indépendantes des échantillons nous a permis de comparer les signatures obtenues avec ITI et les signatures précédements établies.
+		Nous avons donc pu confirmer l'avantage de l'ITI sur la robustesse des performances de la signature ainsi que sa reproductibilité sur un jeu de données indépendant.
+		Nous allons maintenant discuter des autres avantages de cette approche.

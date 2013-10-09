@@ -1,0 +1,133 @@
+\singlespacing
+
+\mychapter{green!45!black}{Analyse non-supervisée}\label{chap:results1}
+	\sectiongreen*{Résumé}
+		\begin{center}
+			\begin{tcolorbox}[colback=green!5!white,colframe=green!45!black,arc=0mm]
+				\sffamily
+				Dans ce chapitre nous allons présenter les résultats que nous avons obtenus lors de l'utilisation d'ITI sur une analyse non-supervisée.
+				Ces résultats sont détaillés dans notre chapitre \citet{Garcia2011} présent dans les Annexes~\ref{app:Garcia2011} de cet ouvrage.
+			\end{tcolorbox}
+			\vspace{5ex}
+			\mtcsetdepth{minitoc}{1}
+			\minitoc
+		\end{center}
+		\newpage
+
+\doublespacing
+
+	\section{\textcolor{green!45!black}{Détails de l'analyse non-supervisée}}
+		\subsection{\textcolor{green!45!black}{Organisation des études}}
+		\mylettrine{P}{our comprendre l'impact} des différents jeux de donnés transcriptome sur la génération de sous-réseaux et les résultats, nous avons généré des sous-réseaux suivant plusieurs combinaisons de nos jeux de données d'entrainement.
+		Quatre combinaison ont été réalisés (A1, A2, B1 et B2 cf Tableau~\ref{tab:Res1Train}) à partir des jeux de données présentés précédement (cf Tableau~\ref{tab:Met:DSNS}) et correspondent aux quatres études que nous avons réalisés dans cette analyse.
+		L'étude A1 contient une combinaison de tous les jeux de données transcriptome, sauf van de Vijver \citet{vandevijver2002}.
+		L'étude B1 contient une combinaison de tous les jeux de données transcriptome, sauf Wang \citet{Wang2005}.
+		L'étude A2 contient une combinaison de tous les jeux de données utilisant une plateforme Affymetrix.
+		L'étude B2 contient une combinaison de tous les jeux de données utilisant une plateforme Affymetrix, sauf Wang \citet{Wang2005}.
+
+		Pour chacunes de ces études, les sous-réseaux ont été validés en utilisant des p-values calculées suivant notre méthode de validation statistique (cf Section\ref{sec:Validation}).
+		Les sous-réseaux obtenues dans l'étude A1 ont été validés par utilisation de p-values de seuils calculées à partir des trois méthodes pour générer des sous-réseaux aléatoires.
+		Nous avons sélectionnés les sous-réseaux avec une p-value de seuil à 1.10\textsuperscript{-2} sur au moins 2 jeux de donnés transcriptome pour la première méthode, une p-value de seuil de 1.10\textsuperscript{-1} sur au moins 11 jeux de données pour la seconde méthode, et une p-value de seuil de 1.10\textsuperscript{-1} sur au moins un jeu de données pour la troisième méthode.
+		Les autres p-values de seuil, et valeur de consensus choisies sont résumés dans le Tableau~\ref{tab:Res1Train}.
+
+		\begin{table}
+			\begin{center}
+				\caption{Organisation de la validation croisée}
+				\begin{tabular}{ll}
+					\toprule
+					\emph{Étude} & \emph{Jeu de données d'entraînement} \\
+					\midrule
+					A1 &  Tous sauf van de Vijver                       \\
+					B1 &  Tous sauf Wang                                \\
+					A2 &  Tous ceux sur plateforme Affymetrix           \\
+					B2 &  Tous ceux sur plateforme Affymetrix sauf Wang \\
+					\bottomrule
+				\end{tabular}
+				\label{tab:Res1Train}
+				\vspace{5ex}
+				\caption*{Deux études sont réalisés à partir de tous les jeux de données de notre compendium sauf un (A1, B1), tandis que deux autres études sont réalisés à partir des jeux de données profilés sur plateforme Affymetrix pour comparer les performances de notre algorithme entre différentes plateformes.}
+			\end{center}
+		\end{table}
+
+		\begin{table}
+			\begin{center}
+				\caption{Seuils de p-value et valeur de consensus choisie}
+				\begin{tabular}{lcccccc}
+					\toprule
+					\multirow{2}{2cm}{\emph{Étude}} & \multicolumn{2}{c}{\centering\emph{Type 1}} & \multicolumn{2}{c}{\centering\emph{Type 2}} & \multicolumn{2}{c}{\centering\emph{Type 3}} \\
+					\cmidrule(r){2-3}\cmidrule(r){4-5}\cmidrule(r){6-7}
+					& p-value & consensus & p-value & consensus & p-value & consensus \\
+					\midrule
+					A1	&	1.10\textsuperscript{-2}	&	2	&	1.10\textsuperscript{-1}	&	11	&	1.10\textsuperscript{-1}	&	1	\\
+					B1	&	1.10\textsuperscript{-1}	&	8	&	1.10\textsuperscript{-2}	&	2	&	1.10\textsuperscript{-1}	&	1	\\
+					A2	&	1.10\textsuperscript{-1}	&	11	&	1.10\textsuperscript{-2}	&	2	&	1.10\textsuperscript{-1}	&	2	\\
+					B2	&	1.10\textsuperscript{-1}	&	6	&	1.10\textsuperscript{-2}	&	2	&	1.10\textsuperscript{-1}	&	1	\\
+					\bottomrule
+				\end{tabular}
+				\label{tab:Res1Threshold}
+				\vspace{5ex}
+				\caption*{Seuils de p-value et valeur de consensus choisie pour chacune des études représentant une différente combinaison des jeux de données transcriptome.}
+			\end{center}
+		\end{table}
+
+		\begin{table}
+			\begin{center}
+				\caption{Nombre de sous-réseaux découverts pour chacune des analyses}
+				\begin{tabular}{lccc}
+					\toprule
+					\multirow{2}{2cm}{\emph{Étude}} & \multirow{2}{3cm}{\centering\emph{Nombre de sous-réseaux}} & \multirow{2}{3cm}{\centering\emph{Nombre de gènes}} \\
+					&&\\
+					\midrule
+					A1	&	119	&	406	\\
+					B1	&	127	&	236	\\
+					A2	&	103	&	306	\\
+					B2	&	100	&	190	\\
+					\bottomrule
+				\end{tabular}
+				\label{tab:Res1Networks}
+				\vspace{5ex}
+				\caption*{Nombre de sous-réseaux et nombre de gènes obtenus suivant les différents combinaison des jeux de données transcriptome.}
+			\end{center}
+		\end{table}
+
+		Après avoir filtré les sous-réseaux lors de l'étape de valdation statistique, ceux-ci sont stockés sur une ressource bioinformatique permettant l'exploration et l'analyse (cf Section~\ref{sec:Ressource}).
+		L'examination des sous-réseaux obtenus, montre comme nous allons le voir dans la partie suivante peu de divergences parmi les sous-réseaux découverts.
+		Mais nous allons commencer d'abord par une exploration biologique des sous-réseaux découverts.
+
+	\section{\textcolor{green!45!black}{Exploration des sous-réseaux}}\label{sec:Exploration}
+		\mylettrine{L}{a biologie intrinsèque} des 119 sous-réseaux extraits pour l'étude A1 a été analysée en utilisant les informations des annotations de la base de donnés EntrezGene du NCBI et de la base de donnés du Gene Ontology Consortium.
+		Comme nous avons expliqué précédemment, la biologie intrinsèque des gènes inclus dans chacun des sous-réseaux a été calculé par enrichissement en terme Gene Ontology\ref{sec:outils}.
+		Nous avons trouvés que les sous-réseaux formaient des complexes fonctionnelles supportant la maladie étudiée.
+		Le métabolisme, le controle du cycle cellulaire, la prolifération, les adhésions cellules-cellules ainsi que la réponse immunitaire sont des mécanismes connus des différentes caractéristiques du cancer (cf Section~\ref{sub:caract}).
+
+		Le sous-réseau ayant le meilleur rang, 387-4 (score S=0.283), montre un enrichissement significatif pour "actin filament bundle formation" (GO:0051017), qui est un processus directement lié au devellopement de la cellule et à la polarité.
+		Le sous-réseau 291-3 (score S=0.279) montre un enrichissement pour "activation of caspase activity by cytochrome C" (GO:0008635), qui est relié à l'apoptose.
+		Ce sous-réseau montre aussi un enrichissement pour "B cell lineage commitment" (GO:002326), qui révèle une réponse immunitaire à la métastase.
+		Le troisième sous-réseau, 2810-3 (score S=0.278), montre lui aussi un enrichissement pour une fonction similaire.
+		Plus loin dans la liste, le sous-réseau 58-7 (score S=0.271) montre un enrichissement pour des fonctions reliées à la formation de micro-tubules : "microtubule organizing center organization" (GO:0031023) et "regulation of centrosome cycle" (GO:0046605).
+		Le sous-réseau 29959-4 (score S=0.270) est relié au métabolisme avec un enrichissement pour les termes "glucose catabolic process" (GO:0006007), "fructose metabolic process" (GO:0006000) et "alditol metabolic process" (GO:0019400).
+		Ce sous-réseau est aussi fonctionnellement impliqué dans la migration cellulaire par la formation de structure cellulaire telles que des lamellipodium ou des filopodium (terme GO "substrate-bound celle migration, cell extension" GO:0006930).
+
+\pagebreak
+
+		Le sous-réseau 581-7 (score S=0.267) est impliqué dans l'adhésion cellulaire avec un enrichissement pour le terme "focal adhesion formation" (GO:0048041).
+		La différentiation cellulaire est aussi fonctionnellement représentée, le sous-réseau 1452-1 (score S=0.247) montre une impliquation des gènes impliqués dans la voie \acs{WNT} montre un enrichissement pour le terme "regulation of Wnt receptor signaling pathway" (GO:0030111).
+		Le sous-réseau impliqué dans la prolifération cellulaire est 5155-5 (score S= 0.254), et il présente un enrichissement pour les termes "positive regulation of endothelial cell proliferation" (GO:0001938) et "establishment or maintenance of epitelial cell apical/basal polarity" (GO:0045197).
+		La liste globale des enrichissements des termes GO est également stockée dans notre ressource (cf Section~\ref{sec:Ressource}).
+
+		Au niveau des gènes, plusieurs marqueurs montres des liens évidents vers le cancer et des implications dans le cycle cellulaire, la proliferation, l'adhésion cellulaire et d'autre mécanismes biologiques impliqués dans cette maladie.
+		La protéine codé par \acs{CDK1} est une sous-unité catalytique du complexe \acs{MPF}, qui est essentiel pour les phases de transitions G1/S et G2/M du cycle cellulaire eucaryote.
+		D'autres gènes impliqués dans ce processus sont également trouvés, comme \acs{CCND1}.
+		\acs{GRB2} est un facteur de croissance associés à plusieurs types de cancer, et pourrait avoir un rôle dans la métastase \citet{Yu2008}.
+		\acs{TK1} est connu pour être un marqueur de la prolifération dans le cancer du sein, et sa sur-expression a été lié aux cancers de la thyroïde.
+		\acs{TSC1} est connu pour jouer un rôle central dans la régulation de la survie cellulaire et signaux de prolifération.
+		D'autres gènes d'intérêt ont été également trouvés, dont \acs{LAMA4} qui a des rôles \emph{in vitro} dans la migration et \emph{in vivo} dans la tumorogénicité des cellules cancéreuses de la prostate, et \acs{PGK1} qui a été relié au cancer de la prostate.
+
+\pagebreak
+
+	\section{\textcolor{green!45!black}{{Conclusion}}}
+		\mylettrine{L'}{analyse} non-supervisée réalisée avec ITI nous a permis d'explorer la biologie des sous-réseaux découverts.
+		Cela nous a permis de confirmer l'utilité d'une telle approche en reliant directement des sous-réseaux à des processus cellulaires caractéristiques de la maladie étudiée.
+		Les sous-réseaux découverts sont de plus disponible pour permettre d'identifier des gènes d'intérêt, qu'ils soient non reliés précédemment avec le cancer du sein, et donc des oncogènes ou des \acs{TSG} putatifs ou des cibles térapeutiques potentielles.
+		Nous allons maintenant exposer les résultats obtenus lors de notre analyse supervisée, et notamment les performances lors de la classification.
+		
