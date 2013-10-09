@@ -89,33 +89,13 @@
 		La redondance des gènes dans les sous-réseaux peut être expliqué par la haute connectivité de certains hubs (comme \acs{TP53}), ce qui augmente leur propabilité d'être intégré dans plusieurs sous-réseaux.
 
 		Pour évaluer la performance des signatures découvertes avec ITI, nous les avons comparé avec des signatures déjà établies.
-		Les 128 sondes du \acs{GGI} \citet{Sotiriou2006}, la signature Mammaprint à 70 gènes \citet{vandeVijver2002} et la signature status ER spécifique à 76 gène \citet{Wang2005} ont été testées.
+		Les 128 sondes du \acs{GGI} \citet{Sotiriou2006}, la signature Mammaprint à 70 gènes \citet{vandevijver2002} et la signature status ER spécifique à 76 gène \citet{Wang2005} ont été testées.
 		La performance a été mesuré sur les mêmes échantillons (jeux de données Desmedt et van de Vijver), séparément sur les tumeurs ER+ et ER-.
 		La méthode de classification originale des signatures a été utilisée.
-		Pour la signature de van de Vijver, les distances aux centroïdes moyens entre les groupes avec et sans rechute ont été calculé \citet{vandeVijver2002}.
+		Pour la signature de van de Vijver, les distances aux centroïdes moyens entre les groupes avec et sans rechute ont été calculé \citet{vandevijver2002}.
 		Pour la signature de Wang, un score de rechute est calculé pour chaque patient par combinaison linéaire de l'expression des gènes pondéré par des coefficients de Cox standardisés \citet{Wang2005}.
 		Les signature GGI et Mammaprint étant sondes-spécifiques, les tests ont donc été réalisés avec les sondes présentes dans le jeu de données de validation.
 		Les résultats et les mesures des performances sont détaillés dans le Tableau~\ref{tab:Res2Classif}.
-		Ces résultats montre que notre algorithme ITI possède une performance largement plus généralisable que les autres signatures précédements publiées.
-		La classification par le GGI montre une précision maximale entre 47 et 68 \%, la signature à 70 gènes entre 41 et 62 \% et la signature à 76 gènes entre 37 et 63\%.
-		ITI a une meilleure précision comparée à la signature de Wang sur les données de Desmedt (ER+) : une précision de 74\% (spécificité de 92\%) a été obtenue contre une précision de 60\% (spécificité de 56\%) pour la signature à 76 gènes.
-		ITI donne aussi des résultats plus performants sur les échantillons ER- des données Desmedt avec une précision de 54\% (spécificité de 65\%) contre une précision de 38\% (spécificité de 41\%) contre la signature de Wang.
-		Ceci reste également vrai pour la signature Mammaprint à 70 gènes qui marche essentiellement sur le jeu de données van de Vijver.
-		ITI montre une performance de 53\% associée à une specificité de 90\% sur les données van de Vijver (ER-) et une précision de 52\% avec une spécificité de 65\% sur les données van de Vijver (ER-). 
-		Cette performance est inférieure à celle obtenu sur l'étude 1 et pourrait refléter un biais vers les plateformes Affymetrix introduit par l'apprentissage sur le compendium. 
-		Le signature Mammaprint a une moins bonne précision de 41\% sur les tumeurs ER+ et de 42\% sur les tumeurs ER- du jeu de données Desmedt.
-		De la même manière, ITI a montré une performance supérieure à la classification GGI sur les patiens ER-.
-		Globalement, ITI a été capable de mieux généralisé avec valeur minimale pour la précision de 52\%.
-
-		Pour une autre comparaison, \citet{Chuang2007} ont achevé une performance de 48.8\% sur les échantillons issus du jeu de données van de Vijver en les entrainant sur ceux du jeu de données Wang et 55.8\% reciproquement.
-		Les contributions spécifiques des données d'interactions ou des données d'expression des gènes ne sont pas quantifiées, elles sont difficilement séparable dans le contexte actuel.
-		Cependant, \citet{Chuang2007} ont déjà démontré que qu'une approche intégrative augmentait la robustesse de la signature, et plusieurs études ont démontré que des méta-analyses de données d'expression des gènes augmentaient également les performances de classification \citep{Fishel2007,Xu2005}.
-		Nous avons réalisé une analyse du temps de survie entre les groupes de bon et mauvais pronostics dans l'étude 1 (cf Figure~\ref{fig:Survival}).
-		Le test Log-rank donne une p-value de 4.89x10\textsuperscript{-5}, suggérant une bonne séparation entre les deux groupes.
-		Cette valeur est plus élevée que les p-values obtenues avec les autres signatures (la signature de Wang donne P = 4.11x10\textsuperscript{-3} et celle du GGI donne P = 1.34x10\textsuperscript{-3}).
-		La signature Mammaprint n'a pas été capable de séparer significativement dans des groupes les patients issus du jeu de données de Desmedt.
-		Même si ITI n'a pas été spęcifiquement prévu pour obtenir un bon score au test Log-rank, il a été capable de séparer les patients avec une haute espérance de survie de ceux avec une espérance de survie faible.
-		Une alternative aurait pu être de caculer directement les scores des sous-réseaux en se basant sur les P-values du log-rank des gènes.
 
 			\begin{sidewaystable}
 				\begin{center}
@@ -144,9 +124,30 @@
 					\end{tabular}
 					\label{tab:Res2Classif}
 					\vspace{5ex}
-					\caption*{Les quatre ensembles de sous-réseaux xXx ont été utilisés pour mesurer la performance de classification d'ITI (\textbf{en gras}). Les abréviations suivantes ont été utilisées : N - nombre de tumeurs à classifier; VN - Vrai Négatif; FP - Faux Positif; VP - Vrai Positif; FN - Faux Négatif; ACC - Justesse; SV - Sensibilité; SP - Spécificité. La justesse de la classification basée sur des sous-réseaux est supérieure à la classification basé sur des expressions de gènes pour prédire la métastase dans le jeu de données de Desmedt, et autour du même niveau pour le jeu de données de van de Vijver.}
+					\caption*{Les quatre signatures ont été utilisés pour mesurer la performance de classification d'ITI (\textbf{en gras}). Les abréviations suivantes ont été utilisées : N - nombre de tumeurs à classifier; VN - Vrai Négatif; FP - Faux Positif; VP - Vrai Positif; FN - Faux Négatif; ACC - Justesse; SV - Sensibilité; SP - Spécificité. La performance de la classification basée sur des sous-réseaux est supérieure à la classification basé sur des expressions de gènes pour prédire la métastase dans le jeu de données de Desmedt, et similaire pour le jeu de données de van de Vijver.}
 				\end{center}
 			\end{sidewaystable}
+
+		Ces résultats montre que notre algorithme ITI possède une performance largement plus généralisable que les autres signatures précédements publiées.
+		La classification par le GGI montre une précision maximale entre 47 et 68 \%, la signature à 70 gènes entre 41 et 62 \% et la signature à 76 gènes entre 37 et 63\%.
+		ITI a une meilleure précision comparée à la signature de Wang sur les données de Desmedt (ER+) : une précision de 74\% (spécificité de 92\%) a été obtenue contre une précision de 60\% (spécificité de 56\%) pour la signature à 76 gènes.
+		ITI donne aussi des résultats plus performants sur les échantillons ER- des données Desmedt avec une précision de 54\% (spécificité de 65\%) contre une précision de 38\% (spécificité de 41\%) contre la signature de Wang.
+		Ceci reste également vrai pour la signature Mammaprint à 70 gènes qui marche essentiellement sur le jeu de données van de Vijver.
+		ITI montre une performance de 53\% associée à une specificité de 90\% sur les données van de Vijver (ER-) et une précision de 52\% avec une spécificité de 65\% sur les données van de Vijver (ER-). 
+		Cette performance est inférieure à celle obtenu sur l'étude 1 et pourrait refléter un biais vers les plateformes Affymetrix introduit par l'apprentissage sur le compendium. 
+		Le signature Mammaprint a une moins bonne précision de 41\% sur les tumeurs ER+ et de 42\% sur les tumeurs ER- du jeu de données Desmedt.
+		De la même manière, ITI a montré une performance supérieure à la classification GGI sur les patiens ER-.
+		Globalement, ITI a été capable de mieux généralisé avec valeur minimale pour la précision de 52\%.
+
+		Pour une autre comparaison, \citet{Chuang2007} ont achevé une performance de 48.8\% sur les échantillons issus du jeu de données van de Vijver en les entrainant sur ceux du jeu de données Wang et 55.8\% reciproquement.
+		Les contributions spécifiques des données d'interactions ou des données d'expression des gènes ne sont pas quantifiées, elles sont difficilement séparable dans le contexte actuel.
+		Cependant, \citet{Chuang2007} ont déjà démontré que qu'une approche intégrative augmentait la robustesse de la signature, et plusieurs études ont démontré que des méta-analyses de données d'expression des gènes augmentaient également les performances de classification \citep{Fishel2007,Xu2005}.
+		Nous avons réalisé une analyse du temps de survie entre les groupes de bon et mauvais pronostics dans l'étude 1 (cf Figure~\ref{fig:Survival}).
+		Le test Log-rank donne une p-value de 4.89x10\textsuperscript{-5}, suggérant une bonne séparation entre les deux groupes.
+		Cette valeur est plus élevée que les p-values obtenues avec les autres signatures (la signature de Wang donne P = 4.11x10\textsuperscript{-3} et celle du GGI donne P = 1.34x10\textsuperscript{-3}).
+		La signature Mammaprint n'a pas été capable de séparer significativement dans des groupes les patients issus du jeu de données de Desmedt.
+		Même si ITI n'a pas été spęcifiquement prévu pour obtenir un bon score au test Log-rank, il a été capable de séparer les patients avec une haute espérance de survie de ceux avec une espérance de survie faible.
+		Une alternative aurait pu être de caculer directement les scores des sous-réseaux en se basant sur les P-values du log-rank des gènes.
 
 		\section{\textcolor{green!45!black}{Exploration des sous-réseaux}}
 
