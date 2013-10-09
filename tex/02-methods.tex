@@ -5,7 +5,7 @@
 		\begin{center}
 			\begin{tcolorbox}[colback=green!5!white,colframe=green!45!black,arc=0mm]
 				\sffamily
-				Nous détaillerons ici notre méthode d'Intégration Transcriptome Interactome. J'ai choisi d'inclure dans cette section nos chapitres \citep{Garcia2011,Garcia2013}. Ces chapitres étant trop longs, ils se trouvent dans les Annexes. Les données utilisées, ainsi que l'algorithme ITI\index{ITI} seront décrit en détail, et les outils utilisés seront décrits briévement.
+				Nous détaillerons ici notre méthode d'Intégration Transcriptome Interactome. J'ai choisi d'inclure dans cette section nos chapitres\citep{Garcia2011,Garcia2013} qui détaillent plus précisément la méthode. Ces chapitres étant trop longs, ils se trouvent dans les Annexes. Les données utilisées, ainsi que l'algorithme ITI\index{ITI} seront décrit en détail, et les outils utilisés seront décrits briévement.
 			\end{tcolorbox}
 			\vspace{5ex}
 			\mtcsetdepth{minitoc}{1}
@@ -18,7 +18,7 @@
 	\section{\textcolor{green!45!black}{Les avantages de l'intégration de données}}
 
 		\subsection{\textcolor{green!45!black}{Les avantages de l'intégration de données d'expression des gènes et d'interactions protéine-protéine}}
-			\mylettrine{N}{ous avons introduit} dans le chapitre précédent les signatures prédictives dans le cancer du sein, ainsi que les limitations des technologies utilisées ~\ref{def:limitations}.
+			\mylettrine{N}{ous avons introduit} dans le chapitre précédent les signatures prédictives dans le cancer du sein, ainsi que les limitations des technologies utilisées (cf Section~\ref{def:limitations}).
 			Ces limitations sont dues d'une part à la topologie des données et du double fléau de la dimension et de la parcimonie.
 			Et d'autres part, à la biologie du cancer et des gènes directeurs en amont qui non seulement sont à l'origine du cancer mais qui dérégulent les gènes en aval et ne sont de ce fait pas détectés.
 			Nous allons maintenant voir quels sont les avantages de l'intégration de données sur les performances de ces signatures.
@@ -35,14 +35,15 @@
 				\item Les sous-réseaux résultants procurent des modèles des méchanismes moléculaires sous-jascents de la métastase.
 				\item Les \emph{hubs} tels que \acs{TP53}, \acs{KRAS}, \acs{HRAS}, \acs{ERBB2}, non détectés par les analyses classiques, jouent un rôle central dans les réseaux en interconnectant un grand nombre de gènes.
 				\item Les sous-réseaux identifiés sont signifiquativement plus reproductibles entre différentes études que des biomarqueurs individuels sélectionnés sans information sur les interactions protéine-protéine.
-				\item Une classification basée sur des réseaux permet d'obtenir une prédiction plus précise en sélectionnant les marqueurs sur un premier jeu de données d'entraînement et en les appliquant à un deuxième jeu de données de validation indépendant (cf figure~\ref{fig:Chuang2007figS1}).
+				\item Une classification basée sur des réseaux permet d'obtenir une prédiction plus précise en sélectionnant les marqueurs sur un premier jeu de données d'entraînement et en les appliquant à un deuxième jeu de données de validation indépendant (cf Figure~\ref{fig:Chuang2007figS1}).
 			\end{itemize}
 
 			\begin{figure}
 				\centering
 				\includegraphics[width=\columnwidth]{figures/Chuang2007figS1.png}
-				\caption{Avantages de l'intégration de données d'expression des gènes et d'interactions protéine-protéine sur la précision de la classification de la rechute métastatique par rapport à une analyse classique sur des données d'expression des gènes par \citeauthor{Chuang2007}.}
+				\caption{Avantages de l'intégration de données d'expression des gènes et d'interactions protéine-protéine sur la précision de la classification de la rechute métastatique par rapport à une analyse classique sur des données d'expression des gènes.}
 				\label{fig:Chuang2007figS1}
+				\caption*{Figure inspirée de \citeauthor{Chuang2007}.}
 			\end{figure}
 
 			\pagebreak
@@ -51,8 +52,8 @@
 			\mylettrine{C}{omme nous venons} de le détailler, cette méthode présente des avantages comparé aux méthodes classiques d'analyse de données d'expression des gènes.
 			Nous allons détailler rapidement ici la méthode de \citeauthor{Chuang2007}.
 			Cette méthode d'intégration utilise deux types de données.
-			Le premier type est les données d'expression des gènes, ainsi que les données cliniques correspondantes, que nous détaillerons dans la partie ~\ref{sec:GEP}.
-			Le second type de données utilisée est les données d'interactions protéine-protéine, que nous nous détaillerons dans la partie ~\ref{sec:IPP}.
+			Le premier type est les données d'expression des gènes, ainsi que les données cliniques correspondantes, que nous détaillerons dans la Section~\ref{sec:GEP}.
+			Le second type de données utilisée est les données d'interactions protéine-protéine, que nous nous détaillerons dans la Section~\ref{sec:IPP}.
 			Les conditions cliniques des patients (\emph{ie} métastatique ou non-métastatique) permettent de différencier l'expression des gènes constituant les sous-réseaux pour constituer une matrice d'activité.
 			Elles sont utilisés pour assigner des ensembles de gènes sur des sous-réseaux.
 			Cette matrice d'activité sert à attribuer un score global à chaque sous-réseau, dérivé de l'expression de chacun des gènes le constituant.
@@ -62,8 +63,9 @@
 			\begin{figure}
 				\centering
 				\includegraphics[width=\columnwidth]{figures/Chuang2007IntegrationAlgorithm.png}
-				\caption{Algorithme détaillant l'intégration de données d'expression des gènes et d'interactions protéine-protéine par \citeauthor{Chuang2007}.}
+				\caption{Algorithme détaillant l'intégration de données d'expression des gènes et d'interactions protéine-protéine.}
 				\label{fig:Chuang2007IntegrationAlgorithm}
+				\caption*{Figure inspirée de \citeauthor{Chuang2007}.}
 			\end{figure}
 		
 	\section{\textcolor{green!45!black}{L'Intégration Transcriptome-Interactome}}
@@ -128,50 +130,50 @@
 						\bottomrule
 					\end{tabular}
 					\label{tab:MetDatasets}
-					\vspace{5ex}
+					\vspace{3ex}
 					\caption*{Tous les jeux de données présentés ici ont été considérés, cependant nous avons gardé seulement les jeux de données accompagnés de données cliniques. Les jeux de données rejetés pourraient cependant être inclus si les données cliniques étaient accessibles.}
 				\end{center}
 			\end{table}
 
 			Nous avons utilisé ces jeux de données d'expression dans le cancer du sein pour deux analyses.
-			Pour la première analyse, non supervisée, nous avons uniquement utilisé comme données cliniques l'événement DMFS.
-			Voici les jeux de données que nous avons sélectionnés pour notre première analyse (\emph{cf} ~\ref{chap:results1}).
+			Pour la première analyse, non supervisée, nous avons uniquement utilisé comme données cliniques l'événement \acs{DMFS}.
+			Voici les jeux de données que nous avons sélectionnés pour notre première analyse (cf Section~\ref{chap:results1}).
 
 			\begin{table}
 				\begin{center}
-					\caption{Liste des jeux de données inclus pour notre analyse non supervisée (\emph{cf} ~\ref{chap:results1}).}
+					\caption{Liste des jeux de données inclus pour notre analyse non supervisée (cf Section~\ref{chap:results1}).}
 					\begin{tabular}{lcccc}
 						\toprule
 						\multirow{2}{3cm}{\emph{Jeu de données}}	&  & \multirow{2}{3cm}{\centering\emph{Nombre d'échantillons}}	& \multirow{2}{3cm}{\centering\emph{Nombre de status \acs{DMFS} positif}} & \multirow{2}{3cm}{\centering\emph{Nombre de status \acs{DMFS} négatif}} \\
 						&&&&\\
 						\midrule
-						Desmedt			& \citep{Desmedt2008}		& 198	& 62	&	136		\\
-						Ivshina			& \citep{Ivshina2006}		& 249	& 89	&	160		\\
-						Loi				& \citep{Loi2008}			& 117	& 26	&	91		\\
-						Parker			& \citep{Parker2009}		& 199	& 45	&	154		\\
-						Pawitan			& \citep{Pawitan2005}		& 159	& 40	&	119		\\
-						Schmidt			& \citep{Schmidt2008}		& 200	& 46	&	154		\\
-						Sabatier		& \citep{Sabatier2011}		& 31	& 9		&	22		\\
-						Sotiriou		& \citep{Sotiriou2009}		& 179	& 40	&	139		\\
-						van de Vijver	& \citep{vandevijver2002}	& 295	& 88	&	207		\\
-						Wang			& \citep{Wang2005}			& 286	& 107	&	179		\\
-						Zhang			& \citep{Zhang2009a}		& 136	& 20	&	116		\\
-						Zhou			& \citep{Zhou2007}			& 54	& 9		&	45		\\
+						Desmedt			& \citet{Desmedt2008}		& 198	& 62	&	136		\\
+						Ivshina			& \citet{Ivshina2006}		& 249	& 89	&	160		\\
+						Loi				& \citet{Loi2008}			& 117	& 26	&	91		\\
+						Parker			& \citet{Parker2009}		& 199	& 45	&	154		\\
+						Pawitan			& \citet{Pawitan2005}		& 159	& 40	&	119		\\
+						Schmidt			& \citet{Schmidt2008}		& 200	& 46	&	154		\\
+						Sabatier		& \citet{Sabatier2011}		& 31	& 9		&	22		\\
+						Sotiriou		& \citet{Sotiriou2009}		& 179	& 40	&	139		\\
+						van de Vijver	& \citet{vandevijver2002}	& 295	& 88	&	207		\\
+						Wang			& \citet{Wang2005}			& 286	& 107	&	179		\\
+						Zhang			& \citet{Zhang2009a}		& 136	& 20	&	116		\\
+						Zhou			& \citet{Zhou2007}			& 54	& 9		&	45		\\
 						\midrule
 						Total			&							& 2103	& 581	&	1522	\\
 						\bottomrule
 					\end{tabular}
 					\label{tab:Met:DSNS}
-					\vspace{5ex}
+					\vspace{3ex}
 					\caption*{L'utilisation de 12 jeux données nous donne l'accès à plus de 2000 tumeurs pour notre analyse non supervisée.}
 				\end{center}
 			\end{table}
 
-			%Toutes les informations cliniques ont été téléchargés sur \acs{GEO} le site de dépôt de bases de données publiques du \acs{NCBI}, pour les jeux de données préalablement récupérés sur ce même site \citep{Desmedt2008, Loi2008, Sabatier2011, Schmidt2008, Wang2005}, ou sur le site internet de l'auteur\footnote{\url{bioinformatics.nki.nl/data.php}} pour le jeu de données de van de Vijver \citep{vandevijver2002}.
+			%Toutes les informations cliniques ont été téléchargés sur \acs{GEO} le site de dépôt de bases de données publiques du \acs{NCBI}, pour les jeux de données préalablement récupérés sur ce même site \citet{Desmedt2008, Loi2008, Sabatier2011, Schmidt2008, Wang2005}, ou sur le site internet de l'auteur\footnote{\url{bioinformatics.nki.nl/data.php}} pour le jeu de données de van de Vijver \citet{vandevijver2002}.
 
 			\pagebreak
 
-			Pour notre seconde analyse, supervisée, nous avons choisi de ne sélectionner que les patientes sans traitements supplémentaires par soucis d'homogénéisation, et ainsi éviter de séparer les patientes en fonction de la réponse au traitement.
+			Pour notre seconde analyse, supervisée, nous avons choisi de ne sélectionner que les patientes sans traitement supplémentaire par soucis d'homogénéisation, et ainsi éviter de séparer les patientes en fonction de la réponse au traitement.
 			Nous avons également tenu compte de l'expression des \aclp{ER}.
 			Dans le but d'avoir un ensemble d'échantillons le plus homogène possible, nous les avons soigneusement choisi en nous basant sur les données cliniques accessibles.
 			Les données cliniques qui nous intéressaient, étaient :
@@ -182,13 +184,13 @@
 				\item La présence ou non de traitement, et sa nature éventuelle
 			\end{itemize}
 
-			Le status \acs{DMFS} et son temps de mesure, nous ont permi de censurer les échantillons (DEV).
-			Le satus \acs{ER} nous a permi de diviser les échantillons en deux groupes pour nos analyses.
-			Traitement (DEV)
+			Le satus \acs{ER} nous a permis de diviser les échantillons en deux groupes pour nos analyses.
+			Nous avons utilisé le status \acs{DMFS} et son temps de mesure, pour controler les échantillons et vérifier qu'il n'y avait pas eu des erreurs d'annotations.
+			Les informations sur le traitement nous a permis de sélectionner uniquement les patientes sans traitement supplémentaire.
 
 			\begin{table}
 				\begin{center}
-					\caption{Liste des jeux de données inclus pour notre analyse supervisée (\emph{cf} ~\ref{chap:results2}).}
+					\caption{Liste des jeux de données inclus pour notre analyse supervisée (cf Section~\ref{chap:results2}).}
 					\begin{tabular}{llr@{/}lr@{/}lr@{/}l}
 						\toprule
 						\emph{Jeu de données} & \emph{Plateforme}	& \multicolumn{2}{c}{\emph{Nombre d'échantillons}}	& \multicolumn{2}{c}{\emph{Statuts DMFS}} & \multicolumn{2}{c}{\emph{Statuts ER}} \\
@@ -205,9 +207,8 @@
 						\midrule
 						Total						& 7 différentes										& 930	&1561	& 307	& 623	& 246	& 684	\\
 						\bottomrule
-					\end{tabular}
-					\label{tab:Met:DSS}
-					\vspace{5ex}
+					\end{tabular}\label{tab:Met:DSS}
+					\vspace{3ex}
 					\caption*{L'utilisation de 6 jeux de données nous donne l'accès à plus de 1500 tumeurs pour notre analyse supervisée.}
 				\end{center}
 			\end{table}
@@ -230,43 +231,36 @@
 			Enfin, les interactions \emph{in silico} sont des prédictions obtenues par divers algorithmes, et ne sont pas validées \emph{in vivo} ou \emph{in vitro}.
 			Elles sont donc moins sûres que les autres interactions. 
 
-			\pagebreak
+			\ac{HPRD} \citet{Prasad2009}, INTAct \citet{Kerrien2012}, \ac{DIP} \citet{Xenarios2000} et \ac{MINT} \citet{Zanzoni2002} contiennent des interactions décrites dans la littérature et vérifiées par double hybride.
+			\ac{CORUM} \citet{Ruepp2008} contient des interactions de complexes.
+			Cocite \citet{Ramani2005} contient des interactions prédites in silico.
 
-			\ac{HPRD} \citep{Prasad2009}, INTAct \citep{Kerrien2012}, \ac{DIP} \citep{Xenarios2000} et \ac{MINT} \citep{Zanzoni2002} contiennent des interactions décrites dans la littérature et vérifiées par double hybride.
-			\ac{CORUM} \citep{Ruepp2008} contient des interactions de complexes.
-			Cocite \citep{Ramani2005} contient des interactions prédites in silico.
+\pagebreak
 
-
-	\section{\textcolor{green!45!black}{Données et outils supplémentaires}}
+	\section{\textcolor{green!45!black}{Données et outils supplémentaires}}\label{sec:outils}
 		\mylettrine{N}{ous utilisons} également des données supplémentaires pour les besoins de notre algorithme.
-			Pour l'annotation des différentes plateformes de puces à \acs{ADN}, nous utilisons les fichiers fournis par la plateforme d'annotation de puces à \acs{ADN} Resourcerer \citep{Tsai2001}.
+			Pour l'annotation des différentes plateformes de puces à \acs{ADN}, nous utilisons les fichiers fournis par la plateforme d'annotation de puces à \acs{ADN} Resourcerer \citet{Tsai2001}.
 			Pour l'annotation des gènes, nous utilisons le fichier gene info \footnote{Homo\_sapiens.gene\_info.gz} fourni par le \acs{NCBI}\footnote{\url{ftp://ftp.ncbi.nlm.nih.gov/gene/DATA/GENE_INFO/Mammalia/}}.
 
 			Nous avons également utilisé des outils supplémentaires pour la visualisation et les analyses de nos résultats.
-			Pour visualiser nos sous-réseaux, nous avons utilisé le logiciel libre \emph{Graphviz}\footnote{\url{http://graphviz.org/}} développé par AT\&T Research et le modèle de rendu \emph{neato}.
-			Pour analyser l'enrichissement en terme GO, nous avons utilisé le programme ErmineJ \citep{Gillis2010}.
-			Pour notre analyse supervisée ~\ref{chap:results2} nous utilisons la librarie libSVM \citep{Chang2007} pour classifier nos échantillons ~\ref{sub:classification}.
+			Pour visualiser nos sous-réseaux, nous avons utilisé le logiciel libre \emph{Graphviz}\footnote{\url{http://graphviz.org/}} développé par AT\&T Labs Research\citet{Graphviz1988} et le modèle de rendu \emph{neato}.
+			Pour analyser l'enrichissement en terme GO, nous avons utilisé le programme ErmineJ \citet{Gillis2010}.
+			Pour notre analyse supervisée (cf Section ~\ref{chap:results2}) nous utilisons la librarie libSVM \citet{Chang2007} pour classifier nos échantillons (cf Section ~\ref{sub:classification}).
 
-			\pagebreak
-
-	\section{\textcolor{green!45!black}{Présentation de l'algorithme ITI}}
+	\section{\textcolor{green!45!black}{Présentation de l'algorithme ITI}}\label{sec:ITI}
 
 		\subsection{\textcolor{green!45!black}{Détection des sous-réseaux}}
 			\mylettrine{L}{a première étape} de notre algorithme est la détection de sous-réseaux.
-			Les données utilisées par \acs{ITIfr} en entrée sont d'une part des profils d'expressions des gènes, ainsi que les conditions cliniques correspondantes aux patients, et des données d'interactions protéine-protéine, détaillés précédemment (données d'expressions des gènes \ref{sec:GEP}, données d'interactions protéine-protéine \ref{sec:IPP}).
+			Les données utilisées par \acs{ITIfr} en entrée sont d'une part des profils d'expressions des gènes, ainsi que les conditions cliniques correspondantes aux patients, et des données d'interactions protéine-protéine, détaillés précédemment (données d'expressions des gènes cf Section~\ref{sec:GEP}, données d'interactions protéine-protéine cf Section~\ref{sec:IPP}).
 			Les données d'interactions protéine-protéine sont rassemblées pour ne former qu'un seul interactome.
 			Les auto-interactions (une protéine vers elle) même n'ont pas été gardées.
 			Nous avons gardés les interactions en nous basant sur l'unicité du numéro d'accession gene ID fourni par les fichiers d'annotations du NCBI. 
 			Les données d'expressions des gènes sont considérées séparément pour chacun des jeux de données utilisés.
 			Chaque gène est utilisé successivement comme graine pour créer un sous-réseau.
-			Ce processus est parallèlisé sur un cluster de calcul de type Beowulf.
-
-
-
-
+			Pour accélérer cette étape de détection des sous-réseaux et minimiser les coûts de calcul, ce processus est parallèlisé en subdivisant l'interactome, lors de la sélection des graines, sur un cluster de calcul de type Beowulf.
 			Pour chacun des jeux de données d'expression des gènes, la corrélation des conditions cliniques avec les \acs{GEP} est calculé.
 			Ainsi, si un gène n'a pas d'expression dans un jeu de données particulier, à cause des différences entre les plateformes, il peut quand même être pris en compte pour la constitution d'un sous-réseaux.
-			Récursivement nous considérons le premier voisin du gène graine, et l'ajoutons à notre sous-réseau en construction, si l'ajout de ce gène améliore le score du sous-réseau, suivant l'équation \ref{eq:score} :
+			Récursivement nous considérons le premier voisin du gène graine, et l'ajoutons à notre sous-réseau en construction, si l'ajout de ce gène améliore le score du sous-réseau, suivant l'Équation~\ref{eq:score} :
 				\begin{equation}\label{eq:score}
 					S_{s,d}=\frac{\sqrt{n_{d}}}{\sqrt{\max n_{d}(DS)}}\Bigg|corr\Bigg(\frac{1}{n}\sum_{g\in S}e(g,d),cc(d)\Bigg)\Bigg|
 				\end{equation}
@@ -280,7 +274,7 @@
 			Au plus des sous-réseaux sont ajoutés, au moins l'apport d'un nouveau gène au sous-réseau influencera la valeur du score.
 			C'est pourquoi une valeur de seuil nous sert ici pour sélectionner les gènes à ajouter, et ainsi éviter d'ajouter à chaque sous-réseaux la totalité des gènes de l'interactome.
 
-			Un score global, non utilisé pour le calcul, mais pour simplifier l'affichage des résultats est calculé suivant l'équation \ref{eq:global} :
+			Un score global, non utilisé pour le calcul, mais pour simplifier l'affichage des résultats est calculé suivant l'Équation~\ref{eq:global} :
 			\begin{equation}\label{eq:global}
 				S_{s}=\frac{1}{NS}\sum_{d\in DS}S(s,d)
 			\end{equation}
@@ -298,7 +292,7 @@
 		
 			Reprenant cette méthode de construction des sous-réseau lors de cette détection, nous construisons, dans le but de valider statistiquement les sous-réseaux que nous venons de détecter, des distributions aléatoires de sous-réseaux.
 
-		\subsection{\textcolor{green!45!black}{Validation statistique}}
+		\subsection{\textcolor{green!45!black}{Validation statistique}}\label{sec:Validation}
 			\mylettrine{D}{ans le but de définir} des distributions aléatoires de scores, nous permettant de vérifier l'hyphothèse nulle, reliant l'expression des gènes et les réseaux d'interactions, nous utilisons trois méthodes pour générer des sous-réseaux aléatoires
 			Ces méthodes se basent sur le principe de construction de sous-réseaux expliqué précédement.
 			Premièrement, nous mélangeons les conditions cliniques.
@@ -326,12 +320,12 @@
 			Les distributions des trois ensembles de sous-réseaux aléatoires nous ont permis d'attribuer 3 p-values différentes pour chacun des sous-réseaux.
 			Nous sélectionnons un seuil de p-value pour chacune des distributions aléatoires et l'utilisons pour filtrer les sous-réseaux détectés et générons trois ensembles de sous-réseaux stastitiquement significatifs suivant chacune des méthodes précédemment expliquées.
 			Nous réalisons alors l'intersection de ces trois ensemble pour constituer un ensemble de sous-réseaux dont la significativité est validé par trois distributions aléatoires.
-			Pour faciliter l'affichage et l'interprétation des résultats, nous combinons les trois différentes p-values avec la méthode de Fisher \citep{Fisher1925}.
+			Pour faciliter l'affichage et l'interprétation des résultats, nous combinons les trois différentes p-values avec la méthode de Fisher \citet{Fisher1925}.
 			Cet ensemble final de sous-réseaux constitue une signature avec laquelle nous pourrons classifier des échantillons et ainsi comparer la performance des signatures trouvées avec notre méthode ITI et les autres méthodes existantes.
-			Nous détaillerons ces résultats dans la partie ~\ref{chap:results2}.
+			Nous détaillerons ces résultats dans la Section~\ref{chap:results2}.
 			Nous allons maintenant détailler la réalisation d'une ressource bioinformatique contenant les différents sous-réseaux trouvés lors de nos analyses.
 
-		\subsection{\textcolor{green!45!black}{Création d'une ressource bioinformatique permettant l'analyse des sous-réseaux}}
+		\subsection{\textcolor{green!45!black}{Création d'une ressource bioinformatique permettant l'analyse des sous-réseaux}}\label{sec:Ressource}
 			\mylettrine{P}{our permettre le parcours} des différents ensembles de sous-réseaux trouvés lors de nos analyses, nous avons créé une ressource bioinformatique permettant, l'affichage, l'interprétation et l'analyse des sous-réseaux.
 			Cette ressource est accessible par internet, et constitue le site internet companion des publications \footnote{\url{http://iti.sourceforge.net/}}.
 			Dans un soucis de reproductibilité des résultats, le code source du projet \ac{ITIfr} est disponible sous licence CeCILL sur sourceforge \footnote{\url{http://sourceforge.net/projects/iti/}}.
@@ -345,8 +339,6 @@
 			Pour chacun des gènes, un lien vers la page du gène sur le site du NCBI est fournie, pour une analyse plus détaillée.
 			Pour permettre plus facilement la navigation d'un sous-réseau à un autre, pour chaque gène il existe une page listant les sous-réseaux dans lesquels il apparait.
 			Enfin, pour chacun des sous-réseaux un enrichissement en terme GO est calculé, par jeux de données d'expression, se basant sur l'apport des gènes du sous-réseaux par rapport à l'ensemble des gènes présents sur la plateforme de puce à \acs{DNA} utilisée pour constituer le jeu de données.
-
-			\pagebreak
 
 		\subsection{\textcolor{green!45!black}{Utilisation des SVM pour la classification}}\label{sub:classification}
 
@@ -363,17 +355,14 @@
 
 			Les \ac{SVM} permettent de traiter des problèmes de discrimination non-linéaire et sont capables de gérer des données de grandes dimensions, c'est pourquoi nous les utilisons pour classifier nos échantillons.
 
-		\subsection{\textcolor{green!45!black}{Stratification, organisation des données et classification}}
-			\mylettrine{P}{our les besoins de notre analyse supervisée} (cf partie ~\ref{chap:results2}), nous avons laissé de coté un jeu de données d'expression, dans le but d'effectuer une classification finale indépendante.
+		\subsection{\textcolor{green!45!black}{Stratification, organisation des données et classification}}\label{sub:stratification}
+			\mylettrine{P}{our les besoins de notre analyse supervisée} (cf Section~\ref{chap:results2}), nous avons laissé de coté un jeu de données d'expression, dans le but d'effectuer une classification finale indépendante.
 			Avec les autres jeux de données d'expression, nous avons réalisé une stratification à dix couches, utilisant 90\% des données pour apprentissage, et les 10\% restant pour classification.
 
-
-
-
-
+			Nous avons effectué notre stratification en sélectionnant les échantillons de manière à respecter la même proportion entre les différentes couches en échantillons des différents éléments des populations (événement \acs{DMFS} négatif ou positif avec un status ER+ ou un status ER-).
 			
 			Nous avons utilisé notre algorithme ITI pour sélectionner des sous-réseaux sur chacune de ces dix couches.
-			Nous utilisons la librarie libSVM pour créer des modèles \ac{SVM} pour chacun des jeux de données d'expression utilisés ~\ref{sub:classification}.
+			Nous utilisons la librarie libSVM pour créer des modèles \ac{SVM} pour chacun des jeux de données d'expression utilisés (cf Section~\ref{sub:classification}).
 			Chaque liste de sous-réseaux sélectionnée après validation statistique a été utilisée pour trouver la taille maximisant les performances de la classification.
 			Pour combiner les différents modèles \ac{SVM}, nous avons réalisé un vote à la majorité pondéré par la taille de la population du jeux de données.
 
@@ -381,8 +370,8 @@
 			Ces dix classifications nous ont permis d'arriver à un ensemble de sous-réseaux optimaux que nous avons alors regroupés.
 			Chacun des sous-réseaux a été comparé avec les autres, et s'il y avait une superposition entre deux jeux de données, seul celui avec le meilleur score était gardé.
 			Ce dernier ensemble de sous-réseaux a finalement été utilisé pour classifier le jeu de donnés d'expression préalablement mis de coté, et donc indépendant.
-			La figure ~\ref{fig:Workflow} détaille cette organisation des données.
-			Les résultats seront exploités dans la partie ~\ref{chap:results2}.
+			La Figure~\ref{fig:Workflow} détaille cette organisation des données.
+			Les résultats seront exploités dans la Section~\ref{chap:results2}.
 
 			\begin{figure}
 				\begin{center}
@@ -393,4 +382,4 @@
 			\end{figure}
 
 	\section{\textcolor{green!45!black}{Conclusion}}
-		\mylettrine{A}{près avoir détaillé} notre méthode, nous allons maintenant présenter les résultats que nous avons obtenus et publiés \citep{Garcia2011,Garcia2012}. Tout d'abord, nous allons détailler nos résultats sur une analyse non-supervisée~\ref{chap:results1}, puis sur une analyse supervisée~\ref{chap:results2}.
+		\mylettrine{A}{près avoir détaillé} notre méthode, nous allons maintenant présenter les résultats que nous avons obtenus et publiés \citet{Garcia2011,Garcia2012}. Tout d'abord, nous allons détailler nos résultats sur une analyse non-supervisée (cf Section~\ref{chap:results1}), puis sur une analyse supervisée (cf Section~\ref{chap:results2}).
