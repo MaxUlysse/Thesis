@@ -90,14 +90,14 @@
 \rfoot{}
 
 % Normal marks
-%\lhead[\fancyplain{}{\sffamily\thepage}]{\fancyplain{}{\sffamily\rightmark}}
-%\rhead[\fancyplain{}{\sffamily\leftmark}]{\fancyplain{}{\sffamily\thepage}}
-%\cfoot{}
+\lhead[\fancyplain{}{\sffamily\thepage}]{\fancyplain{}{\sffamily\rightmark}}
+\rhead[\fancyplain{}{\sffamily\leftmark}]{\fancyplain{}{\sffamily\thepage}}
+\cfoot{}
 
 %Draftmarks
-\lhead[\fancyplain{}{\sffamily\thepage}]{\fancyplain{}{\sffamily\textcolor{blue}{DRAFT} \rightmark}}
-\rhead[\fancyplain{}{\sffamily\leftmark}]{\fancyplain{}{\sffamily\thepage}}
-\cfoot{\textcolor{blue}{\myversion}}
+%\lhead[\fancyplain{}{\sffamily\thepage}]{\fancyplain{}{\sffamily\textcolor{blue}{DRAFT} \rightmark}}
+%\rhead[\fancyplain{}{\sffamily\leftmark}]{\fancyplain{}{\sffamily\thepage}}
+%\cfoot{\textcolor{blue}{\myversion}}
 
 %%% Line Spacing %%%
 \RequirePackage{setspace}
@@ -228,12 +228,9 @@
 Cependant de telles signatures ont des limitations, comme la dépendance au jeu de données d'entrainement et le manque de généralisation.
 Nous proposons un nouvel algorithme, \ac{ITIfr} (\citet{Garcia2012}) pour extraire une signature generalisable prédisant la rechute métastatique dans le cancer du sein par superimposition d'un très large jeu de données d'interaction protèine-protèine sur de multiples jeux de données d'expression des gènes.
 Cette méthode ré-implemente l'algorithme \citet{Chuang2007}, avec la capacité supplémentaire d'extraire une signature génomique à partir de plusieurs jeux de donnés d'expression des gènes simultanément.
-Deux études ont été faites sur cinq jeux de donnés issus de puces à ADN en cancer du sein.
-Pour chaque étude, deux signatures séparées ont été établies sur les patients sur-exprimant les récepteur aux {\oe}strogènes (ER+) and les patients n'exprimant pas les récepteur aux {\oe}strogènes (ER-). 
-Nous aovns trouvé deux signatures composées de 6 et 139 sous-réseaux reliées respectivement à la rechute métastatique à 5 ans dans le cancer du sein ER+ et ER-.
-Ces signatures ont été confrontées aux signatures \citet{Wang2005} et \citet{vantveer2002} contre des jeux de données indépendants.
-Contre le jeu de données \citet{Desmedt2008}, dans les ER+/ER- la précision est respectivement de 0.74/0.54, 0.41/0.44 et 0.60/0.38 pour les signatures ITI, Van’t Veer et Wang.
-Contre le jeu de données \citet{vandevijver2002}, dans les ER+/ER- la précision est respectivement de 0.52/0.53, 0.62/0.53 et 0.63/0.56 pour les signatures ITI, Van’t Veer et Wang.
+Une analyse non-supervisée et une analyse supervisée ont été réalisés sur un compendium de jeux de donnés issus de puces à ADN en cancer du sein.
+Les performances des signatures trouvées par ITI ont été comparé aux performances des signatures préalablement publiées (\citet{vandevijver2002,Wang2005, Sotiriou2006}).
+Nos résultats montrent que les signatures ITI sont plus stables et plus généralisables, et sont plus performantes pour classifier un jeu de données indépendant.
 Nous avons trouvés des sous-réseaux formant des complexes précédement relié à des fonctions biologiques impliquées dans la nétastase et le cancer du sein.
 Plusieurs gènes directeurs ont été détectés, dont \acs{CDK1}, \acs{NCK1} et \acs{PDGFB}, certains n'étant pas déjà relié à la rechute métastatique dans le cancer du sein.}
 
@@ -241,12 +238,9 @@ Plusieurs gènes directeurs ont été détectés, dont \acs{CDK1}, \acs{NCK1} et
 However, such signatures have limitations, such as dependency on training set, and lack of generalization.  
 We propose a novel algorithm, \ac{ITIen} (\citet{Garcia2012}) to extract a generalizable signature predicting breast cancer relapse by superimposition of a large-scale protein-protein interaction data over several gene-expression data sets.  
 This method re-implements the \citet{Chuang2007} algorithm, with the added capability to extract a genomic signature from several gene-expression data sets simultaneously.  
-Two studies were made with five breast cancer DNA microarray data sets.  
-For each studies, two separate signatures were established on patients overexpressing Estrogen Receptor (ER+) and patients non-expressing Estrogen Receptor (ER-).  
-We found two sets of 6 and 139 subnetworks signatures linked respectively to 5 years relapse free survival in breast cancer ER+ and ER-.  
-These were confronted to \citet{Wang2005} and \citet{vantveer2002} signatures against independent datasets.  
-Against \citet{Desmedt2008} Dataset , in ER+/ER- the accuracy is respectively of 0.74/0.54, 0.41/0.44 and 0.60/0.38 for ITI, Van’t Veer and Wang signatures.  
-Against \citet{vandevijver2002} Dataset, in ER+/ER- the accuracy is respectively of 0.52/0.53, 0.62/0.53 and 0.63/0.56 for ITI, Van’t Veer and Wang signatures.  
+A non-supervised and a supervised analysis were made with a breast cancer compendium of DNA microarray data sets.
+Performances of signatures found with ITI were compared with previously published signatures (\citet{vandevijver2002,Wang2005, Sotiriou2006}).
+Our results show that ITI's signatures are more stable and more generalizable, and perfom better when classifying an independant dataset.
 We found that subnetworks formed complexes functionally linked to biological functions related to metastasis and breast cancer.  
 Several drivers genes were detected, including \acs{CDK1}, \acs{NCK1} and \acs{PDGFB}, some not previously linked to breast cancer relapse.}
 
