@@ -1,0 +1,28 @@
+\singlespacing
+
+\mychapter{blue!45!black}{Conclusion Générale}
+	\newpage
+
+\doublespacing
+
+	\section*{\textcolor{blue!45!black}{Conclusion Générale}}
+		\mylettrine{N}{ous avons conçu} un algorithme basé sur une approche réseau (ITI) pour identifier des signatures génomiques généralisables sur plusieurs jeux de données transcriptomiques de différentes origines.
+		Cet algorithme fonctionne en deux étape : tout d'abord, il intègre des données d'un compendium de jeux de données de puces à ADN dans le cancer du sein, et il permet de détecter des sous-réseaux, \emph{ie} des groupes de gènes interagissant ensemble, dont l'expression discrimine deux conditions d'intérêt.
+		Les sous-réseaux sont filtrés par validation statistique.
+		Nous avons appliqué l'algorithme ITI à la question complexe de la rechute métastatique dans le cancer hétérogène qu'est le cancer du sein pour lequel un grand nombre de données publiques sont disponibles.
+
+		Notre approche démontre la faisabilité de l'intégration d'un large compendium de données d'expression des gènes (2103 tumeurs du sein ont été intégrées dans notre analyse non-supervisée et 930 dans notre analyse supervisée) et un réseau d'interactions protéine-protéine à grande échelle.
+		ITI représente un outil potentiellement utile pour explorer les sites de dépôts de données d'expression des gènes.
+		Dans l'étude de la rechute métastatique dans le cancer du sein, nous avons produit deux signatures statut ER spécifique qui ont été validées sur des jeux de données indépendants.
+		Nous avons obtenu une meilleure performance de classification que les précédents classifieurs publiés (74\% pour Desmedt (ER+) et 53\% pour van de Vijver (ER+)).
+		Nos signatures basées sur les réseaux reflètent la large empreinte biologique de la métastase et est par conséquence plus large que les signatures précédemment publiées.
+		Le classifieur obtenu avec ITI est moins sensible que les classifieurs précédemment publiés aux biais des plateformes, puisque la performance de la signature ITI reste similaire sur les deux compendium d'entraînement.
+		Nos signatures montrent également une spécificité forte, ce qui est critique dans le cas de prise de décision pour éviter un traitement adjuvant systémique inutile.
+
+		L'algorithme ITI est actuellement étendu pour incorporer d'autres types de données (\acs{CNV} \citep{Garcia2013}, méthylation de l'ADN, \acsp{miRNA}).
+		ITI est capable d'atténuer le fléau de la dimensionnalité, rendant possible la détection de biomarqueurs par des analyses de type \acs{NGS}.
+		Dans les prochaines versions, la nature de l'interaction protéine-protéine sera prise en compte lors de l'étape de détection des sous-réseaux.
+		Les performances de classification sont inhérentes aux sous-types moléculaires, et un sous-typage plus fin est nécessaire pour permettre l'utilisation de cette technologie pour des usages cliniques.
+		Une future validation clinique pourrait être envisagée avec un essai clinique utilisant des puces à ADN.
+		L'utilisation de plusieurs sources de données en entrée pourraît nourrir une intégration multiple et massive aboutissant à la découverte d'une signature encore plus robuste et généralisable.
+		La performance de l'algorithme est prouvée dans le cadre de la question complexe de la rechute métastatique dans le cadre hétérogène du cancer du sein, il serait intéressant de transposer cet algorithme non seulement à d'autres questions biologiques, telle la réponse au traitement où la différentiation entre sous-types moléculaires, mais aussi à d'autres types de cancer ainsi qu'à d'autres maladies.
