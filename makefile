@@ -21,6 +21,7 @@
 #################################################
 
 MAIN	= myThesis
+THESIS	= ${MAIN}.pdf
 LOGS	= ${MAIN}.aux ${MAIN}.bbl ${MAIN}.blg ${MAIN}.idx ${MAIN}.ilg ${MAIN}.ind ${MAIN}.lof ${MAIN}.log ${MAIN}.lot ${MAIN}.maf ${MAIN}.mtc* ${MAIN}.out ${MAIN}.toc
 PNGS	= $(shell  find -type f -iname "*.svg" | sed 's/.svg/.png/g')
 PDFS	= $(shell  find -type f -iname "*.svg" | sed 's/.svg/.pdf/g')
@@ -29,9 +30,9 @@ PDF_TEX = $(shell  find -type f -iname "*.svg" | sed 's/.svg/.pdf_tex/g')
 SVG2PNG	= inkscape $< -e $@ -y 255 -d 180
 SVG2PDF	= inkscape -D -z --file=$< --export-pdf=$@ --export-latex
 
-all: ${PNGS} ${PDFS} ${MAIN}.pdf
+all: ${PNGS} ${PDFS} ${THESIS}
 
-${MAIN}.pdf:
+${THESIS}:
 	pdflatex ${MAIN}
 	@while ( grep "Rerun to get cross-references" ${MAIN}.log > /dev/null ); \
 	do \
@@ -53,7 +54,7 @@ figures/%.pdf: figures/%.svg
 	$(SVG2PDF)
 
 clean:
-	rm -f ${MAIN}.pdf ${LOGS} ${PNGS} ${PDFS} ${PDF_TEX}
+	rm -f ${THESIS} ${LOGS} ${PNGS} ${PDFS} ${PDF_TEX}
 
 log:
 	pdflatex ${MAIN}
