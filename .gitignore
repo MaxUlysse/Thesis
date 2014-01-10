@@ -1,11 +1,10 @@
 articles/
+bibliography/
 cover/
-data/
 
 *.pdf
 *.pdf_tex
 *.png
-*.bib
 
 .dropbox
 
