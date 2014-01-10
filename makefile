@@ -22,10 +22,24 @@
 
 MAIN	= myThesis
 LOG		= ${MAIN}.aux ${MAIN}.bbl ${MAIN}.blg ${MAIN}.idx ${MAIN}.ilg ${MAIN}.ind ${MAIN}.lof ${MAIN}.log ${MAIN}.lot ${MAIN}.maf ${MAIN}.mtc* ${MAIN}.out ${MAIN}.toc
+PNG		= $(shell  find -type f -iname "*.svg" | sed 's/.svg/.png/g')
+VEC		= $(shell  find -type f -iname "*.svg" | sed 's/.svg/.pdf/g')
+CONVERT_SVG2PNG = inkscape $< -e $@ -y 255 -d 180
+#-y 255 means background opacity is at 255 (between 0 to 255).
+#-d 180 means 180 dpi
+CONVERT_SVG2PDF = inkscape -D -z --file=$< --export-pdf=$@ --export-latex
 
-all: pdf
+all: ${PNG} ${VEC} pdf
 
 pdf: log remove
+
+figures/%.png: figures/%.svg
+	$(MSG)
+	$(CONVERT_SVG2PNG)
+
+figures/%.pdf: figures/%.svg
+	$(MSG)
+	$(CONVERT_SVG2PDF)
 
 log:
 	pdflatex ${MAIN}
@@ -46,3 +60,6 @@ clean:
 
 remove:
 	rm -f ${LOG}
+
+rebuild:
+	clean all
