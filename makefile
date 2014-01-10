@@ -21,25 +21,39 @@
 #################################################
 
 MAIN	= myThesis
-LOG		= ${MAIN}.aux ${MAIN}.bbl ${MAIN}.blg ${MAIN}.idx ${MAIN}.ilg ${MAIN}.ind ${MAIN}.lof ${MAIN}.log ${MAIN}.lot ${MAIN}.maf ${MAIN}.mtc* ${MAIN}.out ${MAIN}.toc
-PNG		= $(shell  find -type f -iname "*.svg" | sed 's/.svg/.png/g')
-VEC		= $(shell  find -type f -iname "*.svg" | sed 's/.svg/.pdf/g')
-CONVERT_SVG2PNG = inkscape $< -e $@ -y 255 -d 180
-#-y 255 means background opacity is at 255 (between 0 to 255).
-#-d 180 means 180 dpi
-CONVERT_SVG2PDF = inkscape -D -z --file=$< --export-pdf=$@ --export-latex
+LOGS	= ${MAIN}.aux ${MAIN}.bbl ${MAIN}.blg ${MAIN}.idx ${MAIN}.ilg ${MAIN}.ind ${MAIN}.lof ${MAIN}.log ${MAIN}.lot ${MAIN}.maf ${MAIN}.mtc* ${MAIN}.out ${MAIN}.toc
+PNGS	= $(shell  find -type f -iname "*.svg" | sed 's/.svg/.png/g')
+PDFS	= $(shell  find -type f -iname "*.svg" | sed 's/.svg/.pdf/g')
+PDF_TEX = $(shell  find -type f -iname "*.svg" | sed 's/.svg/.pdf_tex/g')
 
-all: ${PNG} ${VEC} pdf
+SVG2PNG	= inkscape $< -e $@ -y 255 -d 180
+SVG2PDF	= inkscape -D -z --file=$< --export-pdf=$@ --export-latex
 
-pdf: log remove
+all: ${PNGS} ${PDFS} ${MAIN}.pdf
+
+${MAIN}.pdf:
+	pdflatex ${MAIN}
+	@while ( grep "Rerun to get cross-references" ${MAIN}.log > /dev/null ); \
+	do \
+		bibtex ${MAIN}; \
+		pdflatex ${MAIN}; \
+	done
+	makeindex ${MAIN}; \
+	pdflatex ${MAIN}
+	@while ( grep "Rerun to get outlines " ${MAIN}.log > /dev/null ); \
+	do \
+		pdflatex ${MAIN}; \
+	done
+	rm -f ${LOGS}
 
 figures/%.png: figures/%.svg
-	$(MSG)
-	$(CONVERT_SVG2PNG)
+	$(SVG2PNG)
 
 figures/%.pdf: figures/%.svg
-	$(MSG)
-	$(CONVERT_SVG2PDF)
+	$(SVG2PDF)
+
+clean:
+	rm -f ${MAIN}.pdf ${LOGS} ${PNGS} ${PDFS} ${PDF_TEX}
 
 log:
 	pdflatex ${MAIN}
@@ -54,12 +68,6 @@ log:
 	do \
 		pdflatex ${MAIN}; \
 	done
-
-clean:
-	rm -f ${MAIN}.pdf ${LOG}
-
-remove:
-	rm -f ${LOG}
 
 rebuild:
 	clean all
