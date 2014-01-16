@@ -23,9 +23,9 @@
 MAIN	= myThesis
 THESIS	= ${MAIN}.pdf
 LOGS	= ${MAIN}.aux ${MAIN}.bbl ${MAIN}.blg ${MAIN}.idx ${MAIN}.ilg ${MAIN}.ind ${MAIN}.lof ${MAIN}.log ${MAIN}.lot ${MAIN}.maf ${MAIN}.mtc* ${MAIN}.out ${MAIN}.toc
-PNGS	= $(shell  find -type f -iname "*.svg" | sed 's/.svg/.png/g')
-PDFS	= $(shell  find -type f -iname "*.svg" | sed 's/.svg/.pdf/g')
-PDF_TEX = $(shell  find -type f -iname "*.svg" | sed 's/.svg/.pdf_tex/g')
+PNGS	= $(shell find -type f -iname "*.svg" | sed 's/.svg/.png/g')
+PDFS	= $(shell find -type f -iname "*.svg" | sed 's/.svg/.pdf/g')
+PDF_TEX = $(shell find -type f -iname "*.svg" | sed 's/.svg/.pdf_tex/g')
 
 SVG2PNG	= inkscape $< -e $@ -y 255 -d 180
 SVG2PDF	= inkscape -D -z --file=$< --export-pdf=$@ --export-latex
