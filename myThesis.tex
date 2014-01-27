@@ -81,29 +81,29 @@
 \mainmatter
 	\clearemptydoublepage
 
-	\input{tex/01-introduction}	% State of the art
+	\input{tex/01-introduction}			% State of the art
 	\clearemptydoublepage
 
-	\input{tex/02-methods}		% Supplementary material
+	\input{tex/02-methods}				% Material & Methods + Supplementary Information
 	\clearemptydoublepage
 
-	\input{tex/03-results}		% Got papers? great!
+	\input{tex/03-results}				% Got papers? great!
 	\clearemptydoublepage
 
-	\input{tex/04-results}		% Got more papers? wonderful!
+	\input{tex/04-results}				% Got more papers? wonderful!
 	\clearemptydoublepage
 
-	\input{tex/05-discussion}	% Make sense of the whole of it
+	\input{tex/05-discussion}			% Make sense of the whole of it
 	\clearemptydoublepage
 
-	\input{tex/06-conclusions}	% Your contribution in short points
+	\input{tex/06-conclusions}			% Your contribution in short points
 	\clearemptydoublepage
 
-	\begin{appendices}
-		\input{tex/07-appendices}
-		\input{tex/07a-nomenclature}
-		\input{tex/07b-acronyms}
-		\input{tex/07c-publications}
+	\begin{appendices}					% Appendices
+		\input{tex/07-appendices}		% Explaining what is in your appendices
+		\input{tex/07a-nomenclature}	% Nomenclature used
+		\input{tex/07b-acronyms}		% Acronyms used
+		\input{tex/07c-publications}	% All your publications
 	\end{appendices}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -112,20 +112,20 @@
 
 \backmatter
 	\singlespacing
-	\bibliography{bibliography/biblio}
-	\bibliographystyle{unsrtnat}
+	\bibliography{bibliography/biblio}	% Your bibliography
+	\bibliographystyle{unsrtnat}		% The bibliography style
 	\clearemptydoublepage
 
-	% \phantomsection
-	% \printindex
-	% \clearemptydoublepage
+	% \phantomsection			
+	% \printindex				NOT WORKING YET, NEED TO CORRECT THAT
+	% \clearemptydoublepage		
 
-	\input{tex/08-colophon}
+	\input{tex/08-colophon}				% Small colophon to explain how it was made
 	\clearemptydoublepage
 
 	\phantomsection
-	\addcontentsline{toc}{chapter}{Abstract}
-	\input{tex/09-abstract}
+	\addcontentsline{toc}{chapter}{Abstract}	
+	\input{tex/09-abstract}				% Abstracts of your thesis
 
 \end{document}
 
