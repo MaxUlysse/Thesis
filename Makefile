@@ -73,5 +73,4 @@ log:
 		pdflatex ${MAIN}; \
 	done
 
-rebuild:
-	clean all
+rebuild: clean all
