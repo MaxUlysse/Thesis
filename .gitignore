@@ -1,6 +1,8 @@
 articles/
 cover/
 
+bibliography/biblio.bib
+
 *.pdf
 *.pdf_tex
 *.png
