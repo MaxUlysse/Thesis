@@ -1,6 +1,5 @@
 articles/
-cover/
-
+mendeley/library.bib
 bibliography/biblio.bib
 
 *.pdf
