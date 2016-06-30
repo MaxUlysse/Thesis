@@ -1,6 +1,6 @@
 articles/
-mendeley/library.bib
-bibliography/biblio.bib
+mendeley/
+bibliography/
 
 *.pdf
 *.pdf_tex
